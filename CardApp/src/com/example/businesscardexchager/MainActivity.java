@@ -19,6 +19,7 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 	ViewPager viewPager;
 	ActionBar actionBar;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

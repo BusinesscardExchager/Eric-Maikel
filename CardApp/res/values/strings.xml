@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">BusinessCardExchager</string>
+    <string name="app_name">BC-Exchager</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_fragment_tab1">FragmentTab1</string>
         <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -10,6 +10,8 @@
     <string name="fragmentC">This is fragment C</string>
     <string name="action_search">Search</string>
     <string name="action_send">Send card</string>
+    <string name="naam">Naam: </string>
+    <string name="adres">Adres: </string>
     
     
 
