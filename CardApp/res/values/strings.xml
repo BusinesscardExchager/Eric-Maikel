@@ -18,5 +18,6 @@
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_edit_card">EditCardActivity</string>
     <string name="buttonEditMyCard">Edit</string>
+    <string name="search_hint">name</string>
 
 </resources>
