@@ -4,17 +4,18 @@
     <string name="app_name">BC-Exchager</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_fragment_tab1">FragmentTab1</string>
-        <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragmentA">This is fragment A</string>
     <string name="fragmentB">This is fragment B</string>
     <string name="fragmentC">This is fragment C</string>
     <string name="action_search">Search</string>
     <string name="action_send">Send card</string>
-        <string name="action_overflow">overflow</string>
+    <string name="action_overflow">overflow</string>
     <string name="naam">Naam: </string>
     <string name="adres">Adres: </string>
     <string name="action_settings">Settings</string>
-    
-    
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_edit_card">EditCardActivity</string>
 
 </resources>

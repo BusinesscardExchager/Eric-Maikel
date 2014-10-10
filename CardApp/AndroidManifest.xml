@@ -26,6 +26,18 @@
             android:name=".FragmentTab1"
             android:label="@string/title_activity_fragment_tab1" >
         </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail" >
+        </activity>
+        <activity
+            android:name=".EditCardActivity"
+            android:label="@string/title_activity_edit_card" >
+        </activity>
     </application>
 
 </manifest>
