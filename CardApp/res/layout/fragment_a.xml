@@ -5,13 +5,14 @@
     android:background="#FFCC00"
     tools:context=".FragmentA" >
 
+    <GridView 
+       android:layout_width="fill_parent" 
+       android:layout_height="fill_parent"
+       android:id="@+id/Collection"
+       android:numColumns="2">
+      
+    </GridView>
     
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/fragmentA" />
 
 </FrameLayout>

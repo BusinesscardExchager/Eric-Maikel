@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +23,7 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 	ViewPager viewPager;
 	ActionBar actionBar;
+	SearchView searchView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,15 +84,22 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		
 		SearchManager searchManager =
 		           (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-		    SearchView searchView =
+		    searchView =
 		            (SearchView) menu.findItem(R.id.action_search).getActionView();
 		    searchView.setSearchableInfo(
 		            searchManager.getSearchableInfo(getComponentName()));
-
-		
+		    
 		return super.onCreateOptionsMenu(menu);
 	}
-
+	@Override
+	public void onBackPressed() {
+		
+	    if (!searchView.isIconified()) {
+	        searchView.setIconified(true);
+	    } else {
+	        super.onBackPressed();
+	    }
+	}
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -179,3 +188,5 @@ class MyAdapter extends FragmentPagerAdapter {
 		return 2;
 	}
 }
+	
+
