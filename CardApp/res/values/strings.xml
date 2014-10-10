@@ -10,8 +10,10 @@
     <string name="fragmentC">This is fragment C</string>
     <string name="action_search">Search</string>
     <string name="action_send">Send card</string>
+        <string name="action_overflow">overflow</string>
     <string name="naam">Naam: </string>
     <string name="adres">Adres: </string>
+    <string name="action_settings">Settings</string>
     
     
 
