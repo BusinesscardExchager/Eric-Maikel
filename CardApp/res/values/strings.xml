@@ -14,8 +14,9 @@
     <string name="naam">Naam: </string>
     <string name="adres">Adres: </string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_setting">Settings</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_edit_card">EditCardActivity</string>
+    <string name="EditBackground">Edit background</string>
 
 </resources>
