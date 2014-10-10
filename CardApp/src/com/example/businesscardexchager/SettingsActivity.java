@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class SettingActivity extends Activity {
+public class SettingsActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_setting);
+		setContentView(R.layout.activity_settings);
 	}
 }

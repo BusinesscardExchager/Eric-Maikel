@@ -1,25 +1,24 @@
 package com.example.businesscardexchager;
 
 import android.app.ActionBar;
-import android.app.FragmentManager;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends FragmentActivity implements TabListener {
 
 	ViewPager viewPager;
 	ActionBar actionBar;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,14 +71,52 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		actionBar.addTab(tab1);
 		actionBar.addTab(tab2);
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu items for use in the action bar
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.action_settings:
+			openSettings();
+			return true;
+		case R.id.action_send:
+			openSend();
+			return true;
+		case R.id.action_search:
+			openSearch();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	private void openSearch() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void openSend() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void openSettings() {
+		Intent intent = new Intent(this, SettingsActivity.class);
+		startActivity(intent);
+	}
 	
+	public void editMyCard(View view)
+	{
+		Intent intent = new Intent(this, EditCardActivity.class);
+		startActivity(intent);
+	}
+
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
@@ -129,6 +166,4 @@ class MyAdapter extends FragmentPagerAdapter {
 		// TODO Auto-generated method stub
 		return 2;
 	}
-
-
 }
