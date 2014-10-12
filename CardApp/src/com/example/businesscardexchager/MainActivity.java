@@ -4,26 +4,45 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements TabListener {
 
 	ViewPager viewPager;
 	ActionBar actionBar;
+	public static final String MY_PREFERENCES = "MyPrefs";
+	SharedPreferences sharedprefs;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+
+		if (sharedprefs.contains("achtergrondkleur")) {
+			int color = sharedprefs.getInt("achtergrondkleur", 0);
+			Log.d("EDR", "test");
+			View layout = findViewById(R.id.fragmentA);
+			Log.d("EDR", "" + color);
+			if (color != 2131034125) {
+				layout.getRootView().setBackgroundColor(color);
+			}
+			Log.d("EDR", "test");
+		}
 
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
@@ -98,21 +117,20 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 	private void openSearch() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private void openSend() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private void openSettings() {
 		Intent intent = new Intent(this, SettingsActivity.class);
 		startActivity(intent);
 	}
-	
-	public void editMyCard(View view)
-	{
+
+	public void editMyCard(View view) {
 		Intent intent = new Intent(this, EditCardActivity.class);
 		startActivity(intent);
 	}
