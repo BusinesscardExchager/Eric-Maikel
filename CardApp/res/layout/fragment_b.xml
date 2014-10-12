@@ -6,11 +6,7 @@
     tools:context=".FragmentB"
     android:id="@+id/fragmentB">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fragmentB" />
-
+   
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -20,21 +16,28 @@
         android:background="@color/green"
         android:orientation="vertical" >
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/naam" />
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/adres" />
         
-        <Button
+        
+    </LinearLayout>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/buttonEditMyCard"
-            android:onClick="editMyCard" />
-    </LinearLayout>
-
+            android:onClick="editMyCard" 
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            />
+</RelativeLayout>
 </LinearLayout>

@@ -4,6 +4,10 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
+<<<<<<< HEAD
+=======
+import android.app.SearchManager;
+>>>>>>> FETCH_HEAD
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,20 +15,29 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+import android.widget.SearchView;
+>>>>>>> FETCH_HEAD
 
 public class MainActivity extends FragmentActivity implements TabListener {
 
 	ViewPager viewPager;
 	ActionBar actionBar;
+<<<<<<< HEAD
 	public static final String MY_PREFERENCES = "MyPrefs";
 	SharedPreferences sharedprefs;
+=======
+	SearchView searchView;
+>>>>>>> FETCH_HEAD
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -95,9 +108,25 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
+		
+		SearchManager searchManager =
+		           (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		    searchView =
+		            (SearchView) menu.findItem(R.id.action_search).getActionView();
+		    searchView.setSearchableInfo(
+		            searchManager.getSearchableInfo(getComponentName()));
+		    
 		return super.onCreateOptionsMenu(menu);
 	}
-
+	@Override
+	public void onBackPressed() {
+		
+	    if (!searchView.isIconified()) {
+	        searchView.setIconified(true);
+	    } else {
+	        super.onBackPressed();
+	    }
+	}
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -185,3 +214,5 @@ class MyAdapter extends FragmentPagerAdapter {
 		return 2;
 	}
 }
+	
+

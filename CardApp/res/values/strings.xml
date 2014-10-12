@@ -18,7 +18,11 @@
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_edit_card">EditCardActivity</string>
     <string name="buttonEditMyCard">Edit</string>
+<<<<<<< HEAD
     <string name="setBackgroundImage">Set background Image</string>
     <string name="chooseColor">Choose Backgournd Color</string>
+=======
+    <string name="search_hint">name</string>
+>>>>>>> FETCH_HEAD
 
 </resources>

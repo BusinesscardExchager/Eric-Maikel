@@ -234,6 +234,7 @@ public final class R {
         public static final int transparentcontainer=0x7f020005;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int action_search=0x7f090007;
         public static final int action_send=0x7f090008;
         public static final int action_settings=0x7f090009;
@@ -244,6 +245,13 @@ public final class R {
         public static final int fragmentB=0x7f090006;
         public static final int imageButton=0x7f090004;
         public static final int pager=0x7f090002;
+=======
+        public static final int Collection=0x7f090001;
+        public static final int action_search=0x7f090002;
+        public static final int action_send=0x7f090003;
+        public static final int action_settings=0x7f090004;
+        public static final int pager=0x7f090000;
+>>>>>>> FETCH_HEAD
     }
     public static final class layout {
         public static final int activity_detail=0x7f030000;
@@ -264,14 +272,21 @@ public final class R {
         public static final int adres=0x7f06000b;
         public static final int app_name=0x7f060000;
         public static final int buttonEditMyCard=0x7f060010;
+<<<<<<< HEAD
         public static final int chooseColor=0x7f060012;
+=======
+>>>>>>> FETCH_HEAD
         public static final int fragmentA=0x7f060004;
         public static final int fragmentB=0x7f060005;
         public static final int fragmentC=0x7f060006;
         public static final int hello_blank_fragment=0x7f060003;
         public static final int hello_world=0x7f060001;
         public static final int naam=0x7f06000a;
+<<<<<<< HEAD
         public static final int setBackgroundImage=0x7f060011;
+=======
+        public static final int search_hint=0x7f060011;
+>>>>>>> FETCH_HEAD
         public static final int title_activity_detail=0x7f06000e;
         public static final int title_activity_edit_card=0x7f06000f;
         public static final int title_activity_fragment_tab1=0x7f060002;
@@ -304,8 +319,14 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
+<<<<<<< HEAD
         public static final int Blue=0x7f070003;
         public static final int Green=0x7f070004;
         public static final int Red=0x7f070002;
+=======
+    }
+    public static final class xml {
+        public static final int searchable=0x7f040000;
+>>>>>>> FETCH_HEAD
     }
 }
