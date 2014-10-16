@@ -3,6 +3,7 @@ package com.example.businesscardexchager;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
@@ -47,16 +48,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 			@Override
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
-				if (arg0 == 0) 
-				{
-					View view = findViewById(R.id.fragmentA);
-					setAchtergrond(view);
-				}
-				if(arg0 == 1)
-				{
-					View view = findViewById(R.id.fragmentB);
-					setAchtergrond(view);
-				}
 				actionBar.setSelectedNavigationItem(arg0);
 			}
 
@@ -94,7 +85,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 		actionBar.addTab(tab1);
 		actionBar.addTab(tab2);
-		
 	}
 
 	@Override
