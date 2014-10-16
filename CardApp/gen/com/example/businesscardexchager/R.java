@@ -230,21 +230,24 @@ public final class R {
         public static final int ic_action_overflow=0x7f020001;
         public static final int ic_action_search=0x7f020002;
         public static final int ic_action_share=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int transparentcontainer=0x7f020005;
+        public static final int ic_icon=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int transparentcontainer=0x7f020006;
     }
     public static final class id {
-        public static final int Collection=0x7f0a0006;
-        public static final int action_search=0x7f0a0008;
-        public static final int action_send=0x7f0a0009;
-        public static final int action_settings=0x7f0a000a;
+        public static final int Collection=0x7f0a0007;
+        public static final int action_search=0x7f0a000a;
+        public static final int action_send=0x7f0a000b;
+        public static final int action_settings=0x7f0a000c;
         public static final int activity_detail=0x7f0a0000;
         public static final int activity_edit_card=0x7f0a0001;
-        public static final int activity_settings=0x7f0a0003;
-        public static final int fragmentA=0x7f0a0005;
-        public static final int fragmentB=0x7f0a0007;
-        public static final int imageButton=0x7f0a0004;
-        public static final int pager=0x7f0a0002;
+        public static final int activity_settings=0x7f0a0004;
+        public static final int fragmentA=0x7f0a0006;
+        public static final int fragmentB=0x7f0a0008;
+        public static final int imageButton=0x7f0a0005;
+        public static final int naamContact=0x7f0a0002;
+        public static final int pager=0x7f0a0003;
+        public static final int tvnaamCard=0x7f0a0009;
     }
     public static final class layout {
         public static final int activity_detail=0x7f030000;
@@ -258,26 +261,28 @@ public final class R {
         public static final int main=0x7f090000;
     }
     public static final class string {
+        public static final int SaveEditMyCard=0x7f070015;
         public static final int action_overflow=0x7f070009;
         public static final int action_search=0x7f070007;
         public static final int action_send=0x7f070008;
-        public static final int action_settings=0x7f07000c;
-        public static final int adres=0x7f07000b;
+        public static final int action_settings=0x7f07000d;
+        public static final int adres=0x7f07000c;
         public static final int app_name=0x7f070000;
-        public static final int buttonEditMyCard=0x7f070010;
-        public static final int chooseColor=0x7f070012;
+        public static final int buttonEditMyCard=0x7f070011;
+        public static final int chooseColor=0x7f070013;
         public static final int fragmentA=0x7f070004;
         public static final int fragmentB=0x7f070005;
         public static final int fragmentC=0x7f070006;
         public static final int hello_blank_fragment=0x7f070003;
         public static final int hello_world=0x7f070001;
         public static final int naam=0x7f07000a;
-        public static final int search_hint=0x7f070013;
-        public static final int setBackgroundImage=0x7f070011;
-        public static final int title_activity_detail=0x7f07000e;
-        public static final int title_activity_edit_card=0x7f07000f;
+        public static final int naamCard=0x7f07000b;
+        public static final int search_hint=0x7f070014;
+        public static final int setBackgroundImage=0x7f070012;
+        public static final int title_activity_detail=0x7f07000f;
+        public static final int title_activity_edit_card=0x7f070010;
         public static final int title_activity_fragment_tab1=0x7f070002;
-        public static final int title_activity_setting=0x7f07000d;
+        public static final int title_activity_setting=0x7f07000e;
     }
     public static final class style {
         /** 
