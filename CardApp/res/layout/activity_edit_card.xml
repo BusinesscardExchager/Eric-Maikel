@@ -2,11 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context="${relativePackage}.${activityClass}"
     android:id="@+id/activity_edit_card">
-=======
-    tools:context="${relativePackage}.${activityClass}" >
+    
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -28,7 +26,6 @@
         
         
     </LinearLayout>
->>>>>>> FETCH_HEAD
 
 
 </RelativeLayout>

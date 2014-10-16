@@ -2,12 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".FragmentA"
     android:id="@+id/fragmentA">
-=======
-    android:background="#FFCC00"
-    tools:context=".FragmentA" >
 
     <GridView 
        android:layout_width="fill_parent" 
@@ -16,7 +12,6 @@
        android:numColumns="2">
       
     </GridView>
->>>>>>> FETCH_HEAD
     
 
 

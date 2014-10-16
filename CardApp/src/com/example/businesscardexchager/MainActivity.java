@@ -4,14 +4,13 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
-<<<<<<< HEAD
-=======
 import android.app.SearchManager;
->>>>>>> FETCH_HEAD
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -22,22 +21,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-<<<<<<< HEAD
+import android.webkit.WebView.FindListener;
 import android.widget.Toast;
-=======
 import android.widget.SearchView;
->>>>>>> FETCH_HEAD
 
 public class MainActivity extends FragmentActivity implements TabListener {
 
 	ViewPager viewPager;
 	ActionBar actionBar;
-<<<<<<< HEAD
 	public static final String MY_PREFERENCES = "MyPrefs";
 	SharedPreferences sharedprefs;
-=======
 	SearchView searchView;
->>>>>>> FETCH_HEAD
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +40,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
-		if (sharedprefs.contains("achtergrondkleur")) {
-			int color = sharedprefs.getInt("achtergrondkleur", 0);
-			Log.d("EDR", "test");
-			View layout = findViewById(R.id.fragmentA);
-			Log.d("EDR", "" + color);
-			if (color != 2131034125) {
-				layout.getRootView().setBackgroundColor(color);
-			}
-			Log.d("EDR", "test");
-		}
-
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -64,8 +47,17 @@ public class MainActivity extends FragmentActivity implements TabListener {
 			@Override
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
+				if (arg0 == 0) 
+				{
+					View view = findViewById(R.id.fragmentA);
+					setAchtergrond(view);
+				}
+				if(arg0 == 1)
+				{
+					View view = findViewById(R.id.fragmentB);
+					setAchtergrond(view);
+				}
 				actionBar.setSelectedNavigationItem(arg0);
-				// Log.d("EDR", "onPageSelected at " + " position " + arg0);
 			}
 
 			@Override
@@ -102,31 +94,33 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 		actionBar.addTab(tab1);
 		actionBar.addTab(tab2);
+		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
-		
-		SearchManager searchManager =
-		           (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-		    searchView =
-		            (SearchView) menu.findItem(R.id.action_search).getActionView();
-		    searchView.setSearchableInfo(
-		            searchManager.getSearchableInfo(getComponentName()));
-		    
+
+		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		searchView = (SearchView) menu.findItem(R.id.action_search)
+				.getActionView();
+		searchView.setSearchableInfo(searchManager
+				.getSearchableInfo(getComponentName()));
+
 		return super.onCreateOptionsMenu(menu);
 	}
+
 	@Override
 	public void onBackPressed() {
-		
-	    if (!searchView.isIconified()) {
-	        searchView.setIconified(true);
-	    } else {
-	        super.onBackPressed();
-	    }
+
+		if (!searchView.isIconified()) {
+			searchView.setIconified(true);
+		} else {
+			super.onBackPressed();
+		}
 	}
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -187,6 +181,21 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		// Log.d("EDR", "onTabUnselected at " + " position " + tab.getPosition()
 		// + " name " + tab.getText());
 	}
+
+	public void setAchtergrond(View layout) {
+		if (sharedprefs.contains("achtergrondkleur")) {
+			String color = sharedprefs.getString("achtergrondkleur", "");
+
+			if (color.equals("Rood")) {
+				layout.setBackgroundColor(getResources().getColor(R.color.red));
+			} else if (color.equals("Blauw")) {
+				layout.setBackgroundColor(getResources().getColor(R.color.blue));
+			} else if (color.equals("Groen")) {
+				layout.setBackgroundColor(getResources()
+						.getColor(R.color.green));
+			}
+		}
+	}
 }
 
 class MyAdapter extends FragmentPagerAdapter {
@@ -214,5 +223,3 @@ class MyAdapter extends FragmentPagerAdapter {
 		return 2;
 	}
 }
-	
-
