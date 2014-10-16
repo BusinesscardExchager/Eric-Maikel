@@ -22,7 +22,7 @@ public class FragmentA extends Fragment {
 
 	public FragmentA() {
 		// Required empty public constructor
-		
+
 	}
 
 	@Override
@@ -35,13 +35,9 @@ public class FragmentA extends Fragment {
 	public void onResume() {
 		View view = getView().findViewById(R.id.fragmentA);
 		super.onResume();
-		Log.d("EDR", "resume");
 		if (sharedprefs != null) {
-			Log.d("EDR", "resume1");
 			if (sharedprefs.contains("achtergrondkleur")) {
-				Log.d("EDR", "resume1");
 				String color = sharedprefs.getString("achtergrondkleur", "");
-				Log.d("EDR", "resume2");
 				if (color.equals("Rood")) {
 					view.setBackgroundColor(getResources()
 							.getColor(R.color.red));
@@ -62,7 +58,8 @@ public class FragmentA extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		sharedprefs = this.getActivity().getSharedPreferences(MY_PREFERENCES,Context.MODE_PRIVATE);
+		sharedprefs = this.getActivity().getSharedPreferences(MY_PREFERENCES,
+				Context.MODE_PRIVATE);
 		return inflater.inflate(R.layout.fragment_a, container, false);
 
 	}
