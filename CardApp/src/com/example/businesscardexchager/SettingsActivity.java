@@ -35,17 +35,14 @@ public class SettingsActivity extends Activity {
 			View root = imageButton.getRootView();
 
 			if (color.equals("Rood")) {
-				Log.d("EDR", "rood settings");
 				root.setBackgroundColor(getResources().getColor(R.color.red));
 				imageButton.setBackgroundColor(getResources().getColor(
 						R.color.red));
 			} else if (color.equals("Blauw")) {
-				Log.d("EDR", "blauw settings");
 				root.setBackgroundColor(getResources().getColor(R.color.blue));
 				imageButton.setBackgroundColor(getResources().getColor(
 						R.color.blue));
 			} else if (color.equals("Groen")) {
-				Log.d("EDR", "groen settings");
 				root.setBackgroundColor(getResources().getColor(R.color.green));
 				imageButton.setBackgroundColor(getResources().getColor(
 						R.color.green));

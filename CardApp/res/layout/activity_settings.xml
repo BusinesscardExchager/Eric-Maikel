@@ -16,8 +16,8 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:contentDescription="@string/setBackgroundImage"
             android:onClick="setBackground" 
             android:layout_centerInParent="true"
