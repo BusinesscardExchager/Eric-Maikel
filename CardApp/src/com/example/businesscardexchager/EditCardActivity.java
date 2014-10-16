@@ -40,15 +40,12 @@ public class EditCardActivity extends Activity {
 				if (color.equals("Rood")) {
 					layout.setBackgroundColor(getResources().getColor(
 							R.color.red));
-					Log.d("EDR", "Edit Rood");
 				} else if (color.equals("Blauw")) {
 					layout.setBackgroundColor(getResources().getColor(
 							R.color.blue));
-					Log.d("EDR", "Edit Blauw");
 				} else if (color.equals("Groen")) {
 					layout.setBackgroundColor(getResources().getColor(
 							R.color.green));
-					Log.d("EDR", "Edit Groen");
 				}
 
 			}
