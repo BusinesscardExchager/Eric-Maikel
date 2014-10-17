@@ -14,17 +14,33 @@
         android:background="@color/white"
         android:orientation="vertical" >
 
-        <EditText
-            android:layout_width="wrap_content"
+            <EditText
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/Bedrijf"
+            android:id="@+id/BedrijfContact" />
+    
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
             android:hint="@string/naam"
-            android:text="@string/naamCard"
             android:id="@+id/naamContact" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/adres" />
+            android:singleLine="true"
+            android:hint="@string/adres"
+            android:id="@+id/adresContact" />
+        
+                <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="@string/telefoon"
+            android:id="@+id/telefoonContact" />
         
         
     </LinearLayout>

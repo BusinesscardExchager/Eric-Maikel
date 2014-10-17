@@ -35,9 +35,39 @@ public class FragmentB extends Fragment {
 		// Inflate the layout for this fragment
 
 		View V = inflater.inflate(R.layout.fragment_b, container, false);
-		TextView tv = (TextView) V.findViewById(id.tvnaamCard);
+
 		if (sharedprefs.contains("naamCard")) {
-			tv.setText(sharedprefs.getString("naamCard", "Naam"));
+			TextView tvNaam = (TextView) V.findViewById(R.id.tvnaamCard);
+			if (tvNaam != null) {
+				String naam = sharedprefs.getString("naamCard", "Naam");
+				tvNaam.setText(naam);
+				Log.d("EDR", tvNaam.getText().toString());
+			} else {
+				Log.d("EDR", "fiets");
+			}
+		}
+
+		if (sharedprefs.contains("AdresCard")) {
+			TextView tvAdres = (TextView) V.findViewById(R.id.tvAdresCard);
+			if (tvAdres != null) {
+				String adres = sharedprefs.getString("AdresCard", "Adres");
+				tvAdres.setText(adres);
+				Log.d("EDR", tvAdres.getText().toString());
+			} else {
+				Log.d("EDR", "fiets");
+			}
+		}
+
+		if (sharedprefs.contains("bedrijfCard")) {
+			TextView tvBedrijf = (TextView) V.findViewById(R.id.tvBedrijfCard);
+			if (tvBedrijf != null) {
+				String bedrijf = sharedprefs
+						.getString("bedrijfCard", "Bedrijf");
+				tvBedrijf.setText(bedrijf);
+				Log.d("EDR", tvBedrijf.getText().toString());
+			} else {
+				Log.d("EDR", "fiets");
+			}
 		}
 
 		return inflater.inflate(R.layout.fragment_b, container, false);
@@ -51,6 +81,25 @@ public class FragmentB extends Fragment {
 			if (sharedprefs.contains("naamCard")) {
 				String naam = sharedprefs.getString("naamCard", "naam");
 				tv.setText(naam);
+			}
+			if (sharedprefs.contains("AdresCard")) {
+				TextView tvAdres = (TextView) getView().findViewById(R.id.tvAdresCard);
+					String adres = sharedprefs.getString("AdresCard", "Adres");
+					tvAdres.setText(adres);
+			}
+
+			if (sharedprefs.contains("bedrijfCard")) {
+				TextView tvBedrijf = (TextView) getView().findViewById(R.id.tvBedrijfCard);
+					String bedrijf = sharedprefs
+							.getString("bedrijfCard", "Bedrijf");
+					tvBedrijf.setText(bedrijf);
+			}
+			
+			if (sharedprefs.contains("telefoonCard")) {
+				TextView tvTelefoon = (TextView) getView().findViewById(R.id.tvTelefoonCard);
+					String nummer = sharedprefs
+							.getString("telefoonCard", "nummer");
+					tvTelefoon.setText(nummer);
 			}
 
 			View view = getView().findViewById(R.id.fragmentB);

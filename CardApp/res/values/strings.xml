@@ -23,5 +23,7 @@
     <string name="chooseColor">Choose Backgournd Color</string>
     <string name="search_hint">name</string>
     <string name="SaveEditMyCard">Save</string>
+    <string name="Bedrijf">Bedrijf: </string>
+    <string name="telefoon">Telefoon nummer:</string>
 
 </resources>

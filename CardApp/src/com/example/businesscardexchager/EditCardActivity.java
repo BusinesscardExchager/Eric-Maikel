@@ -20,10 +20,25 @@ public class EditCardActivity extends Activity {
 	public void onResume() 
 	{
 		super.onResume();
-		EditText et = (EditText) findViewById(id.naamContact);
+		EditText etNaam = (EditText) findViewById(id.naamContact);
+		EditText etAdres = (EditText) findViewById(id.adresContact);
+		EditText etBedrijf = (EditText) findViewById(id.BedrijfContact);
+		EditText etTelefoon = (EditText) findViewById(id.telefoonContact);
 		if(sharedprefs.contains("naamCard"))
 		{
-			et.setText(sharedprefs.getString("naamCard", "Naam"));
+			etNaam.setText(sharedprefs.getString("naamCard", "Naam"));
+		}
+		if(sharedprefs.contains("AdresCard"))
+		{
+			etAdres.setText(sharedprefs.getString("AdresCard", "Adres"));
+		}
+		if(sharedprefs.contains("bedrijfCard"))
+		{
+			etBedrijf.setText(sharedprefs.getString("bedrijfCard", "Bedrijf"));
+		}
+		if(sharedprefs.contains("telefoonCard"))
+		{
+			etTelefoon.setText(sharedprefs.getString("telefoonCard", "Nummer"));
 		}
 	}
 	
@@ -54,8 +69,14 @@ public class EditCardActivity extends Activity {
 	public void SaveMyCard(View view) {
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 		Editor editor = sharedprefs.edit();
-		EditText et = (EditText) findViewById(id.naamContact);
-		editor.putString("naamCard", et.getText().toString());
+		EditText etBedrijf = (EditText) findViewById(id.BedrijfContact);
+		editor.putString("bedrijfCard", etBedrijf.getText().toString());
+		EditText etNaam = (EditText) findViewById(id.naamContact);
+		editor.putString("naamCard", etNaam.getText().toString());
+		EditText etAdres = (EditText) findViewById(id.adresContact);
+		editor.putString("AdresCard", etAdres.getText().toString());
+		EditText etTelefoon = (EditText) findViewById(id.telefoonContact);
+		editor.putString("telefoonCard", etTelefoon.getText().toString());
 		editor.commit();
 		finish();
 	}
