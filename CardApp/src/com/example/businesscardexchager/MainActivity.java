@@ -1,5 +1,11 @@
 package com.example.businesscardexchager;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.businesscardexchager.R.color;
+
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -23,6 +29,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView.FindListener;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.SearchView;
 
@@ -33,11 +41,14 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	public static final String MY_PREFERENCES = "MyPrefs";
 	SharedPreferences sharedprefs;
 	SearchView searchView;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		
+		
 
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 

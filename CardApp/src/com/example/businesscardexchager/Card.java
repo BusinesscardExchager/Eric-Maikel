@@ -9,73 +9,83 @@ public class Card {
 	String adres;
 	String telefoonnummer;
 	String functie;
-	
+
 	Image afbeelding;
-	
+
 	int achtergrondKleur;
-	
-	public Card()
-	{
+
+	public Card() {
 		this.achtergrondKleur = Color.MAGENTA;
 	}
-	
-	public String getBedrijf()
-	{
+
+	// Test constructor
+	public Card(String bedrijf, String naam, String adres,
+			String telefoonnummer, String functie, int achtergrondkleur) {
+		this.bedrijf = bedrijf;
+		this.naam = naam;
+		this.adres = adres;
+		this.telefoonnummer = telefoonnummer;
+		this.functie = functie;
+		this.achtergrondKleur = achtergrondkleur;
+	}
+
+	public String getBedrijf() {
 		return bedrijf;
 	}
-	
-	public String getNaam()
-	{
+
+	public String getNaam() {
 		return naam;
 	}
-	
-	public String getAdres()
-	{
+
+	public String getAdres() {
 		return adres;
 	}
-	
-	public String getTelnummer()
-	{
+
+	public String getTelnummer() {
 		return telefoonnummer;
 	}
-	
-	public int getAchtergrondKleur()
-	{
+
+	public int getAchtergrondKleur() {
 		return achtergrondKleur;
 	}
-	
-	public String getFunctie()
-	{
+
+	public String getFunctie() {
 		return functie;
 	}
-	
-	public void setBedrijf(String bedrijf)
-	{
+
+	public void setBedrijf(String bedrijf) {
 		this.bedrijf = bedrijf;
 	}
-	
-	public void setNaam(String naam)
-	{
+
+	public void setNaam(String naam) {
 		this.naam = naam;
 	}
-	
-	public void setAdres(String adres)
-	{
+
+	public void setAdres(String adres) {
 		this.adres = adres;
 	}
-	
-	public void setTelnummer(String telnummer)
-	{
+
+	public void setTelnummer(String telnummer) {
 		this.telefoonnummer = telnummer;
 	}
-	
-	public void setAchtergrondKleur(int kleur)
-	{
+
+	public void setAchtergrondKleur(int kleur) {
 		this.achtergrondKleur = kleur;
 	}
-	
-	public void setFunctie(String functie)
-	{
+
+	public void setFunctie(String functie) {
 		this.functie = functie;
+	}
+	
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.bedrijf + "\n");
+		sb.append(this.naam + "\n");
+		String cardString;
+		cardString = sb.toString();
+		//afmaken
+		return cardString;
 	}
 }
