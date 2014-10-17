@@ -1,60 +1,84 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit_card"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}"
-    android:id="@+id/activity_edit_card">
-    
-<LinearLayout
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:orientation="vertical" >
 
-            <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:hint="@string/Bedrijf"
-            android:id="@+id/BedrijfContact" />
-    
         <EditText
+            android:id="@+id/BedrijfContact"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:hint="@string/naam"
-            android:id="@+id/naamContact" />
+            android:hint="@string/Bedrijf"
+            android:singleLine="true" />
 
         <EditText
+            android:id="@+id/naamContact"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
+            android:hint="@string/naam"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/functieContact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/functie"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/adresContact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/adres"
-            android:id="@+id/adresContact" />
-        
-                <EditText
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/telefoonContact"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
             android:hint="@string/telefoon"
-            android:id="@+id/telefoonContact" />
+            android:singleLine="true" />
         
-        
+        <ImageView 
+            android:id="@+id/PhotoContact"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/photo"
+            android:background="@color/black"
+            />
     </LinearLayout>
-<RelativeLayout 
+
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-    <Button
+        android:layout_height="fill_parent"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/PictureButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/SaveEditMyCard"
-            android:onClick="SaveMyCard" 
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            />
-</RelativeLayout>
+            android:onClick="TakePicCard"
+            android:text="@string/TakePictureCard" />
+
+        <Button
+            android:id="@+id/SaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/PictureButton"
+            android:layout_centerHorizontal="true"
+            android:onClick="SaveMyCard"
+            android:text="@string/SaveEditMyCard" />
+    </RelativeLayout>
 
 </RelativeLayout>
