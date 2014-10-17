@@ -4,13 +4,17 @@ import com.example.businesscardexchager.R.id;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -76,6 +80,8 @@ public class FragmentB extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
+		ImageView iv = (ImageView)getView().findViewById(id.PhotoCard);
+		//iv.setImageBitmap()
 		TextView tv = (TextView) getView().findViewById(id.tvnaamCard);
 		if (sharedprefs != null) {
 			if (sharedprefs.contains("naamCard")) {
@@ -101,6 +107,18 @@ public class FragmentB extends Fragment {
 							.getString("telefoonCard", "nummer");
 					tvTelefoon.setText(nummer);
 			}
+			
+			if (sharedprefs.contains("functieCard")) {
+				TextView tvFunctie = (TextView) getView().findViewById(R.id.tvFunctieCard);
+					String functie = sharedprefs
+							.getString("functieCard", "Functie");
+					tvFunctie.setText(functie);
+			}
+
+			if (sharedprefs.contains("PhotoCard")) {
+				ImageView ivPhoto = (ImageView) getView().findViewById(R.id.PhotoCard);
+				ivPhoto.setImageBitmap(decodeBase64(sharedprefs.getString("PhotoCard", "photo")));
+			}
 
 			View view = getView().findViewById(R.id.fragmentB);
 
@@ -121,5 +139,9 @@ public class FragmentB extends Fragment {
 			Log.d("EDR", "hoi");
 		}
 	}
-
+    public static Bitmap decodeBase64(String input) {
+        byte[] decodedByte = Base64.decode(input, 0);
+        return BitmapFactory
+                .decodeByteArray(decodedByte, 0, decodedByte.length);
+    }
 }

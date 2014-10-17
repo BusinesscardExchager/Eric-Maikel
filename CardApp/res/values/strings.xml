@@ -25,5 +25,8 @@
     <string name="SaveEditMyCard">Save</string>
     <string name="Bedrijf">Bedrijf: </string>
     <string name="telefoon">Telefoon nummer:</string>
+    <string name="functie">Functie: </string>
+    <string name="TakePictureCard">Take Picture</string>
+    <string name="photo">Photo Contact:</string>
 
 </resources>
