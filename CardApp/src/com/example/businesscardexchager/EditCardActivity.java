@@ -76,7 +76,7 @@ public class EditCardActivity extends Activity {
 	    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 	        Bundle extras = data.getExtras();
 	        imageBitmap = (Bitmap) extras.get("data");
-	        imageBitmap = getResizedBitmap(imageBitmap, 150, 90);
+	        imageBitmap = getResizedBitmap(imageBitmap, 100, 60);
 	        ImageView iv = (ImageView)findViewById(id.PhotoContact);
 	        iv.setImageBitmap(imageBitmap);
 	        
