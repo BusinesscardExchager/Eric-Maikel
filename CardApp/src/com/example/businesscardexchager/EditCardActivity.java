@@ -131,7 +131,7 @@ public class EditCardActivity extends Activity {
 		EditText etFunctie = (EditText) findViewById(id.functieContact);
 		editor.putString("functieCard", etFunctie.getText().toString());
 		
-		editor.putString("PhotoCard", encodeTobase64(imageBitmap));
+		//editor.putString("PhotoCard", encodeTobase64(imageBitmap));
 		
 		editor.commit();
 		finish();

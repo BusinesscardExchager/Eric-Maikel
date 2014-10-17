@@ -28,5 +28,6 @@
     <string name="functie">Functie: </string>
     <string name="TakePictureCard">Take Picture</string>
     <string name="photo">Photo Contact:</string>
+    <string name="imageViewCollection">Business card afbeelding in de collection</string>
 
 </resources>
