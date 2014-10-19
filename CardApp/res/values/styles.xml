@@ -17,22 +17,8 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="Red" parent="android:Theme.Light">
-
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:background">@color/red</item>
-    </style>
-    
-    <style name="Blue" parent="android:Theme.Light">
-
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:background">@color/blue</item>
-    </style>
-    
-    <style name="Green" parent="android:Theme.Light">
-
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:background">@color/green</item>
+    <style name="TextStyle">
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>

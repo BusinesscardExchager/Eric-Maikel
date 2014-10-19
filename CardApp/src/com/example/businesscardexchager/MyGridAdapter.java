@@ -3,10 +3,18 @@ package com.example.businesscardexchager;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,17 +26,9 @@ public class MyGridAdapter extends BaseAdapter {
 	private List<Card> cards = new ArrayList<Card>();
 	private LayoutInflater inflater;
 
-	public MyGridAdapter(Context context) {
+	public MyGridAdapter(Context context, List<Card> cards) {
 		inflater = LayoutInflater.from(context);
-		Card card1 = new Card("ME Software Inc.", "Eric de Regter",
-				"Patrijshof 7", "0495-544302", "Managing Software Engineer",
-				color.AliceBlue);
-		Card card2 = new Card("ME Software Inc.", "Maikel Hoeks",
-				"Magneestrat 101", "0612950493", "Software Engineer",
-				color.Beige);
-
-		cards.add(card1);
-		cards.add(card2);
+		this.cards = cards;
 	}
 
 	@Override
@@ -46,24 +46,56 @@ public class MyGridAdapter extends BaseAdapter {
 		return arg0;
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public View getView(int i, View view, ViewGroup viewGroup) {
 		View v = view;
-		ImageView imageView;
-		TextView textView;
+		TextView textBedrijf;
+		TextView textNaam;
+		TextView textFunctie;
+		TextView textAdres;
+		TextView textTelefoonnummer;
+		ImageView img;
 
 		if (v == null) {
 			v = inflater.inflate(R.layout.row_grid, viewGroup, false);
-			v.setTag(R.id.item_image, v.findViewById(R.id.item_image));
-			v.setTag(R.id.item_text, v.findViewById(R.id.item_text));
+			v.setTag(R.id.textBedrijf, v.findViewById(R.id.textBedrijf));
+			v.setTag(R.id.textNaam, v.findViewById(R.id.textNaam));
+			v.setTag(R.id.textFunctie, v.findViewById(R.id.textFunctie));
+			v.setTag(R.id.textAdres, v.findViewById(R.id.textAdres));
+			v.setTag(R.id.textTelefoonnummer,
+					v.findViewById(R.id.textTelefoonnummer));
+			v.setTag(R.id.imageCard, v.findViewById(R.id.imageCard));
 		}
 
-		imageView = (ImageView) v.getTag(R.id.item_image);
-		textView = (TextView) v.getTag(R.id.item_text);
+		textBedrijf = (TextView) v.getTag(R.id.textBedrijf);
+		textNaam = (TextView) v.getTag(R.id.textNaam);
+		textFunctie = (TextView) v.getTag(R.id.textFunctie);
+		textAdres = (TextView) v.getTag(R.id.textAdres);
+		textTelefoonnummer = (TextView) v.getTag(R.id.textTelefoonnummer);
+		img = (ImageView) v.findViewById(R.id.imageCard);
 
 		Card card = (Card) getItem(i);
-		imageView.setBackgroundColor(card.achtergrondKleur);
-		textView.setText(card.getNaam());
+		View root = v.findViewById(R.id.rootCard);
+		GradientDrawable gDrawable = (GradientDrawable) root.getBackground().mutate();
+		
+		
+		gDrawable.setColorFilter(v.getResources().getColor(card.getAchtergrondKleur()),PorterDuff.Mode.MULTIPLY);
+		gDrawable.setStroke(3, v.getResources().getColor(R.color.black));
+		
+		
+		if (card.getAfbeelding() != null) {
+			Log.d("EDR", "Afbeelding");
+			img.setImageBitmap(card.getAfbeelding());
+		} else {
+			Log.d("EDR", "kleur");
+			// img.setBackgroundColor(v.getResources().getColor(card.getAchtergrondKleur()));
+		}
+		textBedrijf.setText(card.getBedrijf());
+		textNaam.setText(card.getNaam());
+		textFunctie.setText(card.getFunctie());
+		textAdres.setText(card.getAdres());
+		textTelefoonnummer.setText(card.getTelnummer());
 
 		return v;
 	}

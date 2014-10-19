@@ -227,42 +227,49 @@ public final class R {
     }
     public static final class drawable {
         public static final int cardachtergrond=0x7f020000;
-        public static final int ic_action_forward=0x7f020001;
-        public static final int ic_action_overflow=0x7f020002;
-        public static final int ic_action_search=0x7f020003;
-        public static final int ic_action_share=0x7f020004;
-        public static final int ic_icon=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int transparentcontainer=0x7f020007;
+        public static final int dropshadow=0x7f020001;
+        public static final int ic_action_forward=0x7f020002;
+        public static final int ic_action_overflow=0x7f020003;
+        public static final int ic_action_search=0x7f020004;
+        public static final int ic_action_share=0x7f020005;
+        public static final int ic_icon=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int transparentcontainer=0x7f020008;
     }
     public static final class id {
-        public static final int BedrijfContact=0x7f0a0002;
-        public static final int Collection=0x7f0a000e;
-        public static final int PhotoCard=0x7f0a0015;
-        public static final int PhotoContact=0x7f0a0007;
-        public static final int PictureButton=0x7f0a0008;
-        public static final int SaveButton=0x7f0a0009;
-        public static final int action_search=0x7f0a0018;
-        public static final int action_send=0x7f0a0019;
-        public static final int action_settings=0x7f0a001a;
+        public static final int BedrijfContact=0x7f0a0003;
+        public static final int Collection=0x7f0a000f;
+        public static final int PhotoCard=0x7f0a0016;
+        public static final int PhotoContact=0x7f0a0008;
+        public static final int PictureButton=0x7f0a0009;
+        public static final int SaveButton=0x7f0a000a;
+        public static final int aantalKaarten=0x7f0a0001;
+        public static final int action_search=0x7f0a001e;
+        public static final int action_send=0x7f0a001f;
+        public static final int action_settings=0x7f0a0020;
         public static final int activity_detail=0x7f0a0000;
-        public static final int activity_edit_card=0x7f0a0001;
-        public static final int activity_settings=0x7f0a000b;
-        public static final int adresContact=0x7f0a0005;
-        public static final int fragmentA=0x7f0a000d;
-        public static final int fragmentB=0x7f0a000f;
-        public static final int functieContact=0x7f0a0004;
-        public static final int imageButton=0x7f0a000c;
-        public static final int item_image=0x7f0a0016;
-        public static final int item_text=0x7f0a0017;
-        public static final int naamContact=0x7f0a0003;
-        public static final int pager=0x7f0a000a;
-        public static final int telefoonContact=0x7f0a0006;
-        public static final int tvAdresCard=0x7f0a0013;
-        public static final int tvBedrijfCard=0x7f0a0010;
-        public static final int tvFunctieCard=0x7f0a0012;
-        public static final int tvTelefoonCard=0x7f0a0014;
-        public static final int tvnaamCard=0x7f0a0011;
+        public static final int activity_edit_card=0x7f0a0002;
+        public static final int activity_settings=0x7f0a000c;
+        public static final int adresContact=0x7f0a0006;
+        public static final int fragmentA=0x7f0a000e;
+        public static final int fragmentB=0x7f0a0010;
+        public static final int functieContact=0x7f0a0005;
+        public static final int imageButton=0x7f0a000d;
+        public static final int imageCard=0x7f0a001d;
+        public static final int naamContact=0x7f0a0004;
+        public static final int pager=0x7f0a000b;
+        public static final int rootCard=0x7f0a0017;
+        public static final int telefoonContact=0x7f0a0007;
+        public static final int textAdres=0x7f0a001b;
+        public static final int textBedrijf=0x7f0a0018;
+        public static final int textFunctie=0x7f0a001a;
+        public static final int textNaam=0x7f0a0019;
+        public static final int textTelefoonnummer=0x7f0a001c;
+        public static final int tvAdresCard=0x7f0a0014;
+        public static final int tvBedrijfCard=0x7f0a0011;
+        public static final int tvFunctieCard=0x7f0a0013;
+        public static final int tvTelefoonCard=0x7f0a0015;
+        public static final int tvnaamCard=0x7f0a0012;
     }
     public static final class layout {
         public static final int activity_detail=0x7f030000;
@@ -294,10 +301,10 @@ public final class R {
         public static final int functie=0x7f070018;
         public static final int hello_blank_fragment=0x7f070003;
         public static final int hello_world=0x7f070001;
-        public static final int imageViewCollection=0x7f07001b;
         public static final int naam=0x7f07000a;
         public static final int naamCard=0x7f07000b;
         public static final int photo=0x7f07001a;
+        public static final int pictureOnCard=0x7f07001b;
         public static final int search_hint=0x7f070014;
         public static final int setBackgroundImage=0x7f070012;
         public static final int telefoon=0x7f070017;
@@ -333,9 +340,7 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
-        public static final int Blue=0x7f080003;
-        public static final int Green=0x7f080004;
-        public static final int Red=0x7f080002;
+        public static final int TextStyle=0x7f080002;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;

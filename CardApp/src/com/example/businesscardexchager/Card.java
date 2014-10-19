@@ -1,21 +1,19 @@
 package com.example.businesscardexchager;
 
-import android.graphics.Color;
-import android.media.Image;
+import android.graphics.Bitmap;
 
 public class Card {
-	String bedrijf;
-	String naam;
-	String adres;
-	String telefoonnummer;
-	String functie;
+	private String bedrijf;
+	private String naam;
+	private String adres;
+	private String telefoonnummer;
+	private String functie;
 
-	Image afbeelding;
+	private Bitmap afbeelding;
 
-	int achtergrondKleur;
+	private int achtergrondKleur;
 
 	public Card() {
-		this.achtergrondKleur = Color.MAGENTA;
 	}
 
 	// Test constructor
@@ -52,6 +50,11 @@ public class Card {
 	public String getFunctie() {
 		return functie;
 	}
+	
+	public Bitmap getAfbeelding()
+	{
+		return afbeelding;
+	}
 
 	public void setBedrijf(String bedrijf) {
 		this.bedrijf = bedrijf;
@@ -77,15 +80,8 @@ public class Card {
 		this.functie = functie;
 	}
 	
-	@Override
-	public String toString()
+	public void setAfbeelding(Bitmap afbeelding)
 	{
-		StringBuilder sb = new StringBuilder();
-		sb.append(this.bedrijf + "\n");
-		sb.append(this.naam + "\n");
-		String cardString;
-		cardString = sb.toString();
-		//afmaken
-		return cardString;
+		this.afbeelding = afbeelding;
 	}
 }
