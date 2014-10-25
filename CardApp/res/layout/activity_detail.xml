@@ -4,11 +4,39 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}"
     android:id="@+id/activity_detail">
-
+    
     <TextView
-        android:id="@+id/aantalKaarten"
+        android:id="@+id/tvBedrijf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"/>
+    
+    <TextView
+        android:id="@+id/tvNaam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:layout_below="@id/tvBedrijf" />
+    
+    <TextView
+        android:id="@+id/tvAdres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" 
+        android:layout_below="@id/tvNaam"/>
+    
+    <TextView
+        android:id="@+id/tvTelefoonnummer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:layout_below="@id/tvAdres" />
+    
+    <TextView
+        android:id="@+id/tvFunctie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:layout_below="@id/tvTelefoonnummer" />
 
 </RelativeLayout>

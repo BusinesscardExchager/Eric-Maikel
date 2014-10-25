@@ -31,9 +31,8 @@ public class FragmentA extends Fragment {
 	public static final String MY_PREFERENCES = "MyPrefs";
 	SharedPreferences sharedprefs;
 	int count = 0;
-	
+
 	GridView grid;
-	
 
 	public FragmentA() {
 		// Required empty public constructor
@@ -64,8 +63,6 @@ public class FragmentA extends Fragment {
 							R.color.green));
 				}
 			}
-		} else {
-			Log.d("EDR", "hoi");
 		}
 	}
 
@@ -75,43 +72,50 @@ public class FragmentA extends Fragment {
 		sharedprefs = this.getActivity().getSharedPreferences(MY_PREFERENCES,
 				Context.MODE_PRIVATE);
 		View rootView = inflater.inflate(R.layout.fragment_a, container, false);
-		
-		CardProvider cardProvider = new CardProvider(getActivity().getApplicationContext());
+
+		final CardProvider cardProvider = new CardProvider(getActivity()
+				.getApplicationContext());
 		List<Card> cards = cardProvider.getCards();
-		
-		Card card1 = new Card("ME Software Inc.", "Eric de Regter",
-				"Patrijshof 7", "0495-544302", "Managing Software Engineer",
-				color.Aquamarine);
-		Card card2 = new Card("ME Software Inc.", "Maikel Hoeks",
-				"Magneestrat 101", "0612950493", "Software Engineer",
-				color.android_green);
 
-		Card card3 = new Card("NS", "Gerard de Regter", "Patrijshof 7",
-				"0495544302", "Medewerker", color.Bisque);
+		if (cards.size() == 0) {
+			Card card1 = new Card("ME Software Inc.", "Eric de Regter",
+					"Patrijshof 7", "0495-544302",
+					"Managing Software Engineer", color.Aquamarine);
+			Card card2 = new Card("ME Software Inc.", "Maikel Hoeks",
+					"Magneestrat 101", "0612950493", "Software Engineer",
+					color.android_green);
 
-		Card card4 = new Card("Land van Horne", "Mila de Regter",
-				"Patrijhof 7", "0495-544302", "Verpleegster", color.CadetBlue);
+			Card card3 = new Card("NS", "Gerard de Regter", "Patrijshof 7",
+					"0495544302", "Medewerker", color.Bisque);
 
-		cardProvider.addCard(card1);
-		cardProvider.addCard(card2);
-		cardProvider.addCard(card3);
-		cardProvider.addCard(card4);
-		
-		
+			Card card4 = new Card("Land van Horne", "Mila de Regter",
+					"Patrijhof 7", "0495-544302", "Verpleegster",
+					color.CadetBlue);
+
+			cardProvider.addCard(card1);
+			cardProvider.addCard(card2);
+			cardProvider.addCard(card3);
+			cardProvider.addCard(card4);
+		}
+
 		grid = (GridView) rootView.findViewById(R.id.Collection);
-		grid.setAdapter(new MyGridAdapter(getActivity().getApplicationContext(), cards));
-		
+		grid.setAdapter(new MyGridAdapter(
+				getActivity().getApplicationContext(), cards));
+
 		grid.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> a, View view, int position,
 					long id) {
-				Intent intent = new Intent(getActivity().getApplicationContext(), DetailActivity.class);
+				Intent intent = new Intent(getActivity()
+						.getApplicationContext(), DetailActivity.class);
 				int cardNr = position;
+				Card card = (Card) cardProvider.getCard(position);
+				intent.putExtra("card", card);
 				intent.putExtra("name", position);
 				startActivity(intent);
 			}
-			
+
 		});
 		return rootView;
 	}
