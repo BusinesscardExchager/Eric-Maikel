@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailActivity extends Activity {
@@ -47,13 +50,24 @@ public class DetailActivity extends Activity {
 		TextView tvAdres = (TextView) findViewById(R.id.tvAdres);
 		TextView tvTelefoonnummer = (TextView) findViewById(R.id.tvTelefoonnummer);
 		TextView tvFunctie = (TextView) findViewById(R.id.tvFunctie);
+		
+		if(card.getAfbeelding() != -1)
+		{
+			ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
+			img.setImageDrawable(getResources().getDrawable(card.getAfbeelding()));
+		}
 
+		
 		if (card != null) {
 			tvBedrijf.setText(card.getBedrijf());
 			tvNaam.setText(card.getNaam());
 			tvAdres.setText(card.getAdres());
 			tvTelefoonnummer.setText(card.getTelnummer());
 			tvFunctie.setText(card.getFunctie());
+			View rootCardView = findViewById(R.id.rootCardDetail);
+			GradientDrawable gDrawable = (GradientDrawable) rootCardView.getBackground();
+			gDrawable.setColorFilter(getResources().getColor(card.getAchtergrondKleur()), PorterDuff.Mode.MULTIPLY);
+			gDrawable.setStroke(3, getResources().getColor(R.color.black));
 		}
 	}
 }

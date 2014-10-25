@@ -1,6 +1,7 @@
 package com.example.businesscardexchager;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -11,7 +12,7 @@ public class Card implements Parcelable {
 	private String telefoonnummer;
 	private String functie;
 
-	private Bitmap afbeelding;
+	private int afbeelding;
 
 	private int achtergrondKleur;
 
@@ -27,6 +28,7 @@ public class Card implements Parcelable {
 		this.telefoonnummer = telefoonnummer;
 		this.functie = functie;
 		this.achtergrondKleur = achtergrondkleur;
+		this.afbeelding = -1;
 	}
 
 	public String getBedrijf() {
@@ -53,7 +55,7 @@ public class Card implements Parcelable {
 		return functie;
 	}
 
-	public Bitmap getAfbeelding() {
+	public int getAfbeelding() {
 		return afbeelding;
 	}
 
@@ -81,7 +83,7 @@ public class Card implements Parcelable {
 		this.functie = functie;
 	}
 
-	public void setAfbeelding(Bitmap afbeelding) {
+	public void setAfbeelding(int afbeelding) {
 		this.afbeelding = afbeelding;
 	}
 
@@ -100,6 +102,7 @@ public class Card implements Parcelable {
 		dest.writeString(telefoonnummer);
 		dest.writeString(functie);
 		dest.writeInt(achtergrondKleur);
+		dest.writeInt(afbeelding);
 	}
 
 	//Wordt aangeroepen door createFromParcel
@@ -110,6 +113,7 @@ public class Card implements Parcelable {
 		this.telefoonnummer = in.readString();
 		this.functie = in.readString();
 		this.achtergrondKleur = in.readInt();
+		this.afbeelding = in.readInt();
 	}
 
 	public static final Parcelable.Creator<Card> CREATOR = new Parcelable.Creator<Card>() {

@@ -9,6 +9,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -91,7 +93,11 @@ public class FragmentA extends Fragment {
 			Card card4 = new Card("Land van Horne", "Mila de Regter",
 					"Patrijhof 7", "0495-544302", "Verpleegster",
 					color.CadetBlue);
-
+			
+			
+			card1.setAfbeelding(R.drawable.mugshot1);
+			card2.setAfbeelding(R.drawable.mugshot2);
+			card3.setAfbeelding(R.drawable.mugshot3);
 			cardProvider.addCard(card1);
 			cardProvider.addCard(card2);
 			cardProvider.addCard(card3);

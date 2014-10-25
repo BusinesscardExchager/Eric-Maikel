@@ -1,42 +1,83 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detail"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}"
-    android:id="@+id/activity_detail">
-    
-    <TextView
-        android:id="@+id/tvBedrijf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"/>
-    
-    <TextView
-        android:id="@+id/tvNaam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:layout_below="@id/tvBedrijf" />
-    
-    <TextView
-        android:id="@+id/tvAdres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" 
-        android:layout_below="@id/tvNaam"/>
-    
-    <TextView
-        android:id="@+id/tvTelefoonnummer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:layout_below="@id/tvAdres" />
-    
-    <TextView
-        android:id="@+id/tvFunctie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:layout_below="@id/tvTelefoonnummer" />
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_horizontal"
+    tools:context="${relativePackage}.${activityClass}" >
 
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rootCardDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/cardachtergrond" >
+
+        <TextView
+            android:id="@+id/tvBedrijf"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvNaam"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBedrijf"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvFunctie"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNaam"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvAdres"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvFunctie"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvTelefoonnummer"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAdres"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imageCardDetail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/pictureOnCard" >
+        </ImageView>
+    </RelativeLayout>
+
+</FrameLayout>
