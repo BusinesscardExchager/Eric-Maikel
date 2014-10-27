@@ -55,6 +55,7 @@ public class MyGridAdapter extends BaseAdapter {
 		TextView textFunctie;
 		TextView textAdres;
 		TextView textTelefoonnummer;
+		TextView textEmail;
 		ImageView img;
 
 		if (v == null) {
@@ -65,6 +66,7 @@ public class MyGridAdapter extends BaseAdapter {
 			v.setTag(R.id.textAdres, v.findViewById(R.id.textAdres));
 			v.setTag(R.id.textTelefoonnummer,
 					v.findViewById(R.id.textTelefoonnummer));
+			v.setTag(R.id.textEmail, v.findViewById(R.id.textEmail));
 			v.setTag(R.id.imageCard, v.findViewById(R.id.imageCard));
 		}
 
@@ -73,6 +75,7 @@ public class MyGridAdapter extends BaseAdapter {
 		textFunctie = (TextView) v.getTag(R.id.textFunctie);
 		textAdres = (TextView) v.getTag(R.id.textAdres);
 		textTelefoonnummer = (TextView) v.getTag(R.id.textTelefoonnummer);
+		textEmail = (TextView) v.getTag(R.id.textEmail);
 		img = (ImageView) v.findViewById(R.id.imageCard);
 
 		Card card = (Card) getItem(i);
@@ -96,6 +99,7 @@ public class MyGridAdapter extends BaseAdapter {
 		textFunctie.setText(card.getFunctie());
 		textAdres.setText(card.getAdres());
 		textTelefoonnummer.setText(card.getTelnummer());
+		textEmail.setText(card.getEmail());
 
 		return v;
 	}

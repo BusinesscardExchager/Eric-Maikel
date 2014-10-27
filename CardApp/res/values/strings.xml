@@ -29,5 +29,10 @@
     <string name="TakePictureCard">Take Picture</string>
     <string name="photo">Photo Contact:</string>
     <string name="pictureOnCard">Picture on the card</string>
+    
+    <string name="call">Call</string>
+    <string name="sendTextMessage">Send Text Message</string>
+    <string name="email">Send Email</string>
+    <string name="addToContacts">Add To Contacts</string>
 
 </resources>

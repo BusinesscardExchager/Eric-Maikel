@@ -82,19 +82,20 @@ public class FragmentA extends Fragment {
 		if (cards.size() == 0) {
 			Card card1 = new Card("ME Software Inc.", "Eric de Regter",
 					"Patrijshof 7", "0495-544302",
-					"Managing Software Engineer", color.Aquamarine);
+					"Managing Software Engineer", "ericderegter@gmail.com", color.Aquamarine);
 			Card card2 = new Card("ME Software Inc.", "Maikel Hoeks",
-					"Magneestrat 101", "0612950493", "Software Engineer",
+					"Magneestrat 101", "0612950493", "Software Engineer", "maikelhoeks@hotmail.com",
 					color.android_green);
 
 			Card card3 = new Card("NS", "Gerard de Regter", "Patrijshof 7",
-					"0495544302", "Medewerker", color.Bisque);
+					"0495544302", "Medewerker", "g.deregter@ns.nl", color.Bisque);
 
 			Card card4 = new Card("Land van Horne", "Mila de Regter",
-					"Patrijhof 7", "0495-544302", "Verpleegster",
+					"Patrijhof 7", "0495-544302", "Verpleegster", "m.deregter@lvh.nl",
 					color.CadetBlue);
 			
-			
+			Card card5 = new Card("De Brouwer", "Rob de Regter", "Patrijshof 7", "0624718538", "Barman", "robderegter@hotmail.com", color.CadetBlue);
+
 			card1.setAfbeelding(R.drawable.mugshot1);
 			card2.setAfbeelding(R.drawable.mugshot2);
 			card3.setAfbeelding(R.drawable.mugshot3);
@@ -102,6 +103,7 @@ public class FragmentA extends Fragment {
 			cardProvider.addCard(card2);
 			cardProvider.addCard(card3);
 			cardProvider.addCard(card4);
+			cardProvider.addCard(card5);
 		}
 
 		grid = (GridView) rootView.findViewById(R.id.Collection);
