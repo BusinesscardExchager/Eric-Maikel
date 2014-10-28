@@ -44,6 +44,7 @@ public class EditCardActivity extends Activity {
 		EditText etBedrijf = (EditText) findViewById(id.BedrijfContact);
 		EditText etTelefoon = (EditText) findViewById(id.telefoonContact);
 		EditText etFunctie = (EditText) findViewById(id.functieContact);
+		EditText etMail = (EditText) findViewById(id.emailContact);
 		ImageView iv = (ImageView) findViewById(id.PhotoContact);
 		if(sharedprefs.contains("naamCard"))
 		{
@@ -64,6 +65,10 @@ public class EditCardActivity extends Activity {
 		if(sharedprefs.contains("functieCard"))
 		{
 			etFunctie.setText(sharedprefs.getString("functieCard", "Functie"));
+		}
+		if(sharedprefs.contains("mailCard"))
+		{
+			etMail.setText(sharedprefs.getString("mailCard", "mail"));
 		}
 		if(sharedprefs.contains("PhotoCard"))
 		{
@@ -131,7 +136,9 @@ public class EditCardActivity extends Activity {
 		EditText etFunctie = (EditText) findViewById(id.functieContact);
 		editor.putString("functieCard", etFunctie.getText().toString());
 		
-		//editor.putString("PhotoCard", encodeTobase64(imageBitmap));
+		EditText etMail = (EditText) findViewById(id.emailContact);
+		editor.putString("mailCard", etMail.getText().toString());
+		
 		
 		editor.commit();
 		finish();

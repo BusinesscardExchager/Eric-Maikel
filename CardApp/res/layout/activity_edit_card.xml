@@ -49,6 +49,14 @@
             android:hint="@string/telefoon"
             android:singleLine="true" />
         
+                <EditText
+            android:id="@+id/emailContact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:singleLine="true" />
+        
         <ImageView 
             android:id="@+id/PhotoContact"
             android:layout_width="60dp"

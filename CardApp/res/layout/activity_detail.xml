@@ -129,7 +129,7 @@
                 android:id="@+id/waaromGekregenET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/waaromGekregen">
+                android:hint="@string/waarGekregen">
             </EditText>
     </LinearLayout>
 
