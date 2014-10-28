@@ -114,6 +114,13 @@ public class FragmentB extends Fragment {
 							.getString("functieCard", "Functie");
 					tvFunctie.setText(functie);
 			}
+			
+			if (sharedprefs.contains("emailCard")) {
+				TextView tvEmail = (TextView) getView().findViewById(R.id.tvEmailCard);
+					String Email = sharedprefs
+							.getString("emailCard", "Email");
+					tvEmail.setText(Email);
+			}
 
 			if (sharedprefs.contains("PhotoCard")) {
 				ImageView ivPhoto = (ImageView) getView().findViewById(R.id.PhotoCard);

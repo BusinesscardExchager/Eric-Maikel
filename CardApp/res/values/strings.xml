@@ -36,5 +36,6 @@
     <string name="addToContacts">Add To Contacts</string>
     <string name="waarGekregen">Waar heb ik dit kaartje gekregen:</string>
     <string name="waaromGekregen">Waarom heb ik dit kaartje gekregen:</string>
+    <string name="setEmail">Email:</string>
 
 </resources>

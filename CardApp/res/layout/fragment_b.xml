@@ -53,6 +53,12 @@
             android:layout_height="wrap_content"
             android:hint="@string/telefoon" />
         
+                <TextView
+            android:id="@+id/tvEmailCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/setEmail" />
+        
             <ImageView        
             android:id="@+id/PhotoCard"
             android:layout_width="60dp"

@@ -53,7 +53,7 @@
             android:id="@+id/emailContact"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            android:hint="@string/setEmail"
             android:inputType="textEmailAddress"
             android:singleLine="true" />
         
