@@ -118,6 +118,19 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/waarGekregen">
             </EditText>
+            
+                    <TextView
+                android:id="@+id/waaromGekregenTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/waaromGekregen">
+            </TextView>
+            <EditText
+                android:id="@+id/waaromGekregenET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/waaromGekregen">
+            </EditText>
     </LinearLayout>
 
     <RelativeLayout
