@@ -115,10 +115,10 @@ public class FragmentB extends Fragment {
 					tvFunctie.setText(functie);
 			}
 			
-			if (sharedprefs.contains("emailCard")) {
+			if (sharedprefs.contains("mailCard")) {
 				TextView tvEmail = (TextView) getView().findViewById(R.id.tvEmailCard);
 					String Email = sharedprefs
-							.getString("emailCard", "Email");
+							.getString("mailCard", "Email");
 					tvEmail.setText(Email);
 			}
 
