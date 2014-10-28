@@ -1,92 +1,80 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/cardachtergrond"
+    android:padding="5dp" >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="125dp"
-        android:background="@drawable/dropshadow" />
-
-    <RelativeLayout
-        android:id="@+id/rootCard"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textBedrijf"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/cardachtergrond"
-        android:padding="5dp" >
+        android:layout_marginTop="5dp"
+        android:textSize="15sp" >
+    </TextView>
 
-        <TextView
-            android:id="@+id/textBedrijf"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp" >
-        </TextView>
+    <TextView
+        android:id="@+id/textNaam"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textBedrijf"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp" >
+    </TextView>
 
-        <TextView
-            android:id="@+id/textNaam"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textBedrijf"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp" >
-        </TextView>
+    <TextView
+        android:id="@+id/textFunctie"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textNaam"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp" >
+    </TextView>
 
-        <TextView
-            android:id="@+id/textFunctie"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textNaam"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp" >
-        </TextView>
+    <TextView
+        android:id="@+id/textAdres"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textFunctie"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp" >
+    </TextView>
 
-        <TextView
-            android:id="@+id/textAdres"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textFunctie"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp" >
-        </TextView>
+    <TextView
+        android:id="@+id/textTelefoonnummer"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textAdres"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp" >
+    </TextView>
 
-        <TextView
-            android:id="@+id/textTelefoonnummer"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textAdres"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp" >
-        </TextView>
+    <TextView
+        android:id="@+id/textEmail"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textTelefoonnummer"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp" >
+    </TextView>
 
-        <TextView
-            android:id="@+id/textEmail"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textTelefoonnummer"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp" >
-        </TextView>
+    <ImageView
+        android:id="@+id/imageCard"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/pictureOnCard" >
+    </ImageView>
 
-        <ImageView
-            android:id="@+id/imageCard"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/pictureOnCard" >
-        </ImageView>
-    </RelativeLayout>
-
-</FrameLayout>
+</RelativeLayout>
