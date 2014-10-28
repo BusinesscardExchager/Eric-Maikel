@@ -103,6 +103,9 @@ public class FragmentA extends Fragment {
 			card1.setAfbeelding(R.drawable.mugshot1);
 			card2.setAfbeelding(R.drawable.mugshot2);
 			card3.setAfbeelding(R.drawable.mugshot3);
+			
+			card1.setLocatie("Utrecht");
+			card1.setReden("Stageplek");
 			cardProvider.addCard(card1);
 			cardProvider.addCard(card2);
 			cardProvider.addCard(card3);

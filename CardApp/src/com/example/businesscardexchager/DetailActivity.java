@@ -1,5 +1,7 @@
 package com.example.businesscardexchager;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -61,7 +63,6 @@ public class DetailActivity extends Activity {
 		TextView tvTelefoonnummer = (TextView) findViewById(R.id.tvTelefoonnummer);
 		TextView tvFunctie = (TextView) findViewById(R.id.tvFunctie);
 		TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
-
 		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
 		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
 
@@ -78,6 +79,8 @@ public class DetailActivity extends Activity {
 			tvTelefoonnummer.setText(card.getTelnummer());
 			tvFunctie.setText(card.getFunctie());
 			tvEmail.setText(card.getEmail());
+			etWaar.setText(card.getLocatie());
+			etWaarom.setText(card.getReden());
 
 			View rootCardView = findViewById(R.id.topCardDetail);
 			GradientDrawable gDrawable = (GradientDrawable) rootCardView
@@ -87,6 +90,15 @@ public class DetailActivity extends Activity {
 					PorterDuff.Mode.MULTIPLY);
 			gDrawable.setStroke(3, getResources().getColor(R.color.black));
 		}
+	}
+	@Override
+	public void onResume()
+	{
+		super.onResume();
+		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
+		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
+		etWaar.setText(card.getLocatie());
+		etWaarom.setText(card.getReden());
 	}
 
 	public void call(View view) {
@@ -106,7 +118,6 @@ public class DetailActivity extends Activity {
 
 	public void sendText(View view) {
 
-		Uri uri = Uri.parse("smsto:" + card.getTelnummer());
 		Intent textIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
 				"smsto", card.getTelnummer(), null));
 		textIntent.putExtra("chat", true);
@@ -138,13 +149,20 @@ public class DetailActivity extends Activity {
 	public void onBackPressed() {
 		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
 		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
+		
+		int position = getIntent().getIntExtra("position", -1);
+		CardProvider cp = new CardProvider(this);
+		List<Card> cards = cp.getCards();
+		Card card2 = cards.get(position);
+		
+		Log.d("EDR", card2.getLocatie());
+		Log.d("EDR", card2.getReden());
+		
+		card2.setLocatie(etWaar.getText().toString());
+		card2.setReden(etWaarom.getText().toString());
 
-		Log.d("EDR", "hallo");
-		card.setLocatie(etWaar.getText().toString());
-		card.setReden(etWaarom.getText().toString());
-
-		Log.d("EDR", card.getLocatie());
-		Log.d("EDR", card.getReden());
+		Log.d("EDR", card2.getLocatie());
+		Log.d("EDR", card2.getReden());
 		finish();
 	}
 }
