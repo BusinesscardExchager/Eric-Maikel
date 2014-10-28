@@ -78,11 +78,15 @@ public class FragmentA extends Fragment {
 		final CardProvider cardProvider = new CardProvider(getActivity()
 				.getApplicationContext());
 		List<Card> cards = cardProvider.getCards();
-
+		
+		for(Card c : cards)
+		{
+			Log.d("EDR", c.getLocatie());
+			Log.d("EDR", c.getReden());
+		}
 		if (cards.size() == 0) {
 			Card card1 = new Card("ME Software Inc.", "Eric de Regter",
-					"Patrijshof 7", "0495-544302",
-					"Managing Software Engineer", "ericderegter@gmail.com", color.Aquamarine);
+					"Patrijshof 7", "0495-544302", "Managing Software Engineer", "ericderegter@gmail.com", color.Aquamarine);
 			Card card2 = new Card("ME Software Inc.", "Maikel Hoeks",
 					"Magneestrat 101", "0612950493", "Software Engineer", "maikelhoeks@hotmail.com",
 					color.android_green);
@@ -120,7 +124,7 @@ public class FragmentA extends Fragment {
 				int cardNr = position;
 				Card card = (Card) cardProvider.getCard(position);
 				intent.putExtra("card", card);
-				intent.putExtra("name", position);
+				intent.putExtra("position", position);
 				startActivity(intent);
 			}
 

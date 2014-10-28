@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class DetailActivity extends Activity {
 	public static final String MY_PREFERENCES = "MyPrefs";
 	SharedPreferences sharedprefs;
 	Card card;
+	CardProvider cp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,9 @@ public class DetailActivity extends Activity {
 		TextView tvFunctie = (TextView) findViewById(R.id.tvFunctie);
 		TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
 
+		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
+		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
+
 		if (card.getAfbeelding() != -1) {
 			ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
 			img.setImageDrawable(getResources().getDrawable(
@@ -73,6 +78,7 @@ public class DetailActivity extends Activity {
 			tvTelefoonnummer.setText(card.getTelnummer());
 			tvFunctie.setText(card.getFunctie());
 			tvEmail.setText(card.getEmail());
+
 			View rootCardView = findViewById(R.id.topCardDetail);
 			GradientDrawable gDrawable = (GradientDrawable) rootCardView
 					.getBackground();
@@ -99,9 +105,10 @@ public class DetailActivity extends Activity {
 	}
 
 	public void sendText(View view) {
-		
+
 		Uri uri = Uri.parse("smsto:" + card.getTelnummer());
-		Intent textIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("smsto", card.getTelnummer(), null));
+		Intent textIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+				"smsto", card.getTelnummer(), null));
 		textIntent.putExtra("chat", true);
 		startActivity(Intent.createChooser(textIntent, "Send with:"));
 
@@ -125,5 +132,19 @@ public class DetailActivity extends Activity {
 		intent.putExtra(ContactsContract.Intents.Insert.EMAIL, email);
 		intent.putExtra(ContactsContract.Intents.Insert.POSTAL, adres);
 		startActivity(intent);
+	}
+
+	@Override
+	public void onBackPressed() {
+		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
+		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
+
+		Log.d("EDR", "hallo");
+		card.setLocatie(etWaar.getText().toString());
+		card.setReden(etWaarom.getText().toString());
+
+		Log.d("EDR", card.getLocatie());
+		Log.d("EDR", card.getReden());
+		finish();
 	}
 }

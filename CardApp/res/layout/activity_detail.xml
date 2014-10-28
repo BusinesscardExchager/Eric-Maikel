@@ -110,7 +110,8 @@
             android:id="@+id/waarGekregenET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/waarGekregen" >
+            android:hint="@string/waarGekregen"
+            android:singleLine="true"  >
         </EditText>
 
         <TextView
@@ -124,7 +125,8 @@
             android:id="@+id/waaromGekregenET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/waarGekregen" >
+            android:hint="@string/waarGekregen"
+            android:singleLine="true" >
         </EditText>
     </LinearLayout>
 

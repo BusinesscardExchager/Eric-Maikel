@@ -12,6 +12,8 @@ public class Card implements Parcelable {
 	private String telefoonnummer;
 	private String functie;
 	private String email;
+	private String locatie;
+	private String reden;
 
 	private int afbeelding;
 
@@ -31,6 +33,8 @@ public class Card implements Parcelable {
 		this.email = email;
 		this.achtergrondKleur = achtergrondkleur;
 		this.afbeelding = -1;
+		this.locatie = "";
+		this.reden = "";
 	}
 
 	public String getBedrijf() {
@@ -65,6 +69,16 @@ public class Card implements Parcelable {
 	{
 		return email;
 	}
+	
+	public String getLocatie()
+	{
+		return locatie;
+	}
+	
+	public String getReden()
+	{
+		return reden;
+	}
 
 	public void setBedrijf(String bedrijf) {
 		this.bedrijf = bedrijf;
@@ -98,6 +112,16 @@ public class Card implements Parcelable {
 	{
 		this.email = email;
 	}
+	
+	public void setLocatie(String locatie)
+	{
+		this.locatie = locatie;
+	}
+	
+	public void setReden(String reden)
+	{
+		this.reden = reden;
+	}
 
 	@Override
 	public int describeContents() {
@@ -116,6 +140,8 @@ public class Card implements Parcelable {
 		dest.writeInt(achtergrondKleur);
 		dest.writeInt(afbeelding);
 		dest.writeString(email);
+		dest.writeString(locatie);
+		dest.writeString(reden);
 	}
 
 	//Wordt aangeroepen door createFromParcel
@@ -128,6 +154,8 @@ public class Card implements Parcelable {
 		this.achtergrondKleur = in.readInt();
 		this.afbeelding = in.readInt();
 		this.email = in.readString();
+		this.locatie = in.readString();
+		this.reden = in.readString();
 	}
 
 	public static final Parcelable.Creator<Card> CREATOR = new Parcelable.Creator<Card>() {
