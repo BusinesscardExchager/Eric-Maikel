@@ -144,9 +144,8 @@ public class DetailActivity extends Activity {
 		intent.putExtra(ContactsContract.Intents.Insert.POSTAL, adres);
 		startActivity(intent);
 	}
-
-	@Override
-	public void onBackPressed() {
+	
+	public void SaveDetail(View view) {
 		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
 		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
 		
@@ -163,6 +162,11 @@ public class DetailActivity extends Activity {
 
 		Log.d("EDR", card2.getLocatie());
 		Log.d("EDR", card2.getReden());
+		finish();
+	}
+	
+	@Override
+	public void onBackPressed() {
 		finish();
 	}
 }

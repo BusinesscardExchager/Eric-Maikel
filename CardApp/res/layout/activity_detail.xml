@@ -128,6 +128,16 @@
             android:hint="@string/waarGekregen"
             android:singleLine="true" >
         </EditText>
+        
+        <Button
+            android:id="@+id/btnSaveDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:onClick="SaveDetail"
+            android:text="@string/SaveEditMyCard" />
     </LinearLayout>
 
     <RelativeLayout
