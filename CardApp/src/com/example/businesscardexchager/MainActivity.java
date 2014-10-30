@@ -43,14 +43,11 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	boolean selectedB;
 	ActionBar.Tab tab1;
 	ActionBar.Tab tab2;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
-		
 
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
@@ -62,13 +59,10 @@ public class MainActivity extends FragmentActivity implements TabListener {
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
 				actionBar.setSelectedNavigationItem(arg0);
-				if(arg0 == 1)
-				{
+				if (arg0 == 1) {
 					selectedB = true;
-				}
-				else
-				{
-					selectedB =  false;
+				} else {
+					selectedB = false;
 				}
 			}
 
@@ -128,12 +122,10 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		if (!searchView.isIconified()) {
 			searchView.setIconified(true);
 		} else {
-			if(selectedB)
-			{
+			if (selectedB) {
 				viewPager.setCurrentItem(tab1.getPosition());
-			}
-			else{
-			super.onBackPressed();
+			} else {
+				super.onBackPressed();
 			}
 		}
 	}
@@ -178,8 +170,13 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		Toast toast = Toast.makeText(getApplicationContext(), "Je bent al op deze tab!", Toast.LENGTH_SHORT);
 		toast.show();
+=======
+		// Log.d("EDR", "onTabReselected at " + " position " + tab.getPosition()
+		// + " name " + tab.getText());
+>>>>>>> FETCH_HEAD
 	}
 
 	@Override
