@@ -34,8 +34,8 @@
     <string name="sendTextMessage">Send Text Message</string>
     <string name="email">Send Email</string>
     <string name="addToContacts">Add To Contacts</string>
-    <string name="waarGekregen">Where did I get this card: </string>
-    <string name="waaromGekregen">Why did I get this card:</string>
+    <string name="waarGekregen">Where did I get this card?</string>
+    <string name="waaromGekregen">Why did I get this card?</string>
     <string name="setEmail">Email:</string>
     <string name="setBackground">Set Background</string>
     <string name="BackgroundCard">Change Background</string>
