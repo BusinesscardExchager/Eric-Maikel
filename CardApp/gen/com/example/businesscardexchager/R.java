@@ -10,6 +10,7 @@ package com.example.businesscardexchager;
 public final class R {
     public static final class array {
         public static final int color_array=0x7f050000;
+        public static final int color_array_bc=0x7f050001;
     }
     public static final class attr {
     }
@@ -237,7 +238,8 @@ public final class R {
         public static final int mugshot2=0x7f020008;
         public static final int mugshot3=0x7f020009;
         public static final int mugshot4=0x7f02000a;
-        public static final int transparentcontainer=0x7f02000b;
+        public static final int textbox=0x7f02000b;
+        public static final int transparentcontainer=0x7f02000c;
     }
     public static final class id {
         public static final int BackgroundButton=0x7f0a001d;
@@ -376,6 +378,7 @@ public final class R {
          */
         public static final int AppTheme=0x7f080001;
         public static final int TextStyle=0x7f080002;
+        public static final int edittextstyle=0x7f080003;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;

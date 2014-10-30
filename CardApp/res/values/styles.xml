@@ -21,4 +21,11 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="edittextstyle" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/textbox</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">7dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
 </resources>

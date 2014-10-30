@@ -78,7 +78,7 @@ public class FragmentB extends Fragment {
 
 		return inflater.inflate(R.layout.fragment_b, container, false);
 	}
-
+	
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -159,14 +159,14 @@ public class FragmentB extends Fragment {
 
 			if (color.equals("Rood")) {
 				gDrawable.setColorFilter(
-						getResources().getColor(R.color.FireBrick),
+						getResources().getColor(R.color.LightPink),
 						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Blauw")) {
 				gDrawable.setColorFilter(
 						getResources().getColor(R.color.LightBlue),
 						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Groen")) {
-				gDrawable.setColorFilter(getResources().getColor(R.color.lime),
+				gDrawable.setColorFilter(getResources().getColor(R.color.LightGreen),
 						PorterDuff.Mode.MULTIPLY);
 			}
 		}
@@ -178,4 +178,5 @@ public class FragmentB extends Fragment {
 		return BitmapFactory
 				.decodeByteArray(decodedByte, 0, decodedByte.length);
 	}
+
 }

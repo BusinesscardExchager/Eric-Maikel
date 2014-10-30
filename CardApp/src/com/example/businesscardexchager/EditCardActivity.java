@@ -116,11 +116,11 @@ public class EditCardActivity extends Activity {
 			String color = sharedprefs.getString("achtergrondkleurCard", "");
 			
 			if (color.equals("Rood")) {
-				gDrawable.setColorFilter(getResources().getColor(R.color.FireBrick),PorterDuff.Mode.MULTIPLY);
+				gDrawable.setColorFilter(getResources().getColor(R.color.LightPink),PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Blauw")) {
 				gDrawable.setColorFilter(getResources().getColor(R.color.LightBlue),PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Groen")) {
-				gDrawable.setColorFilter(getResources().getColor(R.color.lime),PorterDuff.Mode.MULTIPLY);
+				gDrawable.setColorFilter(getResources().getColor(R.color.LightGreen),PorterDuff.Mode.MULTIPLY);
 			}
 		}
 		gDrawable.setStroke(3, getResources().getColor(R.color.black));
@@ -162,7 +162,7 @@ public class EditCardActivity extends Activity {
 	public void BackgroundCard(View view)
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(R.string.chooseColor).setItems(R.array.color_array,
+		builder.setTitle(R.string.chooseColor).setItems(R.array.color_array_bc,
 				new DialogInterface.OnClickListener() {
 
 					@Override
@@ -173,7 +173,7 @@ public class EditCardActivity extends Activity {
 						GradientDrawable gDrawable = (GradientDrawable) settings.getBackground();
 						switch (which) {
 						case 0:
-							gDrawable.setColorFilter(getResources().getColor(R.color.FireBrick),PorterDuff.Mode.MULTIPLY);
+							gDrawable.setColorFilter(getResources().getColor(R.color.LightPink),PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Rood");
 							editor.commit();
 							break;
@@ -185,7 +185,7 @@ public class EditCardActivity extends Activity {
 							break;
 
 						case 2:
-							gDrawable.setColorFilter(getResources().getColor(R.color.lime),PorterDuff.Mode.MULTIPLY);
+							gDrawable.setColorFilter(getResources().getColor(R.color.LightGreen),PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Groen");
 							editor.commit();
 							break;
