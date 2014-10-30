@@ -80,16 +80,17 @@ public class MyGridAdapter extends BaseAdapter {
 
 		Card card = (Card) getItem(i);
 		View root = v.findViewById(R.id.rootCard);
-		GradientDrawable gDrawable = (GradientDrawable) root.getBackground().mutate();
-		
-		
-		gDrawable.setColorFilter(v.getResources().getColor(card.getAchtergrondKleur()),PorterDuff.Mode.MULTIPLY);
+		GradientDrawable gDrawable = (GradientDrawable) root.getBackground()
+				.mutate();
+
+		gDrawable.setColorFilter(
+				v.getResources().getColor(card.getAchtergrondKleur()),
+				PorterDuff.Mode.MULTIPLY);
 		gDrawable.setStroke(3, v.getResources().getColor(R.color.black));
-		
-		
+
 		if (card.getAfbeelding() != -1) {
-			Log.d("EDR", "Afbeelding");
-			img.setImageDrawable(v.getResources().getDrawable(card.getAfbeelding()));
+			img.setImageDrawable(v.getResources().getDrawable(
+					card.getAfbeelding()));
 		} else {
 			Log.d("EDR", "kleur");
 			// img.setBackgroundColor(v.getResources().getColor(card.getAchtergrondKleur()));

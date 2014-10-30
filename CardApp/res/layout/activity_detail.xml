@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvBedrijf"
             android:layout_marginTop="5dp"
-            android:textSize="15sp">
+            android:textSize="15sp" >
         </TextView>
 
         <TextView
@@ -95,36 +95,36 @@
         android:id="@+id/middleCardDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="29dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="29dp"
-        android:layout_marginBottom="29dp"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal" >
+        android:orientation="vertical" >
 
         <EditText
             android:id="@+id/waarGekregenET"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="23dp"
             android:layout_marginRight="23dp"
-            android:hint="@string/waarGekregen"
-            android:singleLine="true"
-            android:layout_gravity="center_horizontal"
             android:background="@drawable/textbox"
-            android:layout_marginBottom="3dp" >
+            android:hint="@string/waarGekregen"
+            android:singleLine="true" >
         </EditText>
 
         <EditText
             android:id="@+id/waaromGekregenET"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="23dp"
             android:layout_marginRight="23dp"
+            android:background="@drawable/textbox"
             android:hint="@string/waaromGekregen"
-            android:singleLine="true"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/textbox" >
+            android:singleLine="true" >
         </EditText>
 
         <Button

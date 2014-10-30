@@ -178,8 +178,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		// Log.d("EDR", "onTabReselected at " + " position " + tab.getPosition()
-		// + " name " + tab.getText());
 		Toast toast = Toast.makeText(getApplicationContext(), "Je bent al op deze tab!", Toast.LENGTH_SHORT);
 		toast.show();
 	}
@@ -187,8 +185,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		// Log.d("EDR", "onTabSelected at " + " position " + tab.getPosition()
-		// + " name " + tab.getText());
 		viewPager.setCurrentItem(tab.getPosition());
 
 	}
@@ -196,8 +192,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		// Log.d("EDR", "onTabUnselected at " + " position " + tab.getPosition()
-		// + " name " + tab.getText());
 	}
 
 	public void setAchtergrond(View layout) {

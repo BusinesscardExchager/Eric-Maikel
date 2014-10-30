@@ -81,8 +81,6 @@ public class FragmentA extends Fragment {
 		
 		for(Card c : cards)
 		{
-			Log.d("EDR", c.getLocatie());
-			Log.d("EDR", c.getReden());
 		}
 		if (cards.size() == 0) {
 			Card card1 = new Card("ME Software Inc.", "Eric de Regter",

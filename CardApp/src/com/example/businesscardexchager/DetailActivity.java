@@ -154,14 +154,8 @@ public class DetailActivity extends Activity {
 		List<Card> cards = cp.getCards();
 		Card card2 = cards.get(position);
 		
-		Log.d("EDR", card2.getLocatie());
-		Log.d("EDR", card2.getReden());
-		
 		card2.setLocatie(etWaar.getText().toString());
 		card2.setReden(etWaarom.getText().toString());
-
-		Log.d("EDR", card2.getLocatie());
-		Log.d("EDR", card2.getReden());
 		finish();
 	}
 	

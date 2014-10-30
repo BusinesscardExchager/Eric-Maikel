@@ -204,8 +204,6 @@ public class EditCardActivity extends Activity {
 		immage.compress(Bitmap.CompressFormat.PNG, 100, baos);
 		byte[] b = baos.toByteArray();
 		String imageEncoded = Base64.encodeToString(b, Base64.DEFAULT);
-
-		Log.d("Image Log:", imageEncoded);
 		return imageEncoded;
 	}
 

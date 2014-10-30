@@ -47,9 +47,6 @@ public class FragmentB extends Fragment {
 			if (tvNaam != null) {
 				String naam = sharedprefs.getString("naamCard", "Naam");
 				tvNaam.setText(naam);
-				Log.d("EDR", tvNaam.getText().toString());
-			} else {
-				Log.d("EDR", "fiets");
 			}
 		}
 
@@ -58,9 +55,6 @@ public class FragmentB extends Fragment {
 			if (tvAdres != null) {
 				String adres = sharedprefs.getString("AdresCard", "Adres");
 				tvAdres.setText(adres);
-				Log.d("EDR", tvAdres.getText().toString());
-			} else {
-				Log.d("EDR", "fiets");
 			}
 		}
 
@@ -70,15 +64,12 @@ public class FragmentB extends Fragment {
 				String bedrijf = sharedprefs
 						.getString("bedrijfCard", "Bedrijf");
 				tvBedrijf.setText(bedrijf);
-				Log.d("EDR", tvBedrijf.getText().toString());
-			} else {
-				Log.d("EDR", "fiets");
 			}
 		}
 
 		return inflater.inflate(R.layout.fragment_b, container, false);
 	}
-	
+
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -149,8 +140,6 @@ public class FragmentB extends Fragment {
 							R.color.green));
 				}
 			}
-		} else {
-			Log.d("EDR", "hoi");
 		}
 		View layout = getView().findViewById(R.id.fragmentB_linear);
 		GradientDrawable gDrawable = (GradientDrawable) layout.getBackground();
@@ -166,7 +155,8 @@ public class FragmentB extends Fragment {
 						getResources().getColor(R.color.LightBlue),
 						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Groen")) {
-				gDrawable.setColorFilter(getResources().getColor(R.color.LightGreen),
+				gDrawable.setColorFilter(
+						getResources().getColor(R.color.LightGreen),
 						PorterDuff.Mode.MULTIPLY);
 			}
 		}
