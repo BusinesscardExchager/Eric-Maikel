@@ -37,6 +37,10 @@
     <string name="waarGekregen">Where did I get this card: </string>
     <string name="waaromGekregen">Why did I get this card:</string>
     <string name="setEmail">Email:</string>
+<<<<<<< HEAD
     <string name="setBackground">Set Background</string>
+=======
+    <string name="BackgroundCard">Change Background</string>
+>>>>>>> FETCH_HEAD
 
 </resources>

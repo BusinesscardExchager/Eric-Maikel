@@ -6,12 +6,13 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <LinearLayout
+        android:id="@+id/activity_edit_card_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:background="@color/white"
+        android:background="@drawable/cardachtergrond"
         android:orientation="vertical" >
 
         <EditText
@@ -63,6 +64,8 @@
             android:layout_height="100dp"
             android:contentDescription="@string/photo"
             android:background="@color/black"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
             />
     </LinearLayout>
 
@@ -70,12 +73,20 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="bottom" >
-
+  <Button
+            android:id="@+id/BackgroundButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:onClick="BackgroundCard"
+            android:text="@string/BackgroundCard" />
+        
         <Button
             android:id="@+id/PictureButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_below="@id/BackgroundButton"
             android:onClick="TakePicCard"
             android:text="@string/TakePictureCard" />
 

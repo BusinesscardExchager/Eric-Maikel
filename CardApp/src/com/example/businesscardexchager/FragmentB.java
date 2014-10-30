@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Base64;
@@ -80,8 +82,8 @@ public class FragmentB extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		ImageView iv = (ImageView)getView().findViewById(id.PhotoCard);
-		//iv.setImageBitmap()
+		ImageView iv = (ImageView) getView().findViewById(id.PhotoCard);
+		// iv.setImageBitmap()
 		TextView tv = (TextView) getView().findViewById(id.tvnaamCard);
 		if (sharedprefs != null) {
 			if (sharedprefs.contains("naamCard")) {
@@ -89,42 +91,47 @@ public class FragmentB extends Fragment {
 				tv.setText(naam);
 			}
 			if (sharedprefs.contains("AdresCard")) {
-				TextView tvAdres = (TextView) getView().findViewById(R.id.tvAdresCard);
-					String adres = sharedprefs.getString("AdresCard", "Adres");
-					tvAdres.setText(adres);
+				TextView tvAdres = (TextView) getView().findViewById(
+						R.id.tvAdresCard);
+				String adres = sharedprefs.getString("AdresCard", "Adres");
+				tvAdres.setText(adres);
 			}
 
 			if (sharedprefs.contains("bedrijfCard")) {
-				TextView tvBedrijf = (TextView) getView().findViewById(R.id.tvBedrijfCard);
-					String bedrijf = sharedprefs
-							.getString("bedrijfCard", "Bedrijf");
-					tvBedrijf.setText(bedrijf);
+				TextView tvBedrijf = (TextView) getView().findViewById(
+						R.id.tvBedrijfCard);
+				String bedrijf = sharedprefs
+						.getString("bedrijfCard", "Bedrijf");
+				tvBedrijf.setText(bedrijf);
 			}
-			
+
 			if (sharedprefs.contains("telefoonCard")) {
-				TextView tvTelefoon = (TextView) getView().findViewById(R.id.tvTelefoonCard);
-					String nummer = sharedprefs
-							.getString("telefoonCard", "nummer");
-					tvTelefoon.setText(nummer);
+				TextView tvTelefoon = (TextView) getView().findViewById(
+						R.id.tvTelefoonCard);
+				String nummer = sharedprefs.getString("telefoonCard", "nummer");
+				tvTelefoon.setText(nummer);
 			}
-			
+
 			if (sharedprefs.contains("functieCard")) {
-				TextView tvFunctie = (TextView) getView().findViewById(R.id.tvFunctieCard);
-					String functie = sharedprefs
-							.getString("functieCard", "Functie");
-					tvFunctie.setText(functie);
+				TextView tvFunctie = (TextView) getView().findViewById(
+						R.id.tvFunctieCard);
+				String functie = sharedprefs
+						.getString("functieCard", "Functie");
+				tvFunctie.setText(functie);
 			}
-			
+
 			if (sharedprefs.contains("mailCard")) {
-				TextView tvEmail = (TextView) getView().findViewById(R.id.tvEmailCard);
-					String Email = sharedprefs
-							.getString("mailCard", "Email");
-					tvEmail.setText(Email);
+				TextView tvEmail = (TextView) getView().findViewById(
+						R.id.tvEmailCard);
+				String Email = sharedprefs.getString("mailCard", "Email");
+				tvEmail.setText(Email);
 			}
 
 			if (sharedprefs.contains("PhotoCard")) {
-				ImageView ivPhoto = (ImageView) getView().findViewById(R.id.PhotoCard);
-				ivPhoto.setImageBitmap(decodeBase64(sharedprefs.getString("PhotoCard", "photo")));
+				ImageView ivPhoto = (ImageView) getView().findViewById(
+						R.id.PhotoCard);
+				ivPhoto.setImageBitmap(decodeBase64(sharedprefs.getString(
+						"PhotoCard", "photo")));
 			}
 
 			View view = getView().findViewById(R.id.fragmentB);
@@ -145,10 +152,30 @@ public class FragmentB extends Fragment {
 		} else {
 			Log.d("EDR", "hoi");
 		}
+		View layout = getView().findViewById(R.id.fragmentB_linear);
+		GradientDrawable gDrawable = (GradientDrawable) layout.getBackground();
+		if (sharedprefs.contains("achtergrondkleurCard")) {
+			String color = sharedprefs.getString("achtergrondkleurCard", "");
+
+			if (color.equals("Rood")) {
+				gDrawable.setColorFilter(
+						getResources().getColor(R.color.FireBrick),
+						PorterDuff.Mode.MULTIPLY);
+			} else if (color.equals("Blauw")) {
+				gDrawable.setColorFilter(
+						getResources().getColor(R.color.LightBlue),
+						PorterDuff.Mode.MULTIPLY);
+			} else if (color.equals("Groen")) {
+				gDrawable.setColorFilter(getResources().getColor(R.color.lime),
+						PorterDuff.Mode.MULTIPLY);
+			}
+		}
+		gDrawable.setStroke(3, getResources().getColor(R.color.black));
 	}
-    public static Bitmap decodeBase64(String input) {
-        byte[] decodedByte = Base64.decode(input, 0);
-        return BitmapFactory
-                .decodeByteArray(decodedByte, 0, decodedByte.length);
-    }
+
+	public static Bitmap decodeBase64(String input) {
+		byte[] decodedByte = Base64.decode(input, 0);
+		return BitmapFactory
+				.decodeByteArray(decodedByte, 0, decodedByte.length);
+	}
 }

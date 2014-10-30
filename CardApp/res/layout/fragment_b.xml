@@ -6,81 +6,74 @@
     android:orientation="vertical"
     tools:context=".FragmentB" >
 
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"
-         android:layout_marginTop="10dp"
-         android:background="@color/white"
-         android:orientation="horizontal"
-         android:padding="5dp" >
+    <LinearLayout
+        android:id="@+id/fragmentB_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/cardachtergrond"
+        android:orientation="horizontal"
+        android:padding="5dp" >
 
-         <LinearLayout
-             android:layout_width="150dp"
-             android:layout_height="wrap_content"
-             android:layout_marginLeft="10dp"
-             android:layout_marginRight="10dp"
-             android:layout_marginTop="10dp"
-             android:layout_weight="0.57"
-             android:background="@color/white"
-             android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.57"
+            android:orientation="vertical" >
 
-             <TextView
-                 android:id="@+id/tvBedrijfCard"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:hint="@string/Bedrijf"
-                 android:textSize="25sp" />
+            <TextView
+                android:id="@+id/tvBedrijfCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/Bedrijf"
+                android:textSize="25sp" />
 
-             <LinearLayout
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/tvnaamCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/naam" />
 
-                 <TextView
-                     android:id="@+id/tvnaamCard"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:hint="@string/naam" />
+            <TextView
+                android:id="@+id/tvFunctieCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/functie" />
 
-                 <TextView
-                     android:id="@+id/tvFunctieCard"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginLeft="10dp"
-                     android:hint="@string/functie" />
-             </LinearLayout>
+            <TextView
+                android:id="@+id/tvAdresCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/adres" />
 
-             <TextView
-                 android:id="@+id/tvAdresCard"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:hint="@string/adres" />
+            <TextView
+                android:id="@+id/tvTelefoonCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/telefoon" />
 
-             <TextView
-                 android:id="@+id/tvTelefoonCard"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:hint="@string/telefoon" />
+            <TextView
+                android:id="@+id/tvEmailCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/setEmail" />
+        </LinearLayout>
 
-             <TextView
-                 android:id="@+id/tvEmailCard"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:hint="@string/setEmail" />
-         </LinearLayout>
-
-         <ImageView
-             android:id="@+id/PhotoCard"
-             android:layout_width="60dp"
-             android:layout_height="100dp"
-             android:background="@color/black"
-             android:layout_marginTop="5dp"
-             android:layout_marginRight="5dp"
-             android:contentDescription="@string/photo" />
-
-     </LinearLayout>
+        <ImageView
+            android:id="@+id/PhotoCard"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/black"
+            android:contentDescription="@string/photo"
+             />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
