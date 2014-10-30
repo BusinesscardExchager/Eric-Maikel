@@ -1,6 +1,5 @@
 package com.example.businesscardexchager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.example.businesscardexchager.R.color;
@@ -41,6 +40,9 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	public static final String MY_PREFERENCES = "MyPrefs";
 	SharedPreferences sharedprefs;
 	SearchView searchView;
+	boolean selectedB;
+	ActionBar.Tab tab1;
+	ActionBar.Tab tab2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,14 @@ public class MainActivity extends FragmentActivity implements TabListener {
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
 				actionBar.setSelectedNavigationItem(arg0);
+				if(arg0 == 1)
+				{
+					selectedB = true;
+				}
+				else
+				{
+					selectedB =  false;
+				}
 			}
 
 			@Override
@@ -86,11 +96,11 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		ActionBar.Tab tab1 = actionBar.newTab();
+		tab1 = actionBar.newTab();
 		tab1.setText("Collection");
 		tab1.setTabListener(this);
 
-		ActionBar.Tab tab2 = actionBar.newTab();
+		tab2 = actionBar.newTab();
 		tab2.setText("My card");
 		tab2.setTabListener(this);
 
@@ -118,7 +128,13 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		if (!searchView.isIconified()) {
 			searchView.setIconified(true);
 		} else {
+			if(selectedB)
+			{
+				viewPager.setCurrentItem(tab1.getPosition());
+			}
+			else{
 			super.onBackPressed();
+			}
 		}
 	}
 
@@ -164,7 +180,8 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		// TODO Auto-generated method stub
 		// Log.d("EDR", "onTabReselected at " + " position " + tab.getPosition()
 		// + " name " + tab.getText());
-
+		Toast toast = Toast.makeText(getApplicationContext(), "Yo dikzak, je bent al op deze tab!", 5000);
+		toast.show();
 	}
 
 	@Override
