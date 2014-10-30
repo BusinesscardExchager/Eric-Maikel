@@ -170,13 +170,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
-		Toast toast = Toast.makeText(getApplicationContext(), "Je bent al op deze tab!", Toast.LENGTH_SHORT);
-		toast.show();
-=======
-		// Log.d("EDR", "onTabReselected at " + " position " + tab.getPosition()
-		// + " name " + tab.getText());
->>>>>>> FETCH_HEAD
 	}
 
 	@Override
