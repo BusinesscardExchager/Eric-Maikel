@@ -43,14 +43,11 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	boolean selectedB;
 	ActionBar.Tab tab1;
 	ActionBar.Tab tab2;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
-		
 
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
@@ -62,13 +59,10 @@ public class MainActivity extends FragmentActivity implements TabListener {
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
 				actionBar.setSelectedNavigationItem(arg0);
-				if(arg0 == 1)
-				{
+				if (arg0 == 1) {
 					selectedB = true;
-				}
-				else
-				{
-					selectedB =  false;
+				} else {
+					selectedB = false;
 				}
 			}
 
@@ -128,12 +122,10 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		if (!searchView.isIconified()) {
 			searchView.setIconified(true);
 		} else {
-			if(selectedB)
-			{
+			if (selectedB) {
 				viewPager.setCurrentItem(tab1.getPosition());
-			}
-			else{
-			super.onBackPressed();
+			} else {
+				super.onBackPressed();
 			}
 		}
 	}
