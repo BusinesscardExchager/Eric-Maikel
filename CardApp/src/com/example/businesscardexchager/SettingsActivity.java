@@ -31,7 +31,7 @@ public class SettingsActivity extends Activity {
 
 		if (sharedprefs.contains("achtergrondkleur")) {
 			String color = sharedprefs.getString("achtergrondkleur", "");
-			View imageButton = findViewById(R.id.imageButton);
+			View imageButton = findViewById(R.id.imageView);
 			View root = imageButton.getRootView();
 
 			if (color.equals("Rood")) {
@@ -60,7 +60,7 @@ public class SettingsActivity extends Activity {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
-						View imageButton = findViewById(R.id.imageButton);
+						View imageButton = findViewById(R.id.imageView);
 						View root = imageButton.getRootView();
 						Editor editor = sharedprefs.edit();
 						View settings = findViewById(R.id.activity_settings);

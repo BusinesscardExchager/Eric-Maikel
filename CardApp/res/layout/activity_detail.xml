@@ -97,38 +97,27 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/waarGekregenTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/waarGekregen" >
-        </TextView>
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal" >
 
         <EditText
             android:id="@+id/waarGekregenET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/waarGekregen"
-            android:singleLine="true"  >
+            android:singleLine="true"
+            android:layout_gravity="center_horizontal" >
         </EditText>
-
-        <TextView
-            android:id="@+id/waaromGekregenTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/waaromGekregen" >
-        </TextView>
 
         <EditText
             android:id="@+id/waaromGekregenET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/waarGekregen"
-            android:singleLine="true" >
+            android:singleLine="true"
+            android:layout_gravity="center_horizontal" >
         </EditText>
-        
+
         <Button
             android:id="@+id/btnSaveDetail"
             android:layout_width="match_parent"
@@ -146,8 +135,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:paddingBottom="10dp"
-        android:background="@drawable/transparentcontainer" >
+        android:background="@drawable/transparentcontainer"
+        android:paddingBottom="10dp" >
 
         <Button
             android:id="@+id/btnAddContact"

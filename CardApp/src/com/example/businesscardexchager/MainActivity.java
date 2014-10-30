@@ -118,8 +118,7 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		if (!searchView.isIconified()) {
 			searchView.setIconified(true);
 		} else {
-			//super.onBackPressed();
-			finish();
+			super.onBackPressed();
 		}
 	}
 
