@@ -10,13 +10,17 @@ import java.io.OutputStream;
 import com.example.businesscardexchager.R.id;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -106,6 +110,20 @@ public class EditCardActivity extends Activity {
 			}
 
 		}
+		View layout = findViewById(R.id.activity_edit_card_linear);
+		GradientDrawable gDrawable = (GradientDrawable) layout.getBackground();
+		if (sharedprefs.contains("achtergrondkleurCard")) {
+			String color = sharedprefs.getString("achtergrondkleurCard", "");
+			
+			if (color.equals("Rood")) {
+				gDrawable.setColorFilter(getResources().getColor(R.color.FireBrick),PorterDuff.Mode.MULTIPLY);
+			} else if (color.equals("Blauw")) {
+				gDrawable.setColorFilter(getResources().getColor(R.color.LightBlue),PorterDuff.Mode.MULTIPLY);
+			} else if (color.equals("Groen")) {
+				gDrawable.setColorFilter(getResources().getColor(R.color.lime),PorterDuff.Mode.MULTIPLY);
+			}
+		}
+		gDrawable.setStroke(3, getResources().getColor(R.color.black));
 
 	}
 
@@ -139,6 +157,45 @@ public class EditCardActivity extends Activity {
 		if (intent.resolveActivity(getPackageManager()) != null) {
 			startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
 		}
+	}
+	
+	public void BackgroundCard(View view)
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.chooseColor).setItems(R.array.color_array,
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						Editor editor = sharedprefs.edit();
+						View settings = findViewById(R.id.activity_edit_card_linear);
+						GradientDrawable gDrawable = (GradientDrawable) settings.getBackground();
+						switch (which) {
+						case 0:
+							gDrawable.setColorFilter(getResources().getColor(R.color.FireBrick),PorterDuff.Mode.MULTIPLY);
+							editor.putString("achtergrondkleurCard", "Rood");
+							editor.commit();
+							break;
+
+						case 1:
+							gDrawable.setColorFilter(getResources().getColor(R.color.LightBlue),PorterDuff.Mode.MULTIPLY);
+							editor.putString("achtergrondkleurCard", "Blauw");
+							editor.commit();
+							break;
+
+						case 2:
+							gDrawable.setColorFilter(getResources().getColor(R.color.lime),PorterDuff.Mode.MULTIPLY);
+							editor.putString("achtergrondkleurCard", "Groen");
+							editor.commit();
+							break;
+						}
+						gDrawable.setStroke(3, getResources().getColor(R.color.black));
+					}
+				});
+
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 
 	public static String encodeTobase64(Bitmap image) {
