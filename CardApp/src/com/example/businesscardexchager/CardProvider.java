@@ -36,4 +36,16 @@ public class CardProvider {
 	{
 		cards.add(card);
 	}
+	
+	public Card getCardByName(String naam)
+	{
+		for(Card card : cards)
+		{
+			if(card.getNaam().equals(naam))
+			{
+				return card;
+			}
+		}
+		return null;
+	}
 }

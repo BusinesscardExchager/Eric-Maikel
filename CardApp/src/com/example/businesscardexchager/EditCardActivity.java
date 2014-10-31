@@ -78,7 +78,7 @@ public class EditCardActivity extends Activity {
 					"photo")));
 		}
 		
-		Card card = new Card(etBedrijf.getText().toString(), etNaam.getText()
+		/*Card card = new Card(etBedrijf.getText().toString(), etNaam.getText()
 				.toString(), etAdres.getText().toString(), etTelefoon.getText()
 				.toString(), etFunctie.getText().toString(), etMail.getText()
 				.toString(), afbeeldingString);
@@ -97,7 +97,7 @@ public class EditCardActivity extends Activity {
 			
 		} catch (Exception ex) {
 			Log.d("EDR", "1 " + ex.getMessage());
-		}
+		}*/
 	}
 
 	@Override

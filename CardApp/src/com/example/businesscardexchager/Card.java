@@ -37,7 +37,7 @@ public class Card implements Parcelable {
 		this.reden = "";
 	}
 	
-	public Card(String bedrijf, String naam, String adres, String telefoonnummer, String functie, String email, String afbeelding)
+	public Card(String bedrijf, String naam, String adres, String telefoonnummer, String functie, String email, String afbeelding, String locatie, String reden)
 	{
 		this.bedrijf = bedrijf;
 		this.naam = naam;
@@ -47,8 +47,8 @@ public class Card implements Parcelable {
 		this.email = email;
 		this.afbeeldingString = afbeelding;
 		this.afbeelding = -1;
-		this.locatie = "Eindhoven";
-		this.reden = "Afspraak over Software dev.";
+		this.locatie = locatie;
+		this.reden = reden;
 	}
 
 	public String getBedrijf() {

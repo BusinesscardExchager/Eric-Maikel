@@ -1,37 +1,41 @@
 package com.example.businesscardexchager;
 
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 
-import com.example.businesscardexchager.R.color;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.StatusLine;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView.FindListener;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.Toast;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements TabListener {
 
@@ -43,6 +47,7 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	boolean selectedB;
 	ActionBar.Tab tab1;
 	ActionBar.Tab tab2;
+	private CardProvider cp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +55,7 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		setContentView(R.layout.activity_main);
 
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-
+		cp = new CardProvider(this);
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -154,7 +159,74 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 	private void openSend() {
 		// TODO Auto-generated method stub
+		new Thread(new Runnable() {
 
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try {
+					HttpClient client = new DefaultHttpClient();
+					HttpGet hGet = new HttpGet(
+							"http://athena.fhict.nl/users/i291685/jsonCard.json");
+					HttpResponse response = client.execute(hGet);
+
+					StatusLine statusLine = response.getStatusLine();
+					int statusCode = statusLine.getStatusCode();
+					if (statusCode == 200) {
+						HttpEntity entity = response.getEntity();
+						InputStream is = entity.getContent();
+						BufferedReader reader = new BufferedReader(
+								new InputStreamReader(is));
+
+						StringBuilder stringBuilder = new StringBuilder();
+						String line;
+						while ((line = reader.readLine()) != null) {
+							stringBuilder.append(line);
+						}
+						try {
+							JSONObject jObject = new JSONObject(stringBuilder
+									.toString());
+							String naam = jObject.getString("naam");
+							Card nieuweCard = new Card(jObject
+									.getString("bedrijf"), jObject
+									.getString("naam"), jObject
+									.getString("adres"), jObject
+									.getString("telefoonnummer"), jObject
+									.getString("functie"), jObject
+									.getString("email"), jObject
+									.getString("afbeelding"), jObject
+									.getString("locatie"), jObject
+									.getString("reden"));
+							if(cp.getCardByName(naam) == null)
+							{
+								cp.addCard(nieuweCard);
+								Log.d("EDR", "toegevoegd");
+							}
+							else
+							{
+								Log.d("EDR", "niet toegevoegd");
+								//Toast.makeText(getApplicationContext(), "Kaart is reeds toegevoegd", Toast.LENGTH_SHORT).show();
+								showToast("Kaart is reeds toegevoegd");
+							}
+							
+
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							Log.d("EDR", e.getMessage());
+						}
+						// Log.d("EDR", stringBuilder.toString());
+
+					}
+				} catch (IOException ex) {
+					Log.d("EDR", ex.getMessage());
+				}
+			}
+		}).start();
+	}
+	
+	private void showToast(String text) {
+		// TODO Auto-generated method stub
+		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 	}
 
 	private void openSettings() {
