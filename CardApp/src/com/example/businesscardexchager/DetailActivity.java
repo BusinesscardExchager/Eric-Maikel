@@ -1,5 +1,6 @@
 package com.example.businesscardexchager;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import android.app.Activity;
@@ -9,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.GradientDrawable;
@@ -72,10 +74,15 @@ public class DetailActivity extends Activity {
 		ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
 
 		if (card.getAfbeelding() == -2) {
-			Log.d("EDR", "1" + card.getNaam());
-			Bitmap bm = Card.decodeBase64(card.getAfbeeldingString());
-			img.setImageBitmap(bm);
-			
+			Log.d("EDR", card.getNaam());
+			try {
+				Bitmap bm = Card.decodeBase64(card.getAfbeeldingString());
+				img.setImageBitmap(bm);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 		} else if (card.getAfbeelding() != -1) {
 
 			img.setImageDrawable(getResources().getDrawable(

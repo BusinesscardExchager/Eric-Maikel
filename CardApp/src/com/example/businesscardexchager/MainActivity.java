@@ -23,6 +23,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -201,14 +202,18 @@ public class MainActivity extends FragmentActivity implements TabListener {
 							JSONObject jObject = new JSONObject(stringBuilder
 									.toString());
 							String naam = jObject.getString("naam");
+							String henk = stringBuilder.toString();
+							int sub = henk.indexOf("/9j");
+							String afbeeldingString = henk.substring(sub);
+							int sub2 = afbeeldingString.indexOf("\""); 
+							String afbeeldingString2 = afbeeldingString.substring(0, sub2);
 							Card nieuweCard = new Card(jObject
 									.getString("bedrijf"), jObject
 									.getString("naam"), jObject
 									.getString("adres"), jObject
 									.getString("telefoonnummer"), jObject
 									.getString("functie"), jObject
-									.getString("email"), jObject
-									.getString("afbeelding"), jObject
+									.getString("email"), afbeeldingString2, jObject
 									.getString("locatie"), jObject
 									.getString("reden"));
 							if(cp.getCardByName(naam) == null)
@@ -224,15 +229,13 @@ public class MainActivity extends FragmentActivity implements TabListener {
 								bundle.putString("text", "Kaart is reeds toegevoegd");
 								message.setData(bundle);
 								handler.sendMessage(message);
-								
 							}
 							
 
-						} catch (JSONException e) {
+						} catch (JSONException ex) {
 							// TODO Auto-generated catch block
-							Log.d("EDR", e.getMessage());
+							Log.d("EDR", ex.getMessage());
 						}
-						// Log.d("EDR", stringBuilder.toString());
 
 					}
 				} catch (IOException ex) {

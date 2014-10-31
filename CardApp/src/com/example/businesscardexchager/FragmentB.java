@@ -121,7 +121,7 @@ public class FragmentB extends Fragment {
 			if (sharedprefs.contains("PhotoCard")) {
 				ImageView ivPhoto = (ImageView) getView().findViewById(
 						R.id.PhotoCard);
-				ivPhoto.setImageBitmap(decodeBase64(sharedprefs.getString(
+				ivPhoto.setImageBitmap(Card.decodeBase64(sharedprefs.getString(
 						"PhotoCard", "photo")));
 			}
 
@@ -161,12 +161,6 @@ public class FragmentB extends Fragment {
 			}
 		}
 		gDrawable.setStroke(3, getResources().getColor(R.color.black));
-	}
-
-	public static Bitmap decodeBase64(String input) {
-		byte[] decodedByte = Base64.decode(input, 0);
-		return BitmapFactory
-				.decodeByteArray(decodedByte, 0, decodedByte.length);
 	}
 
 }
