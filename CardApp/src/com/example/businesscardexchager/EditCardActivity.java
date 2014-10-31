@@ -7,7 +7,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.example.businesscardexchager.R.id;
+import com.google.gson.Gson;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -38,6 +42,7 @@ public class EditCardActivity extends Activity {
 	static final int REQUEST_IMAGE_CAPTURE = 1;
 	String photo = "";
 	Bitmap imageBitmap;
+	String afbeeldingString;
 
 	@Override
 	public void onResume() {
@@ -85,6 +90,7 @@ public class EditCardActivity extends Activity {
 			sharedprefs = getSharedPreferences(MY_PREFERENCES,
 					Context.MODE_PRIVATE);
 			Editor editor = sharedprefs.edit();
+			afbeeldingString = encodeTobase64(imageBitmap);
 			editor.putString("PhotoCard", encodeTobase64(imageBitmap));
 			editor.commit();
 		}
@@ -114,13 +120,19 @@ public class EditCardActivity extends Activity {
 		GradientDrawable gDrawable = (GradientDrawable) layout.getBackground();
 		if (sharedprefs.contains("achtergrondkleurCard")) {
 			String color = sharedprefs.getString("achtergrondkleurCard", "");
-			
+
 			if (color.equals("Rood")) {
-				gDrawable.setColorFilter(getResources().getColor(R.color.LightPink),PorterDuff.Mode.MULTIPLY);
+				gDrawable.setColorFilter(
+						getResources().getColor(R.color.LightPink),
+						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Blauw")) {
-				gDrawable.setColorFilter(getResources().getColor(R.color.LightBlue),PorterDuff.Mode.MULTIPLY);
+				gDrawable.setColorFilter(
+						getResources().getColor(R.color.LightBlue),
+						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Groen")) {
-				gDrawable.setColorFilter(getResources().getColor(R.color.LightGreen),PorterDuff.Mode.MULTIPLY);
+				gDrawable.setColorFilter(
+						getResources().getColor(R.color.LightGreen),
+						PorterDuff.Mode.MULTIPLY);
 			}
 		}
 		gDrawable.setStroke(3, getResources().getColor(R.color.black));
@@ -149,6 +161,27 @@ public class EditCardActivity extends Activity {
 		editor.putString("mailCard", etMail.getText().toString());
 
 		editor.commit();
+
+		Card card = new Card(etBedrijf.getText().toString(), etNaam.getText()
+				.toString(), etAdres.getText().toString(), etTelefoon.getText()
+				.toString(), etFunctie.getText().toString(), etMail.getText()
+				.toString(), afbeeldingString);
+		try {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("bedrijf", card.getBedrijf());
+			jsonObject.put("naam", card.getNaam());
+			jsonObject.put("adres",	 card.getAdres());
+			jsonObject.put("telefoonnummer", card.getTelnummer());
+			jsonObject.put("functie", card.getFunctie());
+			jsonObject.put("email", card.getEmail());
+			jsonObject.put("afbeelding", afbeeldingString);
+			jsonObject.put("locatie", card.getLocatie());
+			jsonObject.put("reden", card.getReden());
+			Log.d("EDR", jsonObject.getString("afbeelding"));
+			
+		} catch (Exception ex) {
+			Log.d("EDR", "1 " + ex.getMessage());
+		}
 		finish();
 	}
 
@@ -158,9 +191,8 @@ public class EditCardActivity extends Activity {
 			startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
 		}
 	}
-	
-	public void BackgroundCard(View view)
-	{
+
+	public void BackgroundCard(View view) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle(R.string.chooseColor).setItems(R.array.color_array_bc,
 				new DialogInterface.OnClickListener() {
@@ -170,27 +202,37 @@ public class EditCardActivity extends Activity {
 						// TODO Auto-generated method stub
 						Editor editor = sharedprefs.edit();
 						View settings = findViewById(R.id.activity_edit_card_linear);
-						GradientDrawable gDrawable = (GradientDrawable) settings.getBackground();
+						GradientDrawable gDrawable = (GradientDrawable) settings
+								.getBackground();
 						switch (which) {
 						case 0:
-							gDrawable.setColorFilter(getResources().getColor(R.color.LightPink),PorterDuff.Mode.MULTIPLY);
+							gDrawable.setColorFilter(
+									getResources().getColor(R.color.LightPink),
+									PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Rood");
 							editor.commit();
 							break;
 
 						case 1:
-							gDrawable.setColorFilter(getResources().getColor(R.color.LightBlue),PorterDuff.Mode.MULTIPLY);
+							gDrawable.setColorFilter(
+									getResources().getColor(R.color.LightBlue),
+									PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Blauw");
 							editor.commit();
 							break;
 
 						case 2:
-							gDrawable.setColorFilter(getResources().getColor(R.color.LightGreen),PorterDuff.Mode.MULTIPLY);
+							gDrawable
+									.setColorFilter(
+											getResources().getColor(
+													R.color.LightGreen),
+											PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Groen");
 							editor.commit();
 							break;
 						}
-						gDrawable.setStroke(3, getResources().getColor(R.color.black));
+						gDrawable.setStroke(3,
+								getResources().getColor(R.color.black));
 					}
 				});
 

@@ -92,8 +92,8 @@ public class MyGridAdapter extends BaseAdapter {
 			img.setImageDrawable(v.getResources().getDrawable(
 					card.getAfbeelding()));
 		} else {
-			Log.d("EDR", "kleur");
-			// img.setBackgroundColor(v.getResources().getColor(card.getAchtergrondKleur()));
+			img.setImageAlpha(0);
+			img.setBackgroundColor(v.getResources().getColor(card.getAchtergrondKleur()));
 		}
 		textBedrijf.setText(card.getBedrijf());
 		textNaam.setText(card.getNaam());

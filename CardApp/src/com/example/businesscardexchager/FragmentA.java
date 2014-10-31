@@ -79,9 +79,6 @@ public class FragmentA extends Fragment {
 				.getApplicationContext());
 		List<Card> cards = cardProvider.getCards();
 		
-		for(Card c : cards)
-		{
-		}
 		if (cards.size() == 0) {
 			Card card1 = new Card("ME Software Inc.", "Eric de Regter",
 					"Patrijshof 7", "0495-544302", "Managing Software Engineer", "ericderegter@gmail.com", color.Aquamarine);
@@ -98,7 +95,7 @@ public class FragmentA extends Fragment {
 			
 			Card card5 = new Card("De Brouwer", "Rob de Regter", "Patrijshof 7", "0624718538", "Barman", "robderegter@hotmail.com", color.CadetBlue);
 
-			card1.setAfbeelding(R.drawable.mugshot1);
+			card1.setAfbeelding(R.drawable.mugshot2);
 			card2.setAfbeelding(R.drawable.mugshot2);
 			card3.setAfbeelding(R.drawable.mugshot3);
 			

@@ -14,7 +14,7 @@ public class Card implements Parcelable {
 	private String email;
 	private String locatie;
 	private String reden;
-
+	private String afbeeldingString;
 	private int afbeelding;
 
 	private int achtergrondKleur;
@@ -35,6 +35,20 @@ public class Card implements Parcelable {
 		this.afbeelding = -1;
 		this.locatie = "";
 		this.reden = "";
+	}
+	
+	public Card(String bedrijf, String naam, String adres, String telefoonnummer, String functie, String email, String afbeelding)
+	{
+		this.bedrijf = bedrijf;
+		this.naam = naam;
+		this.adres = adres;
+		this.telefoonnummer = telefoonnummer;
+		this.functie = functie;
+		this.email = email;
+		this.afbeeldingString = afbeelding;
+		this.afbeelding = -1;
+		this.locatie = "Eindhoven";
+		this.reden = "Afspraak over Software dev.";
 	}
 
 	public String getBedrijf() {
@@ -175,4 +189,10 @@ public class Card implements Parcelable {
 			return null;
 		}
 	};
+	
+	@Override
+	public String toString()
+	{
+		return this.bedrijf + ":"+ this.naam + ":"+ this.adres + ":"+ this.telefoonnummer + ":"+ this.functie + ":"+ this.email + ":"+ this.afbeeldingString + ":"+ this.locatie + ":"+ this.reden;
+	}
 }
