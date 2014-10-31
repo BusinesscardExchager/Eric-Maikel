@@ -73,8 +73,30 @@ public class EditCardActivity extends Activity {
 			etMail.setText(sharedprefs.getString("mailCard", "mail"));
 		}
 		if (sharedprefs.contains("PhotoCard")) {
+			afbeeldingString = sharedprefs.getString("PhotoCard", "photo");
 			iv.setImageBitmap(decodeBase64(sharedprefs.getString("PhotoCard",
 					"photo")));
+		}
+		
+		Card card = new Card(etBedrijf.getText().toString(), etNaam.getText()
+				.toString(), etAdres.getText().toString(), etTelefoon.getText()
+				.toString(), etFunctie.getText().toString(), etMail.getText()
+				.toString(), afbeeldingString);
+		try {
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("bedrijf", card.getBedrijf());
+			jsonObject.put("naam", card.getNaam());
+			jsonObject.put("adres",	 card.getAdres());
+			jsonObject.put("telefoonnummer", card.getTelnummer());
+			jsonObject.put("functie", card.getFunctie());
+			jsonObject.put("email", card.getEmail());
+			jsonObject.put("afbeelding", afbeeldingString);
+			jsonObject.put("locatie", card.getLocatie());
+			jsonObject.put("reden", card.getReden());
+			Log.d("EDR", jsonObject.toString());
+			
+		} catch (Exception ex) {
+			Log.d("EDR", "1 " + ex.getMessage());
 		}
 	}
 
@@ -161,27 +183,6 @@ public class EditCardActivity extends Activity {
 		editor.putString("mailCard", etMail.getText().toString());
 
 		editor.commit();
-
-		Card card = new Card(etBedrijf.getText().toString(), etNaam.getText()
-				.toString(), etAdres.getText().toString(), etTelefoon.getText()
-				.toString(), etFunctie.getText().toString(), etMail.getText()
-				.toString(), afbeeldingString);
-		try {
-			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("bedrijf", card.getBedrijf());
-			jsonObject.put("naam", card.getNaam());
-			jsonObject.put("adres",	 card.getAdres());
-			jsonObject.put("telefoonnummer", card.getTelnummer());
-			jsonObject.put("functie", card.getFunctie());
-			jsonObject.put("email", card.getEmail());
-			jsonObject.put("afbeelding", afbeeldingString);
-			jsonObject.put("locatie", card.getLocatie());
-			jsonObject.put("reden", card.getReden());
-			Log.d("EDR", jsonObject.getString("afbeelding"));
-			
-		} catch (Exception ex) {
-			Log.d("EDR", "1 " + ex.getMessage());
-		}
 		finish();
 	}
 
