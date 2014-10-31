@@ -1,0 +1,12 @@
+ {
+   {    "bedrijf": "1",
+        "naam": "Farhan Shah",
+        "adres": test,
+	"telefoon":1,
+	"functie": iets,
+	"email": lol@lol.lol,
+	"locatie": EH,
+	"reden": omdat het kan,
+	"afbeelding": iets,
+    },
+}
