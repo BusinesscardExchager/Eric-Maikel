@@ -1,9 +1,12 @@
 package com.example.businesscardexchager;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Base64;
 
 public class Card implements Parcelable {
 	private String bedrijf;
@@ -46,9 +49,10 @@ public class Card implements Parcelable {
 		this.functie = functie;
 		this.email = email;
 		this.afbeeldingString = afbeelding;
-		this.afbeelding = -1;
+		this.afbeelding = -2;
 		this.locatie = locatie;
 		this.reden = reden;
+		this.achtergrondKleur = R.color.Coral;
 	}
 
 	public String getBedrijf() {
@@ -194,5 +198,16 @@ public class Card implements Parcelable {
 	public String toString()
 	{
 		return this.bedrijf + ":"+ this.naam + ":"+ this.adres + ":"+ this.telefoonnummer + ":"+ this.functie + ":"+ this.email + ":"+ this.afbeeldingString + ":"+ this.locatie + ":"+ this.reden;
+	}
+
+	public String getAfbeeldingString() {
+		// TODO Auto-generated method stub
+		return afbeeldingString;
+	}
+	
+	public static Bitmap decodeBase64(String input) {
+		byte[] decodedByte = Base64.decode(input, 0);
+		return BitmapFactory
+				.decodeByteArray(decodedByte, 0, decodedByte.length);
 	}
 }

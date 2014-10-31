@@ -5,11 +5,14 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,13 +91,20 @@ public class MyGridAdapter extends BaseAdapter {
 				PorterDuff.Mode.MULTIPLY);
 		gDrawable.setStroke(3, v.getResources().getColor(R.color.black));
 
-		if (card.getAfbeelding() != -1) {
+		if(card.getAfbeelding() == -2)
+		{
+			img.setImageBitmap(Card.decodeBase64(card.getAfbeeldingString()));
+		}
+		else if (card.getAfbeelding() != -1) {
 			img.setImageDrawable(v.getResources().getDrawable(
 					card.getAfbeelding()));
-		} else {
-			img.setImageAlpha(0);
-			img.setBackgroundColor(v.getResources().getColor(card.getAchtergrondKleur()));
+		} 
+		else {
+			//img.setImageAlpha(0);
+			img.setBackgroundColor(v.getResources().getColor(
+					card.getAchtergrondKleur()));
 		}
+
 		textBedrijf.setText(card.getBedrijf());
 		textNaam.setText(card.getNaam());
 		textFunctie.setText(card.getFunctie());

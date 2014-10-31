@@ -81,7 +81,7 @@ public class EditCardActivity extends Activity {
 		/*Card card = new Card(etBedrijf.getText().toString(), etNaam.getText()
 				.toString(), etAdres.getText().toString(), etTelefoon.getText()
 				.toString(), etFunctie.getText().toString(), etMail.getText()
-				.toString(), afbeeldingString);
+				.toString(), afbeeldingString, "", "");
 		try {
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("bedrijf", card.getBedrijf());

@@ -25,6 +25,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -48,7 +51,8 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	ActionBar.Tab tab1;
 	ActionBar.Tab tab2;
 	private CardProvider cp;
-
+	Handler handler;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -92,6 +96,16 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 			}
 		});
+		
+		handler = new Handler() {
+	        @Override
+	        public void handleMessage(Message msg) {
+	            if (msg.what == 0) {
+	            String text = msg.getData().getString("text");
+	            Toast.makeText(getApplicationContext(), text,Toast.LENGTH_SHORT).show();
+
+	            }
+	     }};
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -205,8 +219,12 @@ public class MainActivity extends FragmentActivity implements TabListener {
 							else
 							{
 								Log.d("EDR", "niet toegevoegd");
-								//Toast.makeText(getApplicationContext(), "Kaart is reeds toegevoegd", Toast.LENGTH_SHORT).show();
-								showToast("Kaart is reeds toegevoegd");
+								Message message = handler.obtainMessage(0);
+								Bundle bundle = new Bundle();
+								bundle.putString("text", "Kaart is reeds toegevoegd");
+								message.setData(bundle);
+								handler.sendMessage(message);
+								
 							}
 							
 

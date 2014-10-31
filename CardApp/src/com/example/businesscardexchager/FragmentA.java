@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -33,6 +34,8 @@ public class FragmentA extends Fragment {
 	public static final String MY_PREFERENCES = "MyPrefs";
 	SharedPreferences sharedprefs;
 	int count = 0;
+	MyGridAdapter adapter;
+	CardProvider cardProvider;
 
 	GridView grid;
 
@@ -66,6 +69,9 @@ public class FragmentA extends Fragment {
 				}
 			}
 		}
+		
+		Log.d("EDR", cardProvider.getCards().size() + "");
+		((BaseAdapter) grid.getAdapter()).notifyDataSetChanged();
 	}
 
 	@Override
@@ -75,7 +81,7 @@ public class FragmentA extends Fragment {
 				Context.MODE_PRIVATE);
 		View rootView = inflater.inflate(R.layout.fragment_a, container, false);
 
-		final CardProvider cardProvider = new CardProvider(getActivity()
+		cardProvider = new CardProvider(getActivity()
 				.getApplicationContext());
 		List<Card> cards = cardProvider.getCards();
 		
@@ -109,8 +115,9 @@ public class FragmentA extends Fragment {
 		}
 
 		grid = (GridView) rootView.findViewById(R.id.Collection);
-		grid.setAdapter(new MyGridAdapter(
-				getActivity().getApplicationContext(), cards));
+		adapter = new MyGridAdapter(
+				getActivity().getApplicationContext(), cards);
+		grid.setAdapter(adapter);
 
 		grid.setOnItemClickListener(new OnItemClickListener() {
 
@@ -122,6 +129,7 @@ public class FragmentA extends Fragment {
 				int cardNr = position;
 				Card card = (Card) cardProvider.getCard(position);
 				intent.putExtra("card", card);
+				Log.d("EDR", position + "");
 				intent.putExtra("position", position);
 				startActivity(intent);
 			}

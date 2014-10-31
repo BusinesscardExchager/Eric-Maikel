@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
@@ -56,7 +58,9 @@ public class DetailActivity extends Activity {
 			}
 		}
 
-		card = getIntent().getParcelableExtra("card");
+		int position = getIntent().getIntExtra("position", -1);
+		cp = new CardProvider(getApplicationContext());
+		card = cp.getCard(position);
 		TextView tvBedrijf = (TextView) findViewById(R.id.tvBedrijf);
 		TextView tvNaam = (TextView) findViewById(R.id.tvNaam);
 		TextView tvAdres = (TextView) findViewById(R.id.tvAdres);
@@ -65,9 +69,15 @@ public class DetailActivity extends Activity {
 		TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
 		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
 		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
+		ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
 
-		if (card.getAfbeelding() != -1) {
-			ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
+		if (card.getAfbeelding() == -2) {
+			Log.d("EDR", "1" + card.getNaam());
+			Bitmap bm = Card.decodeBase64(card.getAfbeeldingString());
+			img.setImageBitmap(bm);
+			
+		} else if (card.getAfbeelding() != -1) {
+
 			img.setImageDrawable(getResources().getDrawable(
 					card.getAfbeelding()));
 		}
@@ -91,9 +101,9 @@ public class DetailActivity extends Activity {
 			gDrawable.setStroke(3, getResources().getColor(R.color.black));
 		}
 	}
+
 	@Override
-	public void onResume()
-	{
+	public void onResume() {
 		super.onResume();
 		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
 		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
@@ -144,21 +154,21 @@ public class DetailActivity extends Activity {
 		intent.putExtra(ContactsContract.Intents.Insert.POSTAL, adres);
 		startActivity(intent);
 	}
-	
+
 	public void SaveDetail(View view) {
 		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
 		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
-		
+
 		int position = getIntent().getIntExtra("position", -1);
 		CardProvider cp = new CardProvider(this);
 		List<Card> cards = cp.getCards();
 		Card card2 = cards.get(position);
-		
+
 		card2.setLocatie(etWaar.getText().toString());
 		card2.setReden(etWaarom.getText().toString());
 		finish();
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 		finish();
