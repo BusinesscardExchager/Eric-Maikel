@@ -1,18 +1,7 @@
 package com.example.businesscardexchager;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.example.businesscardexchager.R.id;
-import com.google.gson.Gson;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -21,16 +10,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -47,6 +31,8 @@ public class EditCardActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
+		
+		/** De kaart wordt gevuld met gegevens, ook wordt de achtergrond kleur geupdate. */
 		EditText etNaam = (EditText) findViewById(id.naamContact);
 		EditText etAdres = (EditText) findViewById(id.adresContact);
 		EditText etBedrijf = (EditText) findViewById(id.BedrijfContact);
@@ -74,32 +60,12 @@ public class EditCardActivity extends Activity {
 		}
 		if (sharedprefs.contains("PhotoCard")) {
 			afbeeldingString = sharedprefs.getString("PhotoCard", "photo");
-			iv.setImageBitmap(decodeBase64(sharedprefs.getString("PhotoCard",
+			iv.setImageBitmap(Card.decodeBase64(sharedprefs.getString("PhotoCard",
 					"photo")));
 		}
-		
-		/*Card card = new Card(etBedrijf.getText().toString(), etNaam.getText()
-				.toString(), etAdres.getText().toString(), etTelefoon.getText()
-				.toString(), etFunctie.getText().toString(), etMail.getText()
-				.toString(), afbeeldingString, "", "");
-		try {
-			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("bedrijf", card.getBedrijf());
-			jsonObject.put("naam", card.getNaam());
-			jsonObject.put("adres",	 card.getAdres());
-			jsonObject.put("telefoonnummer", card.getTelnummer());
-			jsonObject.put("functie", card.getFunctie());
-			jsonObject.put("email", card.getEmail());
-			jsonObject.put("afbeelding", afbeeldingString);
-			jsonObject.put("locatie", card.getLocatie());
-			jsonObject.put("reden", card.getReden());
-			Log.d("EDR", jsonObject.toString());
-			
-		} catch (Exception ex) {
-			Log.d("EDR", "1 " + ex.getMessage());
-		}*/
 	}
 
+	/** De gemaakte foto wordt toegevoegd aan de kaart */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
@@ -118,11 +84,14 @@ public class EditCardActivity extends Activity {
 		}
 	}
 
+	/** De achtergrond van de activity wordt gezet */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_card);
-
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("Edit Your Card");
+		
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 		if (sharedprefs.contains("achtergrondkleur")) {
 			String color = sharedprefs.getString("achtergrondkleur", "");
@@ -136,8 +105,9 @@ public class EditCardActivity extends Activity {
 				layout.setBackgroundColor(getResources()
 						.getColor(R.color.green));
 			}
-
 		}
+		
+		/** Achtergrond van het kaartje wordt gezet */
 		View layout = findViewById(R.id.activity_edit_card_linear);
 		GradientDrawable gDrawable = (GradientDrawable) layout.getBackground();
 		if (sharedprefs.contains("achtergrondkleurCard")) {
@@ -161,6 +131,7 @@ public class EditCardActivity extends Activity {
 
 	}
 
+	/** De gegevens van de kaart worden opgeslagen in de sharedPreferences */
 	public void SaveMyCard(View view) {
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 		Editor editor = sharedprefs.edit();
@@ -186,6 +157,7 @@ public class EditCardActivity extends Activity {
 		finish();
 	}
 
+	/** Photointent wordt gestart */
 	public void TakePicCard(View view) {
 		Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
 		if (intent.resolveActivity(getPackageManager()) != null) {
@@ -193,6 +165,7 @@ public class EditCardActivity extends Activity {
 		}
 	}
 
+	/** Er wordt een dialoog aangemaakt die 3 opties toont met ieder een kleur om de achtergrond te veranderen */
 	public void BackgroundCard(View view) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle(R.string.chooseColor).setItems(R.array.color_array_bc,
@@ -241,6 +214,7 @@ public class EditCardActivity extends Activity {
 		dialog.show();
 	}
 
+	/** Binair bestand omzetten naar string */
 	public static String encodeTobase64(Bitmap image) {
 		Bitmap immage = image;
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -250,12 +224,7 @@ public class EditCardActivity extends Activity {
 		return imageEncoded;
 	}
 
-	public static Bitmap decodeBase64(String input) {
-		byte[] decodedByte = Base64.decode(input, 0);
-		return BitmapFactory
-				.decodeByteArray(decodedByte, 0, decodedByte.length);
-	}
-
+	/** Afbeelding resizen */
 	public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
 		int width = bm.getWidth();
 		int height = bm.getHeight();

@@ -5,25 +5,17 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.businesscardexchager.R.color;
-
+/** Deze klasse zorgt voor de invulling van de gridView */
 public class MyGridAdapter extends BaseAdapter {
 
 	private List<Card> cards = new ArrayList<Card>();
@@ -49,10 +41,11 @@ public class MyGridAdapter extends BaseAdapter {
 		return arg0;
 	}
 
+	/** suppresslint (newApi) voor de setBackground */
 	@SuppressLint("NewApi")
 	@Override
-	public View getView(int i, View view, ViewGroup viewGroup) {
-		View v = view;
+	public View getView(int i, View convertView, ViewGroup viewGroup) {
+		View v = convertView;
 		TextView textBedrijf;
 		TextView textNaam;
 		TextView textFunctie;
@@ -61,6 +54,7 @@ public class MyGridAdapter extends BaseAdapter {
 		TextView textEmail;
 		ImageView img;
 
+		/** Als convertview(v) null is dan worden er nieuwe tags toegevoegd */
 		if (v == null) {
 			v = inflater.inflate(R.layout.row_grid, viewGroup, false);
 			v.setTag(R.id.textBedrijf, v.findViewById(R.id.textBedrijf));
@@ -73,6 +67,7 @@ public class MyGridAdapter extends BaseAdapter {
 			v.setTag(R.id.imageCard, v.findViewById(R.id.imageCard));
 		}
 
+		/** alle Views worden geinstantieerd */
 		textBedrijf = (TextView) v.getTag(R.id.textBedrijf);
 		textNaam = (TextView) v.getTag(R.id.textNaam);
 		textFunctie = (TextView) v.getTag(R.id.textFunctie);
@@ -81,28 +76,46 @@ public class MyGridAdapter extends BaseAdapter {
 		textEmail = (TextView) v.getTag(R.id.textEmail);
 		img = (ImageView) v.findViewById(R.id.imageCard);
 
+		/** card wordt opgehaald uit de CardProvider */
 		Card card = (Card) getItem(i);
 		View root = v.findViewById(R.id.rootCard);
 		GradientDrawable gDrawable = (GradientDrawable) root.getBackground()
 				.mutate();
 
+		/** Achtergrond van de kaart wordt gezet */
 		gDrawable.setColorFilter(
 				v.getResources().getColor(card.getAchtergrondKleur()),
 				PorterDuff.Mode.MULTIPLY);
 		gDrawable.setStroke(3, v.getResources().getColor(R.color.black));
 
-		if(card.getAfbeelding() == -2)
+		/** Informatie van de kaart wordt in de Views gezet */
+
+		/*if (card.getAfbeeldingString() != "") {
+			img.setImageBitmap(Card.decodeBase64(card.getAfbeeldingString()));
+		} else {
+			if (card.getAfbeelding() == -1) {
+				Log.d("EDR", "-1" + card.getNaam());
+			} else if (card.getAfbeelding() != -1) {
+				Log.d("EDR", "!-1" + card.getNaam());
+				img.setImageDrawable(v.getResources().getDrawable(
+						card.getAfbeelding()));
+			}
+		}*/
+		if(!card.getAfbeeldingString().equals(""))
 		{
 			img.setImageBitmap(Card.decodeBase64(card.getAfbeeldingString()));
 		}
-		else if (card.getAfbeelding() != -1) {
+		else if(card.getHeeftAfbeelding() == true)
+		{
+			img.setAlpha(1f);
+			Log.d("EDR", card.getNaam() + " heeft afbeelding " + card.getHeeftAfbeelding());
 			img.setImageDrawable(v.getResources().getDrawable(
 					card.getAfbeelding()));
-		} 
-		else {
-			//img.setImageAlpha(0);
-			img.setBackgroundColor(v.getResources().getColor(
-					card.getAchtergrondKleur()));
+		}
+		else if(card.getHeeftAfbeelding() == false)
+		{
+			Log.d("EDR", card.getNaam() + " heeft afbeelding " + card.getHeeftAfbeelding());
+			img.setAlpha(0f);
 		}
 
 		textBedrijf.setText(card.getBedrijf());

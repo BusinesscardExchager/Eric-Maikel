@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 
+/** CardProvider heeft alle kaarten die in de app staan */
 public class CardProvider {
 	private static List<Card> cards;
 	private Context context;

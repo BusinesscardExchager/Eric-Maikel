@@ -8,7 +8,7 @@
     <string name="fragmentA">This is fragment A</string>
     <string name="fragmentB">This is fragment B</string>
     <string name="fragmentC">This is fragment C</string>
-    <string name="action_search">Search</string>
+    <string name="action_searcher">Search</string>
     <string name="action_send">Send card</string>
     <string name="action_overflow">overflow</string>
     <string name="naam">Naam: </string>
@@ -29,7 +29,6 @@
     <string name="TakePictureCard">Take Picture</string>
     <string name="photo">Photo Contact:</string>
     <string name="pictureOnCard">Picture on the card</string>
-    
     <string name="call">Call</string>
     <string name="sendTextMessage">Send Text Message</string>
     <string name="email">Send Email</string>
@@ -39,6 +38,8 @@
     <string name="setEmail">Email:</string>
     <string name="setBackground">Set Background</string>
     <string name="BackgroundCard">Change Background</string>
-
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_search_result">SearchResultActivity</string>
+    <string name="noCardsFound">No Cards Found</string>
 
 </resources>

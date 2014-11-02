@@ -4,23 +4,18 @@ import com.example.businesscardexchager.R.id;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment B geeft de eigen kaart weer
  * 
  */
 public class FragmentB extends Fragment {
@@ -30,7 +25,6 @@ public class FragmentB extends Fragment {
 
 	public FragmentB() {
 		// Required empty public constructor
-
 	}
 
 	@Override
@@ -38,43 +32,35 @@ public class FragmentB extends Fragment {
 			Bundle savedInstanceState) {
 		sharedprefs = this.getActivity().getSharedPreferences(MY_PREFERENCES,
 				Context.MODE_PRIVATE);
-		// Inflate the layout for this fragment
 
-		View V = inflater.inflate(R.layout.fragment_b, container, false);
+		inflater.inflate(R.layout.fragment_b, container, false);
 
-		if (sharedprefs.contains("naamCard")) {
-			TextView tvNaam = (TextView) V.findViewById(R.id.tvnaamCard);
-			if (tvNaam != null) {
-				String naam = sharedprefs.getString("naamCard", "Naam");
-				tvNaam.setText(naam);
-			}
-		}
-
-		if (sharedprefs.contains("AdresCard")) {
-			TextView tvAdres = (TextView) V.findViewById(R.id.tvAdresCard);
-			if (tvAdres != null) {
-				String adres = sharedprefs.getString("AdresCard", "Adres");
-				tvAdres.setText(adres);
-			}
-		}
-
-		if (sharedprefs.contains("bedrijfCard")) {
-			TextView tvBedrijf = (TextView) V.findViewById(R.id.tvBedrijfCard);
-			if (tvBedrijf != null) {
-				String bedrijf = sharedprefs
-						.getString("bedrijfCard", "Bedrijf");
-				tvBedrijf.setText(bedrijf);
-			}
-		}
+		/*
+		 * if (sharedprefs.contains("naamCard")) { TextView tvNaam = (TextView)
+		 * V.findViewById(R.id.tvnaamCard); if (tvNaam != null) { String naam =
+		 * sharedprefs.getString("naamCard", "Naam"); tvNaam.setText(naam); } }
+		 * 
+		 * if (sharedprefs.contains("AdresCard")) { TextView tvAdres =
+		 * (TextView) V.findViewById(R.id.tvAdresCard); if (tvAdres != null) {
+		 * String adres = sharedprefs.getString("AdresCard", "Adres");
+		 * tvAdres.setText(adres); } }
+		 * 
+		 * if (sharedprefs.contains("bedrijfCard")) { TextView tvBedrijf =
+		 * (TextView) V.findViewById(R.id.tvBedrijfCard); if (tvBedrijf != null)
+		 * { String bedrijf = sharedprefs .getString("bedrijfCard", "Bedrijf");
+		 * tvBedrijf.setText(bedrijf); } }
+		 */
 
 		return inflater.inflate(R.layout.fragment_b, container, false);
 	}
 
+	/**
+	 * De kaart in fragment B wordt steeds gemaakt in de onResume hierdoor
+	 * blijft de kaart up to date
+	 */
 	@Override
 	public void onResume() {
 		super.onResume();
-		ImageView iv = (ImageView) getView().findViewById(id.PhotoCard);
-		// iv.setImageBitmap()
 		TextView tv = (TextView) getView().findViewById(id.tvnaamCard);
 		if (sharedprefs != null) {
 			if (sharedprefs.contains("naamCard")) {
@@ -141,6 +127,8 @@ public class FragmentB extends Fragment {
 				}
 			}
 		}
+
+		/** De achtergrond van het kaartje wordt veranderd indien nodig */
 		View layout = getView().findViewById(R.id.fragmentB_linear);
 		GradientDrawable gDrawable = (GradientDrawable) layout.getBackground();
 		if (sharedprefs.contains("achtergrondkleurCard")) {

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -23,11 +22,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -38,11 +34,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements TabListener {
 
+	/** Globale variabelen */
 	ViewPager viewPager;
 	ActionBar actionBar;
 	public static final String MY_PREFERENCES = "MyPrefs";
@@ -53,7 +52,7 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	ActionBar.Tab tab2;
 	private CardProvider cp;
 	Handler handler;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,13 +60,16 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 		cp = new CardProvider(this);
+
+		/** De ViewPager wordt gebruikt om de tabs en de overgang daar tussen */
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+			/** Als er op een tab geklikt wordt */
 			@Override
 			public void onPageSelected(int arg0) {
-				// TODO Auto-generated method stub
+				// Auto-generated method stub
 				actionBar.setSelectedNavigationItem(arg0);
 				if (arg0 == 1) {
 					selectedB = true;
@@ -76,37 +78,40 @@ public class MainActivity extends FragmentActivity implements TabListener {
 				}
 			}
 
+			/**
+			 * Als er horizontaal gescrolt wordt, standaard methode geen
+			 * invulling
+			 */
 			@Override
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				// TODO Auto-generated method stub
-				// Log.d("EDR", "onPageScrolled at " + " position " + arg0 +
-				// " from " + arg1+ " with number of pixels " + arg2);
+				// Auto-generated method stub
 			}
 
+			/** Als er gescrolt is, standaard methode, geen invulling */
 			@Override
 			public void onPageScrollStateChanged(int arg0) {
-				// TODO Auto-generated method stub
-				/*
-				 * if(arg0==ViewPager.SCROLL_STATE_IDLE) { Log.d("EDR",
-				 * "onPageScrollStateChanged Idle"); }
-				 * if(arg0==ViewPager.SCROLL_STATE_DRAGGING) { Log.d("EDR",
-				 * "onPageScrollStateChanged Dragging"); }
-				 * if(arg0==ViewPager.SCROLL_STATE_SETTLING) { Log.d("EDR",
-				 * "onPageScrollStateChanged Settling"); }
-				 */
+				// Auto-generated method stub
 
 			}
 		});
-		
-		handler = new Handler() {
-	        @Override
-	        public void handleMessage(Message msg) {
-	            if (msg.what == 0) {
-	            String text = msg.getData().getString("text");
-	            Toast.makeText(getApplicationContext(), text,Toast.LENGTH_SHORT).show();
 
-	            }
-	     }};
+		/**
+		 * Wordt gebruikt om een toast weer te geven, moet op de UI thread
+		 * gebeuren, wordt aangeroepen vanuit een apparte thread
+		 */
+		handler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				if (msg.what == 0) {
+					String text = msg.getData().getString("text");
+					Toast.makeText(getApplicationContext(), text,
+							Toast.LENGTH_SHORT).show();
+
+				}
+			}
+		};
+
+		/** tabs en actionbar */
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -122,6 +127,10 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		actionBar.addTab(tab2);
 	}
 
+	/**
+	 * Menu bar wordt gemaakt m.b.v. inflater, searchview(zoek scherm) wordt
+	 * toegevoegd aan de bar
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
@@ -136,6 +145,13 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		return super.onCreateOptionsMenu(menu);
 	}
 
+	/**
+	 * Als er op de hardware backknop wordt kunnen er 2 acties uitgevoerd
+	 * worden. Als Search actief is: 1. (Heeft voorrang als beide actief zijn)
+	 * Als Fragment B actief is: 2. Anders wordt de app afgesloten. 1. Search
+	 * scherm wordt niet meer gefocust en wordt teruggegaan naar het originele
+	 * scherm 2. Fragment B (Tab 2) wordt teruggebracht naar fragment A (Tab 1)
+	 */
 	@Override
 	public void onBackPressed() {
 
@@ -150,6 +166,10 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		}
 	}
 
+	/**
+	 * Event handler als er op een knop in de menubar gklikt wordt uitgezonderd
+	 * van search, deze wordt appart geopend.
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -159,95 +179,117 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		case R.id.action_send:
 			openSend();
 			return true;
-		case R.id.action_search:
-			openSearch();
-			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
 
-	private void openSearch() {
-		// TODO Auto-generated method stub
-
-	}
-
+	/**
+	 * Wordt aangeroepen als er op send gedrukt wordt (Haalt in dit geval het
+	 * json bestand van de server, in een nieuwe thread (niet ui thread)
+	 */
 	private void openSend() {
-		// TODO Auto-generated method stub
 		new Thread(new Runnable() {
-
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
+				InputStream is = null;
+				BufferedReader reader = null;
+				StringBuilder stringBuilder = null;
 				try {
 					HttpClient client = new DefaultHttpClient();
 					HttpGet hGet = new HttpGet(
-							"http://athena.fhict.nl/users/i291685/jsonCard.json");
+							"http://athena.fhict.nl/users/i291685/jsonCard2.json");
 					HttpResponse response = client.execute(hGet);
 
 					StatusLine statusLine = response.getStatusLine();
 					int statusCode = statusLine.getStatusCode();
 					if (statusCode == 200) {
 						HttpEntity entity = response.getEntity();
-						InputStream is = entity.getContent();
-						BufferedReader reader = new BufferedReader(
-								new InputStreamReader(is));
+						is = entity.getContent();
+						reader = new BufferedReader(new InputStreamReader(is));
 
-						StringBuilder stringBuilder = new StringBuilder();
+						stringBuilder = new StringBuilder();
 						String line;
 						while ((line = reader.readLine()) != null) {
 							stringBuilder.append(line);
 						}
+						/**
+						 * InputStream en BufferedReader zijn niet meer nodig,
+						 * dus close
+						 */
+						is.close();
+						reader.close();
+
+						/**
+						 * De opgehaalde informatie wordt in een JSONObject
+						 * gezet
+						 */
+						JSONObject jObject;
+						String jsonText;
+						String afbeeldingString;
+						String afbeeldingString2;
 						try {
-							JSONObject jObject = new JSONObject(stringBuilder
-									.toString());
+							jObject = new JSONObject(stringBuilder.toString());
 							String naam = jObject.getString("naam");
-							String henk = stringBuilder.toString();
-							int sub = henk.indexOf("/9j");
-							String afbeeldingString = henk.substring(sub);
-							int sub2 = afbeeldingString.indexOf("\""); 
-							String afbeeldingString2 = afbeeldingString.substring(0, sub2);
-							Card nieuweCard = new Card(jObject
+							jsonText = stringBuilder.toString();
+							int sub = jsonText.indexOf("/9j");
+							afbeeldingString = jsonText.substring(sub);
+							int sub2 = afbeeldingString.indexOf("\"");
+							afbeeldingString2 = afbeeldingString.substring(0,
+									sub2);
+
+							/** Card wordt gecreëerd */
+							Card ontvangenCard = new Card(jObject
 									.getString("bedrijf"), jObject
 									.getString("naam"), jObject
 									.getString("adres"), jObject
 									.getString("telefoonnummer"), jObject
 									.getString("functie"), jObject
-									.getString("email"), afbeeldingString2, jObject
-									.getString("locatie"), jObject
-									.getString("reden"));
-							if(cp.getCardByName(naam) == null)
-							{
-								cp.addCard(nieuweCard);
-								Log.d("EDR", "toegevoegd");
-							}
-							else
-							{
-								Log.d("EDR", "niet toegevoegd");
+									.getString("email"), afbeeldingString2,
+									jObject.getString("locatie"), jObject
+											.getString("reden"));
+
+							/**
+							 * Als de card nog niet in de lijst met kaarten
+							 * voorkomt wordt deze toegevoegd
+							 */
+							if (cp.getCardByName(naam) == null) {
+								cp.addCard(ontvangenCard);
+							} else {
 								Message message = handler.obtainMessage(0);
 								Bundle bundle = new Bundle();
-								bundle.putString("text", "Kaart is reeds toegevoegd");
+								bundle.putString("text",
+										"Kaart is reeds toegevoegd");
 								message.setData(bundle);
 								handler.sendMessage(message);
 							}
-							
-
 						} catch (JSONException ex) {
-							// TODO Auto-generated catch block
-							Log.d("EDR", ex.getMessage());
+							Message message = handler.obtainMessage();
+							Bundle bundle = new Bundle();
+							bundle.putString("text", "Geen geldige kaart");
+							message.setData(bundle);
+							handler.sendMessage(message);
+
+						} finally {
+							/** Grote tekst (encoded afbeelding) leegmaken */
+							jObject = null;
+							jsonText = "";
+							afbeeldingString = "";
+							afbeeldingString2 = "";
 						}
 
 					}
 				} catch (IOException ex) {
-					Log.d("EDR", ex.getMessage());
+					Message message = handler.obtainMessage();
+					Bundle bundle = new Bundle();
+					bundle.putString("text", "Geen internet verbinding");
+					message.setData(bundle);
+					handler.sendMessage(message);
+				} finally {
+					stringBuilder = null;
 				}
 			}
 		}).start();
-	}
-	
-	private void showToast(String text) {
-		// TODO Auto-generated method stub
-		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 	}
 
 	private void openSettings() {
@@ -262,37 +304,23 @@ public class MainActivity extends FragmentActivity implements TabListener {
 
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
+		/** Niet gebruikte methode, wel geïmplementeerd mocht het nodig zijn */
 	}
 
+	/** De geslecteerde tab wordt getoond */
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
 		viewPager.setCurrentItem(tab.getPosition());
 
 	}
 
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-	}
-
-	public void setAchtergrond(View layout) {
-		if (sharedprefs.contains("achtergrondkleur")) {
-			String color = sharedprefs.getString("achtergrondkleur", "");
-
-			if (color.equals("Rood")) {
-				layout.setBackgroundColor(getResources().getColor(R.color.red));
-			} else if (color.equals("Blauw")) {
-				layout.setBackgroundColor(getResources().getColor(R.color.blue));
-			} else if (color.equals("Groen")) {
-				layout.setBackgroundColor(getResources()
-						.getColor(R.color.green));
-			}
-		}
+		/** Niet gebruikte methode, wel geïmplementeerd mocht het nodi zijn */
 	}
 }
 
+/** De my adapter is een custom adapter om de fragments te beheren */
 class MyAdapter extends FragmentPagerAdapter {
 	public MyAdapter(android.support.v4.app.FragmentManager fragmentManager) {
 		super(fragmentManager);
@@ -300,7 +328,6 @@ class MyAdapter extends FragmentPagerAdapter {
 
 	@Override
 	public Fragment getItem(int arg0) {
-		// TODO Auto-generated method stub
 		Fragment fragment = null;
 		if (arg0 == 0) {
 			fragment = new FragmentA();
@@ -314,7 +341,6 @@ class MyAdapter extends FragmentPagerAdapter {
 
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
 		return 2;
 	}
 }

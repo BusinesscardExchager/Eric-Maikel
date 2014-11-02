@@ -1,28 +1,16 @@
 package com.example.businesscardexchager;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
-
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Contacts.People;
 import android.provider.ContactsContract;
-import android.provider.ContactsContract.CommonDataKinds.Phone;
-import android.provider.ContactsContract.Data;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,7 +27,8 @@ public class DetailActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail);
-
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		/** Zet de achtergrond van de activity */
 		sharedprefs = getApplication().getSharedPreferences(MY_PREFERENCES,
 				Context.MODE_PRIVATE);
 
@@ -60,55 +49,66 @@ public class DetailActivity extends Activity {
 			}
 		}
 
+		/**
+		 * Haalt de de kaart op met de doorgegeven positie in de static list
+		 * Card in cardProvider
+		 */
 		int position = getIntent().getIntExtra("position", -1);
-		cp = new CardProvider(getApplicationContext());
-		card = cp.getCard(position);
-		TextView tvBedrijf = (TextView) findViewById(R.id.tvBedrijf);
-		TextView tvNaam = (TextView) findViewById(R.id.tvNaam);
-		TextView tvAdres = (TextView) findViewById(R.id.tvAdres);
-		TextView tvTelefoonnummer = (TextView) findViewById(R.id.tvTelefoonnummer);
-		TextView tvFunctie = (TextView) findViewById(R.id.tvFunctie);
-		TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
-		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
-		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
-		ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
+		if (position != -1) {
+			cp = new CardProvider(getApplicationContext());
+			card = cp.getCard(position);
+			TextView tvBedrijf = (TextView) findViewById(R.id.tvBedrijf);
+			TextView tvNaam = (TextView) findViewById(R.id.tvNaam);
+			TextView tvAdres = (TextView) findViewById(R.id.tvAdres);
+			TextView tvTelefoonnummer = (TextView) findViewById(R.id.tvTelefoonnummer);
+			TextView tvFunctie = (TextView) findViewById(R.id.tvFunctie);
+			TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
+			EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
+			EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
+			ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
 
-		if (card.getAfbeelding() == -2) {
-			Log.d("EDR", card.getNaam());
-			try {
-				Bitmap bm = Card.decodeBase64(card.getAfbeeldingString());
-				img.setImageBitmap(bm);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			/**
+			 * De opgehaalde kaart vanuit het jSon bestand heeft maakt gebruik
+			 * van een string als afbeelding, vandaar de aparte if
+			 */
+			if (card.getAfbeelding() == -2) {
+				try {
+					img.getBackground().setAlpha(0);
+					Bitmap bm = Card.decodeBase64(card.getAfbeeldingString());
+					img.setImageBitmap(bm);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			} else if (card.getAfbeelding() != -1) {
+				img.setImageDrawable(getResources().getDrawable(
+						card.getAfbeelding()));
 			}
 
-		} else if (card.getAfbeelding() != -1) {
+			/** de kaart wordt gevuld met gegevens */
+			if (card != null) {
+				tvBedrijf.setText(card.getBedrijf());
+				tvNaam.setText(card.getNaam());
+				tvAdres.setText(card.getAdres());
+				tvTelefoonnummer.setText(card.getTelnummer());
+				tvFunctie.setText(card.getFunctie());
+				tvEmail.setText(card.getEmail());
+				etWaar.setText(card.getLocatie());
+				etWaarom.setText(card.getReden());
 
-			img.setImageDrawable(getResources().getDrawable(
-					card.getAfbeelding()));
+				View rootCardView = findViewById(R.id.topCardDetail);
+				GradientDrawable gDrawable = (GradientDrawable) rootCardView
+						.getBackground();
+				gDrawable.setColorFilter(
+						getResources().getColor(card.getAchtergrondKleur()),
+						PorterDuff.Mode.MULTIPLY);
+				gDrawable.setStroke(3, getResources().getColor(R.color.black));
+			}
 		}
-
-		if (card != null) {
-			tvBedrijf.setText(card.getBedrijf());
-			tvNaam.setText(card.getNaam());
-			tvAdres.setText(card.getAdres());
-			tvTelefoonnummer.setText(card.getTelnummer());
-			tvFunctie.setText(card.getFunctie());
-			tvEmail.setText(card.getEmail());
-			etWaar.setText(card.getLocatie());
-			etWaarom.setText(card.getReden());
-
-			View rootCardView = findViewById(R.id.topCardDetail);
-			GradientDrawable gDrawable = (GradientDrawable) rootCardView
-					.getBackground();
-			gDrawable.setColorFilter(
-					getResources().getColor(card.getAchtergrondKleur()),
-					PorterDuff.Mode.MULTIPLY);
-			gDrawable.setStroke(3, getResources().getColor(R.color.black));
-		}
+		getActionBar().setTitle(card.getNaam());
 	}
 
+	/** EditTexts waar en waarom worden gevuld */
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -118,6 +118,7 @@ public class DetailActivity extends Activity {
 		etWaarom.setText(card.getReden());
 	}
 
+	/** Belt het telefoonnummer op de kaart */
 	public void call(View view) {
 		String telefoonnummer = "tel:" + card.getTelnummer();
 		Intent callIntent = new Intent(Intent.ACTION_DIAL);
@@ -125,6 +126,7 @@ public class DetailActivity extends Activity {
 		startActivity(callIntent);
 	}
 
+	/** Verstuurd een email naar het emailadres op de kaart */
 	public void sendEmail(View view) {
 		String email = card.getEmail();
 		Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -133,8 +135,11 @@ public class DetailActivity extends Activity {
 				"Choose an Email client: "));
 	}
 
+	/**
+	 * Verstuurd een textbericht naar het opgegeven nummer Whatsapp wordt nog
+	 * niet ondersteund
+	 */
 	public void sendText(View view) {
-
 		Intent textIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
 				"smsto", card.getTelnummer(), null));
 		textIntent.putExtra("chat", true);
@@ -142,6 +147,7 @@ public class DetailActivity extends Activity {
 
 	}
 
+	/** Er wordt een nieuw contact gemaakt met de gegevens van de kaart */
 	public void addContact(View view) {
 		String naam = card.getNaam();
 		String bedrijf = card.getBedrijf();
@@ -162,6 +168,7 @@ public class DetailActivity extends Activity {
 		startActivity(intent);
 	}
 
+	/** de getoonde kaart wordt geupdate */
 	public void SaveDetail(View view) {
 		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
 		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
@@ -176,6 +183,7 @@ public class DetailActivity extends Activity {
 		finish();
 	}
 
+	/** Eventhandler van de hardware backknop */
 	@Override
 	public void onBackPressed() {
 		finish();
