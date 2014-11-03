@@ -82,7 +82,7 @@ public class FragmentA extends Fragment {
 
 		if (cards.size() == 0) {
 			Card card1 = new Card("ME Software Inc.", "Hans Petersson",
-					"St. Eugène straat 83", "0619681049",
+					"St. Eugene straat 83", "0619681049",
 					"Managing Software Engineer", "h.petersson@me.com",
 					color.newAndroid_blue);
 			
@@ -92,7 +92,7 @@ public class FragmentA extends Fragment {
 
 			Card card3 = new Card("Microsoft", "Bill Gates", "One Microsoft Way",
 					"425 8828080", "Big Boss", "b.gates@microsoft.nl",
-					color.newAndroid_orange);
+					color.Wheat);
 
 			Card card4 = new Card("Land van Horne", "Paul Thornson",
 					"Biest 43", "0490-391092", "CEO",

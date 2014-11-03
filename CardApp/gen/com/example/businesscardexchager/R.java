@@ -239,24 +239,27 @@ public final class R {
         public static final int yellow=0x7f06001a;
     }
     public static final class drawable {
-        public static final int actionbar_drawable=0x7f020000;
-        public static final int bg_one=0x7f020001;
-        public static final int bg_three=0x7f020002;
-        public static final int bg_two=0x7f020003;
-        public static final int cardachtergrond=0x7f020004;
-        public static final int ic_action_forward=0x7f020005;
-        public static final int ic_action_overflow=0x7f020006;
-        public static final int ic_action_search=0x7f020007;
-        public static final int ic_action_share=0x7f020008;
-        public static final int ic_icon=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
-        public static final int person_four=0x7f02000b;
-        public static final int person_three=0x7f02000c;
-        public static final int persoon_one=0x7f02000d;
-        public static final int textbox=0x7f02000e;
-        public static final int transparentcontainer=0x7f02000f;
-        public static final int woman_five=0x7f020010;
-        public static final int woman_one=0x7f020011;
+        public static final int bg_one=0x7f020000;
+        public static final int bg_three=0x7f020001;
+        public static final int bg_two=0x7f020002;
+        public static final int button=0x7f020003;
+        public static final int button_selected=0x7f020004;
+        public static final int button_selector=0x7f020005;
+        public static final int cardachtergrond=0x7f020006;
+        public static final int ic_action_forward=0x7f020007;
+        public static final int ic_action_overflow=0x7f020008;
+        public static final int ic_action_search=0x7f020009;
+        public static final int ic_action_share=0x7f02000a;
+        public static final int ic_icon=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int person_four=0x7f02000d;
+        public static final int person_three=0x7f02000e;
+        public static final int persoon_one=0x7f02000f;
+        public static final int textbox=0x7f020010;
+        public static final int textcolor_selector=0x7f020011;
+        public static final int transparentcontainer=0x7f020012;
+        public static final int woman_five=0x7f020013;
+        public static final int woman_one=0x7f020014;
     }
     public static final class id {
         public static final int BackgroundButton=0x7f0a001b;

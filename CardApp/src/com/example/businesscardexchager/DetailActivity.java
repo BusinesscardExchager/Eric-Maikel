@@ -54,54 +54,59 @@ public class DetailActivity extends Activity {
 		if (position != -1) {
 			cp = new CardProvider(getApplicationContext());
 			card = cp.getCard(position);
-			TextView tvBedrijf = (TextView) findViewById(R.id.tvBedrijf);
-			TextView tvNaam = (TextView) findViewById(R.id.tvNaam);
-			TextView tvAdres = (TextView) findViewById(R.id.tvAdres);
-			TextView tvTelefoonnummer = (TextView) findViewById(R.id.tvTelefoonnummer);
-			TextView tvFunctie = (TextView) findViewById(R.id.tvFunctie);
-			TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
-			EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
-			EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
-			ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
-
-			/**
-			 * De opgehaalde kaart vanuit het jSon bestand heeft maakt gebruik
-			 * van een string als afbeelding, vandaar de aparte if
-			 */
-			if (card.getAfbeelding() == -2) {
-				try {
-					img.getBackground().setAlpha(0);
-					Bitmap bm = Card.decodeBase64(card.getAfbeeldingString());
-					img.setImageBitmap(bm);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-			} else if (card.getAfbeelding() != -1) {
-				img.setImageDrawable(getResources().getDrawable(
-						card.getAfbeelding()));
-			}
-
-			/** de kaart wordt gevuld met gegevens */
-			if (card != null) {
-				tvBedrijf.setText(card.getBedrijf());
-				tvNaam.setText(card.getNaam());
-				tvAdres.setText(card.getAdres());
-				tvTelefoonnummer.setText(card.getTelnummer());
-				tvFunctie.setText(card.getFunctie());
-				tvEmail.setText(card.getEmail());
-				etWaar.setText(card.getLocatie());
-				etWaarom.setText(card.getReden());
-
-				View rootCardView = findViewById(R.id.topCardDetail);
-				GradientDrawable gDrawable = (GradientDrawable) rootCardView
-						.getBackground();
-				gDrawable.setColorFilter(
-						getResources().getColor(card.getAchtergrondKleur()),
-						PorterDuff.Mode.MULTIPLY);
-				gDrawable.setStroke(3, getResources().getColor(R.color.black));
-			}
 		}
+		else if(getIntent().getParcelableExtra("card") != null)
+		{
+			card = (Card) getIntent().getParcelableExtra("card");
+		}
+		TextView tvBedrijf = (TextView) findViewById(R.id.tvBedrijf);
+		TextView tvNaam = (TextView) findViewById(R.id.tvNaam);
+		TextView tvAdres = (TextView) findViewById(R.id.tvAdres);
+		TextView tvTelefoonnummer = (TextView) findViewById(R.id.tvTelefoonnummer);
+		TextView tvFunctie = (TextView) findViewById(R.id.tvFunctie);
+		TextView tvEmail = (TextView) findViewById(R.id.tvEmail);
+		EditText etWaarom = (EditText) findViewById(R.id.waaromGekregenET);
+		EditText etWaar = (EditText) findViewById(R.id.waarGekregenET);
+		ImageView img = (ImageView) findViewById(R.id.imageCardDetail);
+
+		/**
+		 * De opgehaalde kaart vanuit het jSon bestand heeft maakt gebruik van
+		 * een string als afbeelding, vandaar de aparte if
+		 */
+		if (card.getAfbeelding() == -2) {
+			try {
+				img.getBackground().setAlpha(0);
+				Bitmap bm = Card.decodeBase64(card.getAfbeeldingString());
+				img.setImageBitmap(bm);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} else if (card.getAfbeelding() != -1) {
+			img.setImageDrawable(getResources().getDrawable(
+					card.getAfbeelding()));
+		}
+
+		/** de kaart wordt gevuld met gegevens */
+		if (card != null) {
+			tvBedrijf.setText(card.getBedrijf());
+			tvNaam.setText(card.getNaam());
+			tvAdres.setText(card.getAdres());
+			tvTelefoonnummer.setText(card.getTelnummer());
+			tvFunctie.setText(card.getFunctie());
+			tvEmail.setText(card.getEmail());
+			etWaar.setText(card.getLocatie());
+			etWaarom.setText(card.getReden());
+
+			View rootCardView = findViewById(R.id.topCardDetail);
+			GradientDrawable gDrawable = (GradientDrawable) rootCardView
+					.getBackground();
+			gDrawable.setColorFilter(
+					getResources().getColor(card.getAchtergrondKleur()),
+					PorterDuff.Mode.MULTIPLY);
+			gDrawable.setStroke(3, getResources().getColor(R.color.black));
+		}
+
 		getActionBar().setTitle(card.getNaam());
 	}
 

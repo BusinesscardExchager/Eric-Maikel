@@ -2,7 +2,7 @@
 <resources>
     <string-array name="color_array" >
         <item>Grey</item>
-        <item>Colors</item>
+        <item>Wood</item>
         <item>Water</item>
     </string-array>
     <string-array name="color_array_bc" >

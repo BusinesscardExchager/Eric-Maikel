@@ -54,7 +54,6 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_drawable));
 		
 		cp = new CardProvider(this);
 

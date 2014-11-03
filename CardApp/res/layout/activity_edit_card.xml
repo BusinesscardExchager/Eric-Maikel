@@ -79,34 +79,51 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="bottom" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/transparentcontainer"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="30dp" >
 
         <Button
             android:id="@+id/BackgroundButton"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:onClick="BackgroundCard"
-            android:text="@string/BackgroundCard" />
+            android:text="@string/BackgroundCard"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector" 
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
 
         <Button
             android:id="@+id/PictureButton"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/BackgroundButton"
             android:layout_centerHorizontal="true"
             android:onClick="TakePicCard"
-            android:text="@string/TakePictureCard" />
+            android:text="@string/TakePictureCard"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector" 
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
 
         <Button
             android:id="@+id/SaveButton"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/PictureButton"
             android:layout_centerHorizontal="true"
             android:onClick="SaveMyCard"
-            android:text="@string/SaveEditMyCard" />
+            android:text="@string/SaveEditMyCard"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
     </RelativeLayout>
 
 </RelativeLayout>

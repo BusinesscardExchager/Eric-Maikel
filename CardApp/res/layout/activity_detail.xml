@@ -136,7 +136,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:onClick="SaveDetail"
-            android:text="@string/SaveEditMyCard" />
+            android:text="@string/SaveEditMyCard"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector"  />
     </LinearLayout>
 
     <RelativeLayout
@@ -157,7 +159,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:onClick="addContact"
-            android:text="@string/addToContacts" />
+            android:text="@string/addToContacts"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector"  />
 
         <Button
             android:id="@+id/btnSendEmail"
@@ -168,7 +172,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:onClick="sendEmail"
-            android:text="@string/email" />
+            android:text="@string/email"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector"  />
 
         <Button
             android:id="@+id/btnSendText"
@@ -179,7 +185,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:onClick="sendText"
-            android:text="@string/sendTextMessage" />
+            android:text="@string/sendTextMessage"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector" />
 
         <Button
             android:id="@+id/btnCall"
@@ -190,7 +198,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:onClick="call"
-            android:text="@string/call" />
+            android:text="@string/call"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector" />
     </RelativeLayout>
 
 </LinearLayout>

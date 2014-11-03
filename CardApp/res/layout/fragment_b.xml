@@ -84,7 +84,9 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:onClick="editMyCard"
-            android:text="@string/buttonEditMyCard" />
+            android:text="@string/buttonEditMyCard"
+            android:textColor="@drawable/textcolor_selector"
+            android:background="@drawable/button_selector" />
     </RelativeLayout>
 
 </LinearLayout>

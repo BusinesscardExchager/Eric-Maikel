@@ -37,6 +37,7 @@ public class SearchActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("Search Result");
 
 		cards = new ArrayList<Card>();
 		sharedprefs = getApplication().getSharedPreferences(MY_PREFERENCES,
@@ -55,7 +56,9 @@ public class SearchActivity extends Activity {
 						int position, long id) {
 					Intent intent = new Intent(getApplicationContext(),
 							DetailActivity.class);
-					intent.putExtra("position", position);
+					Card card = cards.get(position);
+					intent.putExtra("card", card);
+					//intent.putExtra("position", position);
 					startActivity(intent);
 				}
 			});

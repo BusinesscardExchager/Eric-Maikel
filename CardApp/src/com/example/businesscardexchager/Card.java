@@ -2,9 +2,11 @@ package com.example.businesscardexchager;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Base64;
 
-public class Card {
+public class Card implements Parcelable {
 	private String bedrijf;
 	private String naam;
 	private String adres;
@@ -157,5 +159,58 @@ public class Card {
 		byte[] decodedByte = Base64.decode(input, 0);
 		return BitmapFactory
 				.decodeByteArray(decodedByte, 0, decodedByte.length);
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		dest.writeString(bedrijf);
+		dest.writeString(naam);
+		dest.writeString(adres);
+		dest.writeString(telefoonnummer);
+		dest.writeString(functie);
+		dest.writeInt(achtergrondKleur);
+		dest.writeInt(afbeelding);
+		dest.writeString(email);
+		dest.writeString(locatie);
+		dest.writeString(reden);
+		dest.writeString(afbeeldingString);
+	}
+
+	// Wordt aangeroepen door createFromParcel
+	private Card(Parcel in) {
+		this.bedrijf = in.readString();
+		this.naam = in.readString();
+		this.adres = in.readString();
+		this.telefoonnummer = in.readString();
+		this.functie = in.readString();
+		this.achtergrondKleur = in.readInt();
+		this.afbeelding = in.readInt();
+		this.email = in.readString();
+		this.locatie = in.readString();
+		this.reden = in.readString();
+		this.afbeeldingString = in.readString();
+	}
+
+	public static final Parcelable.Creator<Card> CREATOR = new Parcelable.Creator<Card>() {
+
+		// Roept private Card(parcel in) aan.
+		@Override
+		public Card createFromParcel(Parcel source) {
+			return new Card(source);
+		}
+
+		// Auto-generated
+		@Override
+		public Card[] newArray(int size) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	};
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
