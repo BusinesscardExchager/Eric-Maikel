@@ -89,32 +89,19 @@ public class MyGridAdapter extends BaseAdapter {
 		gDrawable.setStroke(3, v.getResources().getColor(R.color.black));
 
 		/** Informatie van de kaart wordt in de Views gezet */
-
-		/*if (card.getAfbeeldingString() != "") {
-			img.setImageBitmap(Card.decodeBase64(card.getAfbeeldingString()));
-		} else {
-			if (card.getAfbeelding() == -1) {
-				Log.d("EDR", "-1" + card.getNaam());
-			} else if (card.getAfbeelding() != -1) {
-				Log.d("EDR", "!-1" + card.getNaam());
-				img.setImageDrawable(v.getResources().getDrawable(
-						card.getAfbeelding()));
-			}
-		}*/
 		if(!card.getAfbeeldingString().equals(""))
 		{
 			img.setImageBitmap(Card.decodeBase64(card.getAfbeeldingString()));
 		}
 		else if(card.getHeeftAfbeelding() == true)
 		{
+			/** alpha (zichtbaarheid) wordt veranderd anders wordt er bij elk kaartje een photo weergegeven */
 			img.setAlpha(1f);
-			Log.d("EDR", card.getNaam() + " heeft afbeelding " + card.getHeeftAfbeelding());
 			img.setImageDrawable(v.getResources().getDrawable(
 					card.getAfbeelding()));
 		}
 		else if(card.getHeeftAfbeelding() == false)
 		{
-			Log.d("EDR", card.getNaam() + " heeft afbeelding " + card.getHeeftAfbeelding());
 			img.setAlpha(0f);
 		}
 

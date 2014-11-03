@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="color_array" >
-        <item>Rood</item>
-        <item>Blauw</item>
-        <item>Groen</item>
+        <item>Grey</item>
+        <item>Colors</item>
+        <item>Water</item>
     </string-array>
     <string-array name="color_array_bc" >
         <item>Roze</item>

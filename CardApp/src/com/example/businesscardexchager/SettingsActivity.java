@@ -28,17 +28,15 @@ public class SettingsActivity extends Activity {
 			View root = imageButton.getRootView();
 
 			if (color.equals("Rood")) {
-				root.setBackgroundColor(getResources().getColor(R.color.red));
-				imageButton.setBackgroundColor(getResources().getColor(
-						R.color.red));
+				root.setBackgroundResource(R.drawable.bg_one);
+				//root.setBackgroundColor(getResources().getColor(R.color.red));
+				imageButton.setBackgroundResource(R.drawable.bg_one);
 			} else if (color.equals("Blauw")) {
-				root.setBackgroundColor(getResources().getColor(R.color.blue));
-				imageButton.setBackgroundColor(getResources().getColor(
-						R.color.blue));
+				root.setBackgroundResource(R.drawable.bg_two);
+				imageButton.setBackgroundResource(R.drawable.bg_two);
 			} else if (color.equals("Groen")) {
-				root.setBackgroundColor(getResources().getColor(R.color.green));
-				imageButton.setBackgroundColor(getResources().getColor(
-						R.color.green));
+				root.setBackgroundResource(R.drawable.bg_three);
+				imageButton.setBackgroundResource(R.drawable.bg_three);
 			}
 		}
 	}
@@ -57,24 +55,24 @@ public class SettingsActivity extends Activity {
 
 						switch (which) {
 						case 0:
-							settings.setBackgroundColor(getResources().getColor(R.color.red));
-							imageButton.setBackgroundColor(getResources().getColor(R.color.red));
+							settings.setBackgroundResource(R.drawable.bg_one);
+							imageButton.setBackgroundResource(R.drawable.bg_one);
 							
 							editor.putString("achtergrondkleur", "Rood");
 							editor.commit();
 							break;
 
 						case 1:
-							settings.setBackgroundColor(getResources().getColor(R.color.blue));
-							imageButton.setBackgroundColor(getResources().getColor(R.color.blue));
+							settings.setBackgroundResource(R.drawable.bg_two);
+							imageButton.setBackgroundResource(R.drawable.bg_two);
 
 							editor.putString("achtergrondkleur", "Blauw");
 							editor.commit();
 							break;
 
 						case 2:
-							settings.setBackgroundColor(getResources().getColor(R.color.green));
-							imageButton.setBackgroundColor(getResources().getColor(R.color.green));
+							settings.setBackgroundResource(R.drawable.bg_three);
+							imageButton.setBackgroundResource(R.drawable.bg_three);
 
 							editor.putString("achtergrondkleur", "Groen");
 							editor.commit();

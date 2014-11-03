@@ -50,14 +50,11 @@ public class FragmentA extends Fragment {
 			if (sharedprefs.contains("achtergrondkleur")) {
 				String color = sharedprefs.getString("achtergrondkleur", "");
 				if (color.equals("Rood")) {
-					view.setBackgroundColor(getResources()
-							.getColor(R.color.red));
+					view.setBackgroundResource(R.drawable.bg_one);
 				} else if (color.equals("Blauw")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.blue));
+					view.setBackgroundResource(R.drawable.bg_two);
 				} else if (color.equals("Groen")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.green));
+					view.setBackgroundResource(R.drawable.bg_three);
 				}
 			}
 		}
@@ -84,29 +81,32 @@ public class FragmentA extends Fragment {
 		List<Card> cards = cardProvider.getCards();
 
 		if (cards.size() == 0) {
-			Card card1 = new Card("ME Software Inc.", "Eric de Regter",
-					"Patrijshof 7", "0495-544302",
-					"Managing Software Engineer", "ericderegter@gmail.com",
+			Card card1 = new Card("ME Software Inc.", "Hans Petersson",
+					"St. Eugène straat 83", "0619681049",
+					"Managing Software Engineer", "h.petersson@me.com",
 					color.Aquamarine);
-			Card card2 = new Card("ME Software Inc.", "Maikel Hoeks",
-					"Magneestrat 101", "0612950493", "Software Engineer",
-					"maikelhoeks@hotmail.com", color.android_green);
+			
+			Card card2 = new Card("ME Software Inc.", "Caroline Singer",
+					"Mussenberg 201", "0612950493", "Paralegal",
+					"c.singer@me.com", color.android_green);
 
-			Card card3 = new Card("NS", "Gerard de Regter", "Patrijshof 7",
-					"0495544302", "Medewerker", "g.deregter@ns.nl",
+			Card card3 = new Card("Microsoft", "Bill Gates", "One Microsoft Way",
+					"425 8828080", "Big Boss", "b.gates@microsoft.nl",
 					color.Bisque);
 
-			Card card4 = new Card("Land van Horne", "Mila de Regter",
-					"Patrijhof 7", "0495-544302", "Verpleegster",
-					"m.deregter@lvh.nl", color.CadetBlue);
+			Card card4 = new Card("Land van Horne", "Paul Thornson",
+					"Biest 43", "0490-391092", "CEO",
+					"paul.thornson@lvh.nl", color.CadetBlue);
 
-			Card card5 = new Card("De Brouwer", "Rob de Regter",
-					"Patrijshof 7", "0624718538", "Barman",
-					"robderegter@hotmail.com", color.CadetBlue);
+			Card card5 = new Card("NS", "Femke Janssen",
+					"Laan van Puntenburg 100", "+31 (0)88 6712000", "Personeelszaken",
+					"femke.janssen@ns.nl", color.CadetBlue);
 
-			card1.setAfbeelding(R.drawable.mugshot1);
-			card2.setAfbeelding(R.drawable.mugshot2);
-			card3.setAfbeelding(R.drawable.mugshot3);
+			card1.setAfbeelding(R.drawable.persoon_one);
+			card2.setAfbeelding(R.drawable.woman_one);
+			card3.setAfbeelding(R.drawable.person_three);
+			card4.setAfbeelding(R.drawable.person_four);
+			card5.setAfbeelding(R.drawable.woman_five);
 
 			card1.setLocatie("Utrecht");
 			card1.setReden("Stageplek");

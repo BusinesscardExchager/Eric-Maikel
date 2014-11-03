@@ -20,8 +20,8 @@
     <string name="title_activity_edit_card">EditCardActivity</string>
     <string name="buttonEditMyCard">Edit</string>
     <string name="setBackgroundImage">Set background Image</string>
-    <string name="chooseColor">Choose Backgournd Color</string>
-    <string name="search_hint">name</string>
+    <string name="chooseColor">Choose Background</string>
+    <string name="search_hint">Search by Name, Company, etc.</string>
     <string name="SaveEditMyCard">Save</string>
     <string name="Bedrijf">Bedrijf: </string>
     <string name="telefoon">Telefoon nummer:</string>

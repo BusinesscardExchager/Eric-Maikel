@@ -29,13 +29,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -57,8 +54,8 @@ public class MainActivity extends FragmentActivity implements TabListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+		//getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_drawable));
+		
 		cp = new CardProvider(this);
 
 		/** De ViewPager wordt gebruikt om de tabs en de overgang daar tussen */

@@ -25,6 +25,14 @@
         android:textSize="15sp"
         android:visibility="invisible" />
 
+    <TextView
+        android:id="@+id/numberCards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0"
+        android:textSize="15sp"/>
+
     <GridView
         android:id="@+id/searchCollection"
         android:layout_width="fill_parent"

@@ -91,14 +91,11 @@ public class SearchActivity extends Activity {
 			if (sharedprefs.contains("achtergrondkleur")) {
 				String color = sharedprefs.getString("achtergrondkleur", "");
 				if (color.equals("Rood")) {
-					view.setBackgroundColor(getResources()
-							.getColor(R.color.red));
+					view.setBackgroundResource(R.drawable.bg_one);
 				} else if (color.equals("Blauw")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.blue));
+					view.setBackgroundResource(R.drawable.bg_two);
 				} else if (color.equals("Groen")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.green));
+					view.setBackgroundResource(R.drawable.bg_three);
 				}
 			}
 		}
@@ -127,10 +124,8 @@ public class SearchActivity extends Activity {
 				foundCards.add(card);
 			}
 		}
-		Log.d("EDR", "Aantal kaarten gevonden: " + foundCards.size());
-		Toast t = Toast.makeText(getBaseContext(),
-				"Cards Found: " + foundCards.size(), Toast.LENGTH_SHORT);
-		t.show();
+		TextView tvNumberCards = (TextView) findViewById(R.id.numberCards);
+		tvNumberCards.setText("Number of Cards found: " + foundCards.size());
 
 		return foundCards;
 	}

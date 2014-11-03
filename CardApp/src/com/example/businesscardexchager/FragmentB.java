@@ -35,22 +35,6 @@ public class FragmentB extends Fragment {
 
 		inflater.inflate(R.layout.fragment_b, container, false);
 
-		/*
-		 * if (sharedprefs.contains("naamCard")) { TextView tvNaam = (TextView)
-		 * V.findViewById(R.id.tvnaamCard); if (tvNaam != null) { String naam =
-		 * sharedprefs.getString("naamCard", "Naam"); tvNaam.setText(naam); } }
-		 * 
-		 * if (sharedprefs.contains("AdresCard")) { TextView tvAdres =
-		 * (TextView) V.findViewById(R.id.tvAdresCard); if (tvAdres != null) {
-		 * String adres = sharedprefs.getString("AdresCard", "Adres");
-		 * tvAdres.setText(adres); } }
-		 * 
-		 * if (sharedprefs.contains("bedrijfCard")) { TextView tvBedrijf =
-		 * (TextView) V.findViewById(R.id.tvBedrijfCard); if (tvBedrijf != null)
-		 * { String bedrijf = sharedprefs .getString("bedrijfCard", "Bedrijf");
-		 * tvBedrijf.setText(bedrijf); } }
-		 */
-
 		return inflater.inflate(R.layout.fragment_b, container, false);
 	}
 
@@ -116,14 +100,11 @@ public class FragmentB extends Fragment {
 			if (sharedprefs.contains("achtergrondkleur")) {
 				String color = sharedprefs.getString("achtergrondkleur", "");
 				if (color.equals("Rood")) {
-					view.setBackgroundColor(getResources()
-							.getColor(R.color.red));
+					view.setBackgroundResource(R.drawable.bg_one);
 				} else if (color.equals("Blauw")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.blue));
+					view.setBackgroundResource(R.drawable.bg_two);
 				} else if (color.equals("Groen")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.green));
+					view.setBackgroundResource(R.drawable.bg_three);
 				}
 			}
 		}

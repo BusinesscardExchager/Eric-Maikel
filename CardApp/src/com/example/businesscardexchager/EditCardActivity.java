@@ -98,12 +98,11 @@ public class EditCardActivity extends Activity {
 			View layout = findViewById(R.id.activity_edit_card);
 
 			if (color.equals("Rood")) {
-				layout.setBackgroundColor(getResources().getColor(R.color.red));
+				layout.setBackgroundResource(R.drawable.bg_one);
 			} else if (color.equals("Blauw")) {
-				layout.setBackgroundColor(getResources().getColor(R.color.blue));
+				layout.setBackgroundResource(R.drawable.bg_two);
 			} else if (color.equals("Groen")) {
-				layout.setBackgroundColor(getResources()
-						.getColor(R.color.green));
+				layout.setBackgroundResource(R.drawable.bg_three);
 			}
 		}
 		

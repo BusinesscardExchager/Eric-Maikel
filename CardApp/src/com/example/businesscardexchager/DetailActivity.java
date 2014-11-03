@@ -37,14 +37,11 @@ public class DetailActivity extends Activity {
 			if (sharedprefs.contains("achtergrondkleur")) {
 				String color = sharedprefs.getString("achtergrondkleur", "");
 				if (color.equals("Rood")) {
-					view.setBackgroundColor(getResources()
-							.getColor(R.color.red));
+					view.setBackgroundResource(R.drawable.bg_one);
 				} else if (color.equals("Blauw")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.blue));
+					view.setBackgroundResource(R.drawable.bg_two);
 				} else if (color.equals("Groen")) {
-					view.setBackgroundColor(getResources().getColor(
-							R.color.green));
+					view.setBackgroundResource(R.drawable.bg_three);
 				}
 			}
 		}
