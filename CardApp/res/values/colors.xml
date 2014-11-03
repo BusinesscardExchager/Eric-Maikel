@@ -13,6 +13,17 @@
 	<color name="win8_blue">#1BA1E2</color>
 	<color name="win8_red">#E51400</color>
 	<color name="win8_green">#339933</color>
+	<!-- Nieuwste kleuren -->
+	<color name="newAndroid_blue">#33B5E5</color>
+	<color name="newAndroid_blue_dark">#0099CC</color>
+	<color name="newAndroid_purple">#AA66CC</color>
+	<color name="newAndroid_purple_dark">#9933CC</color>
+	<color name="newAndroid_green">#99CC00</color>
+	<color name="newAndroid_green_dark">#669900</color>
+	<color name="newAndroid_orange">#FFBB33</color>
+	<color name="newAndroid_orange_dark">#FF8800</color>
+	<color name="newAndroid_red">#FF4444</color>
+	<color name="newAndroid_red_dark">#CC0000</color>
 	<!-- Common -->
 	<color name="white">#FFFFFF</color>
 	<color name="black">#000000</color>

@@ -84,23 +84,23 @@ public class FragmentA extends Fragment {
 			Card card1 = new Card("ME Software Inc.", "Hans Petersson",
 					"St. Eugène straat 83", "0619681049",
 					"Managing Software Engineer", "h.petersson@me.com",
-					color.Aquamarine);
+					color.newAndroid_blue);
 			
 			Card card2 = new Card("ME Software Inc.", "Caroline Singer",
 					"Mussenberg 201", "0612950493", "Paralegal",
-					"c.singer@me.com", color.android_green);
+					"c.singer@me.com", color.newAndroid_red);
 
 			Card card3 = new Card("Microsoft", "Bill Gates", "One Microsoft Way",
 					"425 8828080", "Big Boss", "b.gates@microsoft.nl",
-					color.Bisque);
+					color.newAndroid_orange);
 
 			Card card4 = new Card("Land van Horne", "Paul Thornson",
 					"Biest 43", "0490-391092", "CEO",
-					"paul.thornson@lvh.nl", color.CadetBlue);
+					"paul.thornson@lvh.nl", color.newAndroid_purple);
 
 			Card card5 = new Card("NS", "Femke Janssen",
 					"Laan van Puntenburg 100", "+31 (0)88 6712000", "Personeelszaken",
-					"femke.janssen@ns.nl", color.CadetBlue);
+					"femke.janssen@ns.nl", color.newAndroid_green);
 
 			card1.setAfbeelding(R.drawable.persoon_one);
 			card2.setAfbeelding(R.drawable.woman_one);

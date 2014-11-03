@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:textSize="15sp" >
+            android:textSize="15sp">
         </TextView>
 
         <TextView
@@ -112,7 +112,8 @@
             android:layout_marginRight="23dp"
             android:background="@drawable/textbox"
             android:hint="@string/waarGekregen"
-            android:singleLine="true" >
+            android:singleLine="true" 
+            android:paddingLeft="5dp">
         </EditText>
 
         <EditText
@@ -124,7 +125,8 @@
             android:layout_marginRight="23dp"
             android:background="@drawable/textbox"
             android:hint="@string/waaromGekregen"
-            android:singleLine="true" >
+            android:singleLine="true" 
+            android:paddingLeft="5dp">
         </EditText>
 
         <Button
