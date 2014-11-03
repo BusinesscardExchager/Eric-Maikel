@@ -238,17 +238,13 @@ public final class R {
         public static final int ic_action_share=0x7f020008;
         public static final int ic_icon=0x7f020009;
         public static final int ic_launcher=0x7f02000a;
-        public static final int mugshot1=0x7f02000b;
-        public static final int mugshot2=0x7f02000c;
-        public static final int mugshot3=0x7f02000d;
-        public static final int mugshot4=0x7f02000e;
-        public static final int person_four=0x7f02000f;
-        public static final int person_three=0x7f020010;
-        public static final int persoon_one=0x7f020011;
-        public static final int textbox=0x7f020012;
-        public static final int transparentcontainer=0x7f020013;
-        public static final int woman_five=0x7f020014;
-        public static final int woman_one=0x7f020015;
+        public static final int person_four=0x7f02000b;
+        public static final int person_three=0x7f02000c;
+        public static final int persoon_one=0x7f02000d;
+        public static final int textbox=0x7f02000e;
+        public static final int transparentcontainer=0x7f02000f;
+        public static final int woman_five=0x7f020010;
+        public static final int woman_one=0x7f020011;
     }
     public static final class id {
         public static final int BackgroundButton=0x7f0a001b;
