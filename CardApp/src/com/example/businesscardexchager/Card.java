@@ -1,5 +1,7 @@
 package com.example.businesscardexchager;
 
+import com.example.businesscardexchager.R.color;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Parcel;
@@ -55,7 +57,7 @@ public class Card implements Parcelable {
 		this.afbeelding = -2;
 		this.locatie = locatie;
 		this.reden = reden;
-		this.achtergrondKleur = R.color.Coral;
+		this.achtergrondKleur = color.newAndroid_red;
 	}
 
 	public String getBedrijf() {

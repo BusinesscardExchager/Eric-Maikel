@@ -92,11 +92,11 @@ public class FragmentA extends Fragment {
 
 			Card card3 = new Card("Microsoft", "Bill Gates", "One Microsoft Way",
 					"425 8828080", "Big Boss", "b.gates@microsoft.nl",
-					color.Wheat);
+					color.newAndroid_green);
 
 			Card card4 = new Card("Land van Horne", "Paul Thornson",
 					"Biest 43", "0490-391092", "CEO",
-					"paul.thornson@lvh.nl", color.newAndroid_purple);
+					"paul.thornson@lvh.nl", color.newAndroid_blue);
 
 			Card card5 = new Card("NS", "Femke Janssen",
 					"Laan van Puntenburg 100", "+31 (0)88 6712000", "Personeelszaken",
