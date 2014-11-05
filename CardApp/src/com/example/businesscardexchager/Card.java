@@ -60,7 +60,7 @@ public class Card implements Parcelable, Serializable {
 		this.afbeelding = -2;
 		this.locatie = locatie;
 		this.reden = reden;
-		this.achtergrondKleur = color.newAndroid_red;
+		this.achtergrondKleur = color.StudyStoryBlue;
 	}
 
 	public String getBedrijf() {

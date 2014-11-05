@@ -97,29 +97,29 @@ public class FragmentA extends Fragment {
 			Card card1 = new Card("ME Software Inc.", "Hans Petersson",
 					"St. Eugene straat 83", "0619681049",
 					"Managing Software Engineer", "h.petersson@me.com",
-					color.newAndroid_blue);
+					color.AppleGrey);
 			
-			Card card2 = new Card("ME Software Inc.", "Caroline Singer",
-					"Mussenberg 201", "0612950493", "Paralegal",
-					"c.singer@me.com", color.newAndroid_red);
+			Card card2 = new Card("NS", "Femke Janssen",
+					"Laan van Puntenburg 100", "+31 (0)88 6712000", "Personeelszaken",
+					"femke.janssen@ns.nl", color.nsYellow);
 
 			Card card3 = new Card("Microsoft", "Bill Gates", "One Microsoft Way",
 					"425 8828080", "Big Boss", "b.gates@microsoft.nl",
-					color.newAndroid_green);
+					color.Ivory);
 
 			Card card4 = new Card("Land van Horne", "Paul Thornson",
 					"Biest 43", "0490-391092", "CEO",
-					"paul.thornson@lvh.nl", color.newAndroid_blue);
+					"paul.thornson@lvh.nl", color.StudyStoryBlue);
 
-			Card card5 = new Card("NS", "Femke Janssen",
-					"Laan van Puntenburg 100", "+31 (0)88 6712000", "Personeelszaken",
-					"femke.janssen@ns.nl", color.newAndroid_green);
+			Card card5 = new Card("ME Software Inc.", "Caroline Singer",
+					"Mussenberg 201", "0612950493", "Paralegal",
+					"c.singer@me.com", color.AppleGrey);
 
 			card1.setAfbeelding(R.drawable.persoon_one);
-			card2.setAfbeelding(R.drawable.woman_one);
+			card2.setAfbeelding(R.drawable.woman_five);
 			card3.setAfbeelding(R.drawable.person_three);
 			card4.setAfbeelding(R.drawable.person_four);
-			card5.setAfbeelding(R.drawable.woman_five);
+			card5.setAfbeelding(R.drawable.woman_one);
 
 			card1.setLocatie("Utrecht");
 			card1.setReden("Stageplek");

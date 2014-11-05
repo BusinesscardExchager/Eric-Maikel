@@ -3,7 +3,7 @@
     android:id="@+id/fragmentA"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentA" >
+    tools:context=".FragmentA">
     
     <TextView 
         android:id="@+id/noCollection"
