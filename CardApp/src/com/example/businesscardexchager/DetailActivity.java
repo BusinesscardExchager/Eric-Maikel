@@ -182,6 +182,7 @@ public class DetailActivity extends Activity {
 
 		card2.setLocatie(etWaar.getText().toString());
 		card2.setReden(etWaarom.getText().toString());
+		CardProvider.saveCards();
 		finish();
 	}
 

@@ -4,6 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentA" >
+    
+    <TextView 
+        android:id="@+id/noCollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:text="@string/noCollection"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"/>
 
     <GridView
         android:id="@+id/Collection"

@@ -2,13 +2,14 @@ package com.example.businesscardexchager;
 
 import java.util.List;
 
-import com.example.businesscardexchager.R.color;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.opengl.Visibility;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,9 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.TextView;
+
+import com.example.businesscardexchager.R.color;
 
 /**
  * Fragment geeft de ontvangen kaarten weer
@@ -64,6 +68,11 @@ public class FragmentA extends Fragment {
 		 * goede plaats vinden)
 		 */
 		((BaseAdapter) grid.getAdapter()).notifyDataSetChanged();
+		if(cardProvider.getCards().size() > 0)
+		{
+			TextView tv = (TextView) view.findViewById(R.id.noCollection);
+			tv.setVisibility(View.GONE);
+		}
 	}
 
 	@Override
@@ -79,7 +88,11 @@ public class FragmentA extends Fragment {
 		 */
 		cardProvider = new CardProvider(getActivity().getApplicationContext());
 		List<Card> cards = cardProvider.getCards();
+		
 
+		cards = CardProvider.loadCards();
+		
+		/** Test gegevens */
 		if (cards.size() == 0) {
 			Card card1 = new Card("ME Software Inc.", "Hans Petersson",
 					"St. Eugene straat 83", "0619681049",
@@ -117,12 +130,20 @@ public class FragmentA extends Fragment {
 			cardProvider.addCard(card3);
 			cardProvider.addCard(card4);
 			cardProvider.addCard(card5);
+			
+			//Deserialize cards
+			CardProvider.saveCards();
 		}
 
 		/**
 		 * Adapter wordt toegevoegd aan GridView en onclick listener wordt
 		 * gemaakt
 		 */
+		if(cards.size() == 0)
+		{
+			TextView tv = (TextView) rootView.findViewById(R.id.noCollection);
+			tv.setVisibility(View.VISIBLE);
+		}
 		grid = (GridView) rootView.findViewById(R.id.Collection);
 		adapter = new MyGridAdapter(getActivity().getApplicationContext(),
 				cards);

@@ -41,5 +41,6 @@
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_search_result">SearchResultActivity</string>
     <string name="noCardsFound">No Cards Found</string>
+    <string name="noCollection">There are no Cards in your Collection</string>
 
 </resources>

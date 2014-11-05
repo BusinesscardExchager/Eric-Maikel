@@ -1,12 +1,15 @@
 package com.example.businesscardexchager;
 
+import java.io.Serializable;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
 
-public class Card implements Parcelable {
+public class Card implements Parcelable, Serializable {
+	private static final long serialVersionUID = 1L;
 	private String bedrijf;
 	private String naam;
 	private String adres;

@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -57,7 +58,7 @@ public class SearchActivity extends Activity {
 					Intent intent = new Intent(getApplicationContext(),
 							DetailActivity.class);
 					Card card = cards.get(position);
-					intent.putExtra("card", card);
+					intent.putExtra("card", (Parcelable)card);
 					//intent.putExtra("position", position);
 					startActivity(intent);
 				}

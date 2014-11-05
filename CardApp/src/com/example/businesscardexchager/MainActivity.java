@@ -22,6 +22,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -56,6 +57,13 @@ public class MainActivity extends FragmentActivity implements TabListener {
 		setContentView(R.layout.activity_main);
 		
 		cp = new CardProvider(this);
+		sharedprefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+		if(sharedprefs == null || !sharedprefs.contains("achtergrondkleur"))
+		{
+			Editor editor = sharedprefs.edit();
+			editor.putString("achtergrondkleur", "Blauw");
+			editor.commit();
+		}
 
 		/** De ViewPager wordt gebruikt om de tabs en de overgang daar tussen */
 		viewPager = (ViewPager) findViewById(R.id.pager);
