@@ -1,10 +1,8 @@
 package com.example.businesscardexchager;
 
-<<<<<<< HEAD
 import java.io.Serializable;
-=======
+
 import com.example.businesscardexchager.R.color;
->>>>>>> FETCH_HEAD
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

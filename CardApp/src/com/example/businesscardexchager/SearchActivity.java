@@ -59,7 +59,6 @@ public class SearchActivity extends Activity {
 							DetailActivity.class);
 					Card card = cards.get(position);
 					intent.putExtra("card", (Parcelable)card);
-					//intent.putExtra("position", position);
 					startActivity(intent);
 				}
 			});
@@ -129,7 +128,7 @@ public class SearchActivity extends Activity {
 			}
 		}
 		TextView tvNumberCards = (TextView) findViewById(R.id.numberCards);
-		tvNumberCards.setText("Number of Cards found: " + foundCards.size());
+		tvNumberCards.setText(foundCards.size() + " Cards found");
 
 		return foundCards;
 	}

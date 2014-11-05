@@ -22,7 +22,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0"
         android:text="@string/noCardsFound"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:visibility="invisible" />
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0"
-        android:textSize="15sp"/>
+        android:textSize="18sp"/>
 
     <GridView
         android:id="@+id/searchCollection"
