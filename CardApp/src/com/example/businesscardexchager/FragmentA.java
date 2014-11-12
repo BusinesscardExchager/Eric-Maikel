@@ -105,7 +105,7 @@ public class FragmentA extends Fragment {
 
 			Card card3 = new Card("Microsoft", "Bill Gates", "One Microsoft Way",
 					"425 8828080", "Big Boss", "b.gates@microsoft.nl",
-					color.Ivory);
+					color.StudyStoryBlue);
 
 			Card card4 = new Card("Land van Horne", "Paul Thornson",
 					"Biest 43", "0490-391092", "CEO",

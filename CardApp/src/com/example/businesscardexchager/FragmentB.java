@@ -117,15 +117,15 @@ public class FragmentB extends Fragment {
 
 			if (color.equals("Rood")) {
 				gDrawable.setColorFilter(
-						getResources().getColor(R.color.newAndroid_red),
+						getResources().getColor(R.color.AppleGrey),
 						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Blauw")) {
 				gDrawable.setColorFilter(
-						getResources().getColor(R.color.newAndroid_blue),
+						getResources().getColor(R.color.StudyStoryBlue),
 						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Groen")) {
 				gDrawable.setColorFilter(
-						getResources().getColor(R.color.newAndroid_green),
+						getResources().getColor(R.color.nsYellow),
 						PorterDuff.Mode.MULTIPLY);
 			}
 		}

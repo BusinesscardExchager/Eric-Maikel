@@ -114,15 +114,15 @@ public class EditCardActivity extends Activity {
 
 			if (color.equals("Rood")) {
 				gDrawable.setColorFilter(
-						getResources().getColor(R.color.newAndroid_red),
+						getResources().getColor(R.color.AppleGrey),
 						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Blauw")) {
 				gDrawable.setColorFilter(
-						getResources().getColor(R.color.newAndroid_blue),
+						getResources().getColor(R.color.StudyStoryBlue),
 						PorterDuff.Mode.MULTIPLY);
 			} else if (color.equals("Groen")) {
 				gDrawable.setColorFilter(
-						getResources().getColor(R.color.newAndroid_green),
+						getResources().getColor(R.color.nsYellow),
 						PorterDuff.Mode.MULTIPLY);
 			}
 		}
@@ -180,7 +180,7 @@ public class EditCardActivity extends Activity {
 						switch (which) {
 						case 0:
 							gDrawable.setColorFilter(
-									getResources().getColor(R.color.newAndroid_red),
+									getResources().getColor(R.color.AppleGrey),
 									PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Rood");
 							editor.commit();
@@ -188,7 +188,7 @@ public class EditCardActivity extends Activity {
 
 						case 1:
 							gDrawable.setColorFilter(
-									getResources().getColor(R.color.newAndroid_blue),
+									getResources().getColor(R.color.StudyStoryBlue),
 									PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Blauw");
 							editor.commit();
@@ -198,7 +198,7 @@ public class EditCardActivity extends Activity {
 							gDrawable
 									.setColorFilter(
 											getResources().getColor(
-													R.color.newAndroid_green),
+													R.color.nsYellow),
 											PorterDuff.Mode.MULTIPLY);
 							editor.putString("achtergrondkleurCard", "Groen");
 							editor.commit();
