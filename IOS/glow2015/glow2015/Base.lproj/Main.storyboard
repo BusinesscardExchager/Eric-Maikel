@@ -70,7 +70,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gYc-2P-r86" kind="presentation" id="8Rk-NX-idi"/>
+                                    <segue destination="gYc-2P-r86" kind="show" id="8Rk-NX-idi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTQ-eP-5sb">
@@ -116,14 +116,23 @@
                                 <rect key="frame" x="137" y="467" width="46" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
-                                    <action selector="CloseView:" destination="gYc-2P-r86" eventType="touchUpInside" id="yZ2-EQ-2Eg"/>
+                                    <action selector="closeEasterEgg:" destination="gYc-2P-r86" eventType="touchUpInside" id="YTR-bz-SDb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="erikDoeRustig.png" translatesAutoresizingMaskIntoConstraints="NO" id="pCO-C0-Dzp">
-                                <rect key="frame" x="-6" y="42" width="332" height="197"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-tz-IMM">
+                                <rect key="frame" x="-87" y="28" width="467" height="248"/>
+                                <state key="normal" title="Button" image="erikDoeRustig.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vqw-9g-ctt" kind="show" id="7qm-ja-rKd"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="up-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="nwC-iW-dVZ">
+                                <rect key="frame" x="148" y="310" width="25" height="25"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Eric doe rustig!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBD-jW-hKi">
-                                <rect key="frame" x="35" y="332" width="251" height="39"/>
+                                <rect key="frame" x="35" y="343" width="251" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -136,6 +145,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqt-zM-ddf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968" y="539"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="Mdl-V4-bS4">
+            <objects>
+                <viewController id="vqw-9g-ctt" customClass="VideoViewController" customModule="glow2015" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5cz-9a-yeG"/>
+                        <viewControllerLayoutGuide type="bottom" id="wbI-Wk-beA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9QU-LV-aD2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWd-EV-2ja">
+                                <rect key="frame" x="137" y="481" width="46" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeView:" destination="vqw-9g-ctt" eventType="touchUpInside" id="ybP-FO-ZO1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kuu-av-2uS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="524"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="dv7-RL-itq">
@@ -190,6 +229,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-2v-6Lu">
+                                <rect key="frame" x="112" y="324" width="96" height="30"/>
+                                <state key="normal" title="Click here!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="magNietButon:" destination="hfp-RY-kta" eventType="touchUpInside" id="ZzR-cE-0EX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -275,5 +323,6 @@
     <resources>
         <image name="erikDoeRustig.png" width="1024" height="576"/>
         <image name="psvlogo.png" width="348" height="239"/>
+        <image name="up-50.png" width="25" height="25"/>
     </resources>
 </document>

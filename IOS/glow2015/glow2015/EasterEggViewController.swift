@@ -12,7 +12,7 @@ class EasterEggViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -31,8 +31,7 @@ class EasterEggViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    @IBAction func CloseView(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, nil);
+    @IBAction func closeEasterEgg(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

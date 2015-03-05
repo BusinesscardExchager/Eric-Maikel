@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07325B861AA91E9A006101BD /* up-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07325B851AA91E9A006101BD /* up-50@2x.png */; };
+		0766AE741AA8A20D005819CE /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 077ECFAE1AA89CD00037290B /* video.mp4 */; };
+		0766AE761AA8B527005819CE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766AE751AA8B527005819CE /* VideoViewController.swift */; };
 		077ECF7B1AA841B70037290B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077ECF7A1AA841B70037290B /* AppDelegate.swift */; };
 		077ECF7D1AA841B70037290B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077ECF7C1AA841B70037290B /* ViewController.swift */; };
 		077ECF801AA841B70037290B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077ECF7E1AA841B70037290B /* Main.storyboard */; };
@@ -33,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07325B851AA91E9A006101BD /* up-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-50@2x.png"; sourceTree = "<group>"; };
+		0766AE751AA8B527005819CE /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ../VideoViewController.swift; sourceTree = "<group>"; };
 		077ECF751AA841B70037290B /* glow2015.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = glow2015.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		077ECF791AA841B70037290B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		077ECF7A1AA841B70037290B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		077ECFA81AA890210037290B /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		077ECFAA1AA8902F0037290B /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		077ECFAC1AA890540037290B /* MoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewController.swift; sourceTree = "<group>"; };
+		077ECFAE1AA89CD00037290B /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +97,14 @@
 		077ECF771AA841B70037290B /* glow2015 */ = {
 			isa = PBXGroup;
 			children = (
+				0766AE751AA8B527005819CE /* VideoViewController.swift */,
 				077ECF7A1AA841B70037290B /* AppDelegate.swift */,
 				077ECF7C1AA841B70037290B /* ViewController.swift */,
 				077ECF7E1AA841B70037290B /* Main.storyboard */,
 				077ECFA41AA88CFF0037290B /* erikDoeRustig.png */,
+				07325B851AA91E9A006101BD /* up-50@2x.png */,
 				077ECFA01AA886BB0037290B /* EasterEggViewController.swift */,
+				077ECFAE1AA89CD00037290B /* video.mp4 */,
 				077ECF9C1AA85BAA0037290B /* psvlogo.png */,
 				077ECF811AA841B70037290B /* Images.xcassets */,
 				077ECF831AA841B70037290B /* LaunchScreen.xib */,
@@ -213,6 +222,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07325B861AA91E9A006101BD /* up-50@2x.png in Resources */,
+				0766AE741AA8A20D005819CE /* video.mp4 in Resources */,
 				077ECF9D1AA85BAA0037290B /* psvlogo.png in Resources */,
 				077ECF801AA841B70037290B /* Main.storyboard in Resources */,
 				077ECF851AA841B70037290B /* LaunchScreen.xib in Resources */,
@@ -237,6 +248,7 @@
 			files = (
 				077ECF7D1AA841B70037290B /* ViewController.swift in Sources */,
 				077ECFA11AA886BB0037290B /* EasterEggViewController.swift in Sources */,
+				0766AE761AA8B527005819CE /* VideoViewController.swift in Sources */,
 				077ECFA91AA890210037290B /* GeneralViewController.swift in Sources */,
 				077ECFAD1AA890540037290B /* MoreDetailsViewController.swift in Sources */,
 				077ECFA71AA88F370037290B /* AboutViewController.swift in Sources */,
@@ -433,6 +445,7 @@
 				077ECF961AA841B70037290B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		077ECF971AA841B70037290B /* Build configuration list for PBXNativeTarget "glow2015Tests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +454,7 @@
 				077ECF991AA841B70037290B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

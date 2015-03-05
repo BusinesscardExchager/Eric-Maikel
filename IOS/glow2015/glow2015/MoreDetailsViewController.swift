@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class MoreDetailsViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -32,4 +34,15 @@ class MoreDetailsViewController: UIViewController {
     }
     */
 
+    @IBAction func magNietButon(sender: AnyObject) {
+        let alert = UIAlertView()
+        alert.title = "More Details"
+        alert.message = "Mag niet"
+        alert.addButtonWithTitle("Close")
+        alert.show()
+    }
+    
+
+    
+    
 }
