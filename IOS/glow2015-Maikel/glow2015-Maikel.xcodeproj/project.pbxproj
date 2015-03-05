@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F568DC7F1AA8571600FF370F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DC7E1AA8571600FF370F /* AppDelegate.swift */; };
+		F568DC811AA8571600FF370F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DC801AA8571600FF370F /* ViewController.swift */; };
+		F568DC841AA8571600FF370F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F568DC821AA8571600FF370F /* Main.storyboard */; };
+		F568DC861AA8571600FF370F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F568DC851AA8571600FF370F /* Images.xcassets */; };
+		F568DC891AA8571600FF370F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F568DC871AA8571600FF370F /* LaunchScreen.xib */; };
+		F568DC951AA8571600FF370F /* glow2015_MaikelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DC941AA8571600FF370F /* glow2015_MaikelTests.swift */; };
+		F568DCA11AA85CFE00FF370F /* maxresdefault.png in Resources */ = {isa = PBXBuildFile; fileRef = F568DCA01AA85CFE00FF370F /* maxresdefault.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F568DC8F1AA8571600FF370F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F568DC711AA8571600FF370F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F568DC781AA8571600FF370F;
+			remoteInfo = "glow2015-Maikel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F568DC791AA8571600FF370F /* glow2015-Maikel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "glow2015-Maikel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F568DC7D1AA8571600FF370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F568DC7E1AA8571600FF370F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F568DC801AA8571600FF370F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F568DC831AA8571600FF370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F568DC851AA8571600FF370F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F568DC881AA8571600FF370F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F568DC8E1AA8571600FF370F /* glow2015-MaikelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "glow2015-MaikelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F568DC931AA8571600FF370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F568DC941AA8571600FF370F /* glow2015_MaikelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glow2015_MaikelTests.swift; sourceTree = "<group>"; };
+		F568DCA01AA85CFE00FF370F /* maxresdefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maxresdefault.png; path = ../../../../../../Downloads/maxresdefault.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F568DC761AA8571600FF370F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F568DC8B1AA8571600FF370F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F568DC701AA8571600FF370F = {
+			isa = PBXGroup;
+			children = (
+				F568DC7B1AA8571600FF370F /* glow2015-Maikel */,
+				F568DC911AA8571600FF370F /* glow2015-MaikelTests */,
+				F568DC7A1AA8571600FF370F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F568DC7A1AA8571600FF370F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F568DC791AA8571600FF370F /* glow2015-Maikel.app */,
+				F568DC8E1AA8571600FF370F /* glow2015-MaikelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F568DC7B1AA8571600FF370F /* glow2015-Maikel */ = {
+			isa = PBXGroup;
+			children = (
+				F568DC7E1AA8571600FF370F /* AppDelegate.swift */,
+				F568DC801AA8571600FF370F /* ViewController.swift */,
+				F568DC821AA8571600FF370F /* Main.storyboard */,
+				F568DCA01AA85CFE00FF370F /* maxresdefault.png */,
+				F568DC851AA8571600FF370F /* Images.xcassets */,
+				F568DC871AA8571600FF370F /* LaunchScreen.xib */,
+				F568DC7C1AA8571600FF370F /* Supporting Files */,
+			);
+			path = "glow2015-Maikel";
+			sourceTree = "<group>";
+		};
+		F568DC7C1AA8571600FF370F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F568DC7D1AA8571600FF370F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F568DC911AA8571600FF370F /* glow2015-MaikelTests */ = {
+			isa = PBXGroup;
+			children = (
+				F568DC941AA8571600FF370F /* glow2015_MaikelTests.swift */,
+				F568DC921AA8571600FF370F /* Supporting Files */,
+			);
+			path = "glow2015-MaikelTests";
+			sourceTree = "<group>";
+		};
+		F568DC921AA8571600FF370F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F568DC931AA8571600FF370F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F568DC781AA8571600FF370F /* glow2015-Maikel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F568DC981AA8571600FF370F /* Build configuration list for PBXNativeTarget "glow2015-Maikel" */;
+			buildPhases = (
+				F568DC751AA8571600FF370F /* Sources */,
+				F568DC761AA8571600FF370F /* Frameworks */,
+				F568DC771AA8571600FF370F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "glow2015-Maikel";
+			productName = "glow2015-Maikel";
+			productReference = F568DC791AA8571600FF370F /* glow2015-Maikel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F568DC8D1AA8571600FF370F /* glow2015-MaikelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F568DC9B1AA8571600FF370F /* Build configuration list for PBXNativeTarget "glow2015-MaikelTests" */;
+			buildPhases = (
+				F568DC8A1AA8571600FF370F /* Sources */,
+				F568DC8B1AA8571600FF370F /* Frameworks */,
+				F568DC8C1AA8571600FF370F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F568DC901AA8571600FF370F /* PBXTargetDependency */,
+			);
+			name = "glow2015-MaikelTests";
+			productName = "glow2015-MaikelTests";
+			productReference = F568DC8E1AA8571600FF370F /* glow2015-MaikelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F568DC711AA8571600FF370F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Fhict;
+				TargetAttributes = {
+					F568DC781AA8571600FF370F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					F568DC8D1AA8571600FF370F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = F568DC781AA8571600FF370F;
+					};
+				};
+			};
+			buildConfigurationList = F568DC741AA8571600FF370F /* Build configuration list for PBXProject "glow2015-Maikel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F568DC701AA8571600FF370F;
+			productRefGroup = F568DC7A1AA8571600FF370F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F568DC781AA8571600FF370F /* glow2015-Maikel */,
+				F568DC8D1AA8571600FF370F /* glow2015-MaikelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F568DC771AA8571600FF370F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F568DC841AA8571600FF370F /* Main.storyboard in Resources */,
+				F568DCA11AA85CFE00FF370F /* maxresdefault.png in Resources */,
+				F568DC891AA8571600FF370F /* LaunchScreen.xib in Resources */,
+				F568DC861AA8571600FF370F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F568DC8C1AA8571600FF370F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F568DC751AA8571600FF370F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F568DC811AA8571600FF370F /* ViewController.swift in Sources */,
+				F568DC7F1AA8571600FF370F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F568DC8A1AA8571600FF370F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F568DC951AA8571600FF370F /* glow2015_MaikelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F568DC901AA8571600FF370F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F568DC781AA8571600FF370F /* glow2015-Maikel */;
+			targetProxy = F568DC8F1AA8571600FF370F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F568DC821AA8571600FF370F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F568DC831AA8571600FF370F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F568DC871AA8571600FF370F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F568DC881AA8571600FF370F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F568DC961AA8571600FF370F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F568DC971AA8571600FF370F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F568DC991AA8571600FF370F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "glow2015-Maikel/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F568DC9A1AA8571600FF370F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "glow2015-Maikel/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F568DC9C1AA8571600FF370F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "glow2015-MaikelTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/glow2015-Maikel.app/glow2015-Maikel";
+			};
+			name = Debug;
+		};
+		F568DC9D1AA8571600FF370F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "glow2015-MaikelTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/glow2015-Maikel.app/glow2015-Maikel";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F568DC741AA8571600FF370F /* Build configuration list for PBXProject "glow2015-Maikel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F568DC961AA8571600FF370F /* Debug */,
+				F568DC971AA8571600FF370F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F568DC981AA8571600FF370F /* Build configuration list for PBXNativeTarget "glow2015-Maikel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F568DC991AA8571600FF370F /* Debug */,
+				F568DC9A1AA8571600FF370F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F568DC9B1AA8571600FF370F /* Build configuration list for PBXNativeTarget "glow2015-MaikelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F568DC9C1AA8571600FF370F /* Debug */,
+				F568DC9D1AA8571600FF370F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F568DC711AA8571600FF370F /* Project object */;
+}
