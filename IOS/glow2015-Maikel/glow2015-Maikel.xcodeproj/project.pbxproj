@@ -14,6 +14,11 @@
 		F568DC891AA8571600FF370F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F568DC871AA8571600FF370F /* LaunchScreen.xib */; };
 		F568DC951AA8571600FF370F /* glow2015_MaikelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DC941AA8571600FF370F /* glow2015_MaikelTests.swift */; };
 		F568DCA11AA85CFE00FF370F /* maxresdefault.png in Resources */ = {isa = PBXBuildFile; fileRef = F568DCA01AA85CFE00FF370F /* maxresdefault.png */; };
+		F568DCB11AA88AE400FF370F /* EasterEggViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DCB01AA88AE400FF370F /* EasterEggViewController.swift */; };
+		F568DCB31AA88AF900FF370F /* generalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DCB21AA88AF900FF370F /* generalViewController.swift */; };
+		F568DCB51AA88B0A00FF370F /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DCB41AA88B0A00FF370F /* aboutViewController.swift */; };
+		F568DCB71AA88B2200FF370F /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DCB61AA88B2200FF370F /* detailViewController.swift */; };
+		F568DCB91AA88B3600FF370F /* moreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F568DCB81AA88B3600FF370F /* moreDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		F568DC931AA8571600FF370F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F568DC941AA8571600FF370F /* glow2015_MaikelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glow2015_MaikelTests.swift; sourceTree = "<group>"; };
 		F568DCA01AA85CFE00FF370F /* maxresdefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maxresdefault.png; path = ../../../../../../Downloads/maxresdefault.png; sourceTree = "<group>"; };
+		F568DCB01AA88AE400FF370F /* EasterEggViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasterEggViewController.swift; sourceTree = "<group>"; };
+		F568DCB21AA88AF900FF370F /* generalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generalViewController.swift; sourceTree = "<group>"; };
+		F568DCB41AA88B0A00FF370F /* aboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
+		F568DCB61AA88B2200FF370F /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		F568DCB81AA88B3600FF370F /* moreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moreDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,11 @@
 				F568DC851AA8571600FF370F /* Images.xcassets */,
 				F568DC871AA8571600FF370F /* LaunchScreen.xib */,
 				F568DC7C1AA8571600FF370F /* Supporting Files */,
+				F568DCB01AA88AE400FF370F /* EasterEggViewController.swift */,
+				F568DCB21AA88AF900FF370F /* generalViewController.swift */,
+				F568DCB41AA88B0A00FF370F /* aboutViewController.swift */,
+				F568DCB61AA88B2200FF370F /* detailViewController.swift */,
+				F568DCB81AA88B3600FF370F /* moreDetailViewController.swift */,
 			);
 			path = "glow2015-Maikel";
 			sourceTree = "<group>";
@@ -217,7 +232,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F568DC811AA8571600FF370F /* ViewController.swift in Sources */,
+				F568DCB11AA88AE400FF370F /* EasterEggViewController.swift in Sources */,
 				F568DC7F1AA8571600FF370F /* AppDelegate.swift in Sources */,
+				F568DCB31AA88AF900FF370F /* generalViewController.swift in Sources */,
+				F568DCB51AA88B0A00FF370F /* aboutViewController.swift in Sources */,
+				F568DCB71AA88B2200FF370F /* detailViewController.swift in Sources */,
+				F568DCB91AA88B3600FF370F /* moreDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +429,7 @@
 				F568DC9A1AA8571600FF370F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F568DC9B1AA8571600FF370F /* Build configuration list for PBXNativeTarget "glow2015-MaikelTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +438,7 @@
 				F568DC9D1AA8571600FF370F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

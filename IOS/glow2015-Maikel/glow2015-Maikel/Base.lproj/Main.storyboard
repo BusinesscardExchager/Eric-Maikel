@@ -21,10 +21,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Lt6-lw-dyu">
             <objects>
-                <viewController id="H9G-M8-sMI" sceneMemberID="viewController">
+                <viewController id="H9G-M8-sMI" customClass="detailViewController" customModule="glow2015_Maikel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Prg-ZN-Otc"/>
                         <viewControllerLayoutGuide type="bottom" id="Ggc-2n-GJM"/>
@@ -32,6 +32,20 @@
                     <view key="view" contentMode="scaleToFill" id="g3y-wL-n85">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="maxresdefault.png" translatesAutoresizingMaskIntoConstraints="NO" id="FLY-Uw-9VF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="297"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ff-Jr-zk2">
+                                <rect key="frame" x="145" y="580" width="85" height="30"/>
+                                <state key="normal" title="More details">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ab3-qm-XKB" kind="presentation" id="U1i-cz-d2C"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="4vj-Wv-vVZ"/>
@@ -41,12 +55,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEI-g2-C2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="2454"/>
+            <point key="canvasLocation" x="244.5" y="2663.5"/>
         </scene>
-        <!--View Controller-->
+        <!--More Detail View Controller-->
         <scene sceneID="MOp-BM-nqd">
             <objects>
-                <viewController id="ab3-qm-XKB" sceneMemberID="viewController">
+                <viewController id="ab3-qm-XKB" customClass="moreDetailViewController" customModule="glow2015_Maikel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4so-a5-6q1"/>
                         <viewControllerLayoutGuide type="bottom" id="12w-2t-WYT"/>
@@ -54,6 +68,20 @@
                     <view key="view" contentMode="scaleToFill" id="PfT-ww-L0X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daydream 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-BP-sfO">
+                                <rect key="frame" x="110" y="160" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11 en 12 april" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oH-lR-JEV">
+                                <rect key="frame" x="110" y="189" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="flv-W1-QSr"/>
@@ -65,7 +93,7 @@
         <!--About-->
         <scene sceneID="R5g-om-YRa">
             <objects>
-                <viewController id="WFP-jF-ssm" sceneMemberID="viewController">
+                <viewController id="WFP-jF-ssm" customClass="aboutViewController" customModule="glow2015_Maikel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GNp-rg-t3W"/>
                         <viewControllerLayoutGuide type="bottom" id="Agp-IT-ndG"/>
@@ -73,19 +101,88 @@
                     <view key="view" contentMode="scaleToFill" id="QLF-pw-uZA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-is-yNn">
+                                <rect key="frame" x="121" y="436" width="96" height="29"/>
+                                <state key="normal" title="show textfield">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPressed:" destination="WFP-jF-ssm" eventType="touchUpInside" id="xdF-Z5-6UQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Made by Maikel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pug-I4-LlI">
+                                <rect key="frame" x="126" y="315" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7V-r4-FIV">
+                                <rect key="frame" x="121" y="386" width="73" height="30"/>
+                                <state key="normal" title="easter egg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="eggPressed:" destination="WFP-jF-ssm" eventType="touchUpInside" id="lj2-77-Lh8"/>
+                                    <segue destination="vxy-4P-dnC" kind="presentation" id="lZK-9F-Jsk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hb6-8W-3Mq">
+                                <rect key="frame" x="126" y="473" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" id="FVU-aS-wor"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textfield" destination="Hb6-8W-3Mq" id="FQV-3y-rfe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsL-zi-581" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37" y="1789"/>
+            <point key="canvasLocation" x="31.5" y="1846.5"/>
+        </scene>
+        <!--Easter Egg View Controller-->
+        <scene sceneID="9cL-f6-6pk">
+            <objects>
+                <viewController id="vxy-4P-dnC" customClass="EasterEggViewController" customModule="glow2015_Maikel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Na8-7F-v5Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="yg4-kj-eTU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TBG-TJ-jLJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPp-qo-EpI">
+                                <rect key="frame" x="167" y="611" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closePressed:" destination="vxy-4P-dnC" eventType="touchUpInside" id="JN0-09-eYH"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="maxresdefault.png" translatesAutoresizingMaskIntoConstraints="NO" id="QDN-Dl-Ztm">
+                                <rect key="frame" x="5" y="8" width="370" height="606"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9iS-1q-vfn"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZw-ao-eXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469.5" y="1846.5"/>
         </scene>
         <!--General-->
         <scene sceneID="PLd-Qp-Ais">
             <objects>
-                <viewController id="uZ7-Xa-Uhy" sceneMemberID="viewController">
+                <viewController id="uZ7-Xa-Uhy" customClass="generalViewController" customModule="glow2015_Maikel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sjq-pv-X7A"/>
                         <viewControllerLayoutGuide type="bottom" id="ddF-Nf-x6Z"/>
@@ -151,10 +248,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOh-bh-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-515" y="2454"/>
+            <point key="canvasLocation" x="-774.5" y="2663.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="maxresdefault.png" width="1280" height="720"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="U1i-cz-d2C"/>
+    </inferredMetricsTieBreakers>
 </document>
