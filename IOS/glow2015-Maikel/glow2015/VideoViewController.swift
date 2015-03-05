@@ -55,7 +55,7 @@ class VideoViewController: UIViewController {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoHasFinishedPlaying:", name: MPMoviePlayerPlaybackDidFinishNotification, object: nil)
 
             println("Successfully instantiated the movie player")
-            var videoSize = CGRectMake(0, 0, self.view.bounds.width, 200)
+            var videoSize = CGRectMake(0, 50, self.view.bounds.width, 200)
             
             player.view.frame = videoSize
                 view.addSubview(player.view)
@@ -71,8 +71,8 @@ class VideoViewController: UIViewController {
     func stopPlayingVideo(){
         if let player = moviePlayer{
             NSNotificationCenter.defaultCenter().removeObserver(self)
-            player.stop()
-            player.view.removeFromSuperview()
+            player.pause()
+            //player.view.removeFromSuperview()
         }
     }
     
