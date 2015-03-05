@@ -36,22 +36,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="maxresdefault.png" translatesAutoresizingMaskIntoConstraints="NO" id="FLY-Uw-9VF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="297"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ff-Jr-zk2">
-                                <rect key="frame" x="145" y="580" width="85" height="30"/>
-                                <state key="normal" title="More details">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ab3-qm-XKB" kind="presentation" id="U1i-cz-d2C"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4vj-Wv-vVZ"/>
-                    <connections>
-                        <segue destination="ab3-qm-XKB" kind="push" id="Fhc-4a-IP6"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="4vj-Wv-vVZ">
+                        <barButtonItem key="rightBarButtonItem" title="more" id="uQp-Hq-5lp">
+                            <connections>
+                                <segue destination="ab3-qm-XKB" kind="show" id="F9n-5L-UPE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEI-g2-C2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-is-yNn">
-                                <rect key="frame" x="121" y="436" width="96" height="29"/>
+                                <rect key="frame" x="113" y="185" width="96" height="29"/>
                                 <state key="normal" title="show textfield">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -112,13 +106,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Made by Maikel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pug-I4-LlI">
-                                <rect key="frame" x="126" y="315" width="122" height="21"/>
+                                <rect key="frame" x="113" y="86" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7V-r4-FIV">
-                                <rect key="frame" x="121" y="386" width="73" height="30"/>
+                                <rect key="frame" x="113" y="141" width="73" height="30"/>
                                 <state key="normal" title="easter egg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -128,7 +122,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hb6-8W-3Mq">
-                                <rect key="frame" x="126" y="473" width="97" height="30"/>
+                                <rect key="frame" x="112" y="222" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -254,7 +248,4 @@
     <resources>
         <image name="maxresdefault.png" width="1280" height="720"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="U1i-cz-d2C"/>
-    </inferredMetricsTieBreakers>
 </document>
