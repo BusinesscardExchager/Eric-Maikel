@@ -11,3 +11,6 @@ SMED:
 hoe meer personen mee hoe plannen
 Strippen/minder functionaliteit
 verschil tussen app en website
+
+Week 3:
+opdracht zag er netjes uit(applicatie)
