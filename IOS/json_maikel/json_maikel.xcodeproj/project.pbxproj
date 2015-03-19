@@ -644,6 +644,7 @@
 				F516A4E91ABAC8DD00258CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F516A4EA1ABAC8DD00258CC5 /* Build configuration list for PBXNativeTarget "json_maikelTests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +653,7 @@
 				F516A4EC1ABAC8DD00258CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

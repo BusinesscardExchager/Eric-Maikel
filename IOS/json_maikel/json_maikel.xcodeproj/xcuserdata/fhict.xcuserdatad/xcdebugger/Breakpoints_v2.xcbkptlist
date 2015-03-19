@@ -15,6 +15,36 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
             endingLineNumber = "10">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "json_maikel.TableViewController.__deallocating_deinit"
+                  moduleName = "json_maikel"
+                  urlString = "file:///Users/fhict/Documents/GitHub/Eric-Maikel/IOS/json_maikel/json_maikel/TableViewController.swift"
+                  timestampString = "448459306.270689"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc json_maikel.TableViewController.__ivar_destroyer"
+                  moduleName = "json_maikel"
+                  urlString = "file:///Users/fhict/Documents/GitHub/Eric-Maikel/IOS/json_maikel/json_maikel/TableViewController.swift"
+                  timestampString = "448459306.275592"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
