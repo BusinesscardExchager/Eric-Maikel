@@ -17,3 +17,13 @@ opdracht zag er netjes uit(applicatie)
 
 Week4:
 Gewoon zo door blijven gaan.
+Waarom deze hoeveelheid persona's?
+Persona's te globaal?
+
+Concept: App eigenlijk alleen voor gebruikers die nog geen datum hebben en ook nog niet precies weten waar ze heen gaan.
+Zorgen dat de gebruikers niet zelf een datum moeten kiezen (dus niet zoals outlook dat doet). 
+Mogelijkheid tot uitbreiding:
+- voor dagje uit (oa. muziekfestival, film etc).
+- suggesties op basis van geschiedenis (of juist suggesties op basis van dingen die nog niet gedaan zijn.
+
+
