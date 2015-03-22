@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:background="@drawable/btn_red_selector"
+        android:onClick="btnLeave_Click"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/pokertable"
+        android:src="@drawable/ft_green_poker_skin"
+        android:layout_marginTop="10dp"/>
+    
+    <LinearLayout 
+        android:id="@+id/betBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true">
+        
+        <SeekBar 
+            android:id="@+id/seekBar"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"/>
+        
+        <EditText 
+            android:id="@+id/EtAmountBet"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </LinearLayout>
+    
+    <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/betBar"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="100dp"
+                android:paddingRight="100dp" >
+
+                <Button
+                    android:id="@+id/btnFold"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_grey_selector"
+                    android:text="@string/fold"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnCheck"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_green_selector"
+                    android:text="@string/check"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:onClick="btnCheck_Click"/>
+
+                <Button
+                    android:id="@+id/btnBet"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_yellow_selector"
+                    android:text="@string/bet"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+</RelativeLayout>
