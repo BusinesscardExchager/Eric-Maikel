@@ -1,0 +1,18 @@
+Dingen die veranderd zijn voor de interface van SE41:
+
+Geen back knoppen, deze zijn van android al beschikbaar, zowel softbuttons als hardware.
+
+Mogelijkheid om geld te storten en geld op te nemen toegevoegd
+
+Settings toegevoegd
+
+Weggaan van een tafel toegevoegd
+
+Geen inlogscherm gemaakt (Is altijd standaar)
+
+Slide bar toegevoegd om de goede hoeveelheid te betten/raisen
+
+De "More info" knop leidt direct naar het spel
+
+Geen chat in de game: Is dit wel nodig? Je kunt dan niet tegelijkertijd typen en spelen.
+
