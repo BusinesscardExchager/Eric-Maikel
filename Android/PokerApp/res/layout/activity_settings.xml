@@ -55,6 +55,7 @@
                     android:gravity="right|center"
                     android:paddingLeft="5dp"
                     android:text="" />
+                
 
                 <View
                     android:layout_width="0dp"
@@ -129,6 +130,30 @@
                     android:layout_height="1dp"
                     android:layout_weight="0.3" />
             </TableRow>
+             <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="10dp" >
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+                
+                <Button
+            	android:id="@+id/btnLanguage"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_green_selector"
+                android:text="@string/language"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:onClick="btnLanguage_Click" />
+                
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.3" />
+            </TableRow>
         </TableLayout>
     </LinearLayout>
 
@@ -156,6 +181,7 @@
                 android:textSize="24sp"
                 android:onClick="btnSave_Click" />
         </LinearLayout>
+       
     </RelativeLayout>
 
 </RelativeLayout>

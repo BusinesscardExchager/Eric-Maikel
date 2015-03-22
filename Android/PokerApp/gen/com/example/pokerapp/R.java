@@ -39,14 +39,15 @@ public final class R {
         public static final int ic_launcher=0x7f02000d;
     }
     public static final class id {
-        public static final int BuyinistViewItem=0x7f07001f;
+        public static final int BuyinistViewItem=0x7f070020;
         public static final int EtAmountBet=0x7f070006;
-        public static final int StartTimeListViewItem=0x7f07001d;
+        public static final int StartTimeListViewItem=0x7f07001e;
         public static final int betBar=0x7f070004;
         public static final int btnBet=0x7f070009;
         public static final int btnCheck=0x7f070008;
         public static final int btnFindGame=0x7f070017;
         public static final int btnFold=0x7f070007;
+        public static final int btnLanguage=0x7f07001d;
         public static final int btnMyAccount=0x7f070018;
         public static final int btnRingGame=0x7f070003;
         public static final int btnSettings=0x7f070019;
@@ -55,7 +56,7 @@ public final class R {
         public static final int gameList=0x7f07001b;
         public static final int historyList=0x7f070011;
         public static final int myHistory=0x7f070010;
-        public static final int nameListViewItem=0x7f07001e;
+        public static final int nameListViewItem=0x7f07001f;
         public static final int seekBar=0x7f070005;
         public static final int tfFindGame=0x7f070000;
         public static final int tfKindOfGame=0x7f07001a;
@@ -102,6 +103,7 @@ public final class R {
         public static final int gameName=0x7f05002e;
         public static final int hello_world=0x7f050001;
         public static final int history=0x7f05002a;
+        public static final int language=0x7f050036;
         public static final int mainmenu=0x7f050016;
         public static final int maxBuyin=0x7f050033;
         public static final int moneyAmount=0x7f050009;
