@@ -36,7 +36,9 @@ public final class R {
         public static final int btn_yellow_pressed=0x7f02000a;
         public static final int btn_yellow_selector=0x7f02000b;
         public static final int ft_green_poker_skin=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
+        public static final int hartenaas=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int schoppenaas=0x7f02000f;
     }
     public static final class id {
         public static final int BuyinistViewItem=0x7f070020;

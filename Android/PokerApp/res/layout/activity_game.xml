@@ -66,7 +66,7 @@
                     android:layout_width="0dp"
                     android:layout_height="56dp"
                     android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:background="@drawable/btn_grey_selector"
                     android:text="@string/fold"
                     android:textColor="@color/white"
@@ -78,7 +78,7 @@
                     android:layout_height="56dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:background="@drawable/btn_green_selector"
                     android:text="@string/check"
                     android:textColor="@color/white"
@@ -90,11 +90,26 @@
                     android:layout_width="0dp"
                     android:layout_height="56dp"
                     android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:background="@drawable/btn_yellow_selector"
                     android:text="@string/bet"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
+                
+                  <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/pokertable"
+        android:src="@drawable/schoppenaas"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"/>
+                    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/pokertable"
+        android:src="@drawable/hartenaas"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"/>
             </LinearLayout>
 
 </RelativeLayout>
