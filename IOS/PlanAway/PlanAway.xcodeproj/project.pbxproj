@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B158F1AC4527E00B04439 /* newActivityViewController.swift */; };
 		F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5511AC4360200258CC5 /* AppDelegate.swift */; };
 		F516A5541AC4360200258CC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5531AC4360200258CC5 /* ViewController.swift */; };
 		F516A5571AC4360200258CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F516A5551AC4360200258CC5 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		077B158F1AC4527E00B04439 /* newActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newActivityViewController.swift; sourceTree = "<group>"; };
 		F516A54C1AC4360200258CC5 /* PlanAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F516A5501AC4360200258CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F516A5511AC4360200258CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				F516A5711AC43E4900258CC5 /* ActivityTableViewController.swift */,
 				F516A5731AC4406A00258CC5 /* ActivityDetailViewController.swift */,
 				F516A5751AC440FD00258CC5 /* Activity.swift */,
+				077B158F1AC4527E00B04439 /* newActivityViewController.swift */,
 			);
 			path = PlanAway;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				F516A5761AC440FD00258CC5 /* Activity.swift in Sources */,
 				F516A5741AC4406A00258CC5 /* ActivityDetailViewController.swift in Sources */,
+				077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */,
 				F516A5541AC4360200258CC5 /* ViewController.swift in Sources */,
 				F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */,
 				F516A5721AC43E4900258CC5 /* ActivityTableViewController.swift in Sources */,
@@ -420,6 +424,7 @@
 				F516A56D1AC4360200258CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F516A56E1AC4360200258CC5 /* Build configuration list for PBXNativeTarget "PlanAwayTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +433,7 @@
 				F516A5701AC4360200258CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

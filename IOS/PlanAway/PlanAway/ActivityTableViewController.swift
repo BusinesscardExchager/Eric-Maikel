@@ -97,8 +97,16 @@ class ActivityTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        var controller = segue.destinationViewController as ActivityDetailViewController
-        controller.selectedActivity = self.activities[self.tableView.indexPathForSelectedRow()!.row]
+        if(sender?.identifier == "detailActivity")
+        {
+            var controller = segue.destinationViewController as ActivityDetailViewController
+            controller.selectedActivity = self.activities[self.tableView.indexPathForSelectedRow()!.row]
+        }
+        else if(sender?.identifier == "addActivity")
+        {
+            
+        }
+        
     }
     
 
