@@ -1,25 +1,39 @@
 //
-//  ActivityTableViewController.swift
-//  PlanAway
+//  TableViewController.swift
+//  test
 //
-//  Created by Fhict on 26/03/15.
+//  Created by Fhict on 02/04/15.
 //  Copyright (c) 2015 Fontys. All rights reserved.
 //
 
 import UIKit
 
-class ActivityTableViewController: UITableViewController {
-    
-    var activities = [Activity]()
 
+class TableViewController: UITableViewController {
+
+let apps = ["Minecraft","Facebook","Twitter","Instagram"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        //activities.append(Activity(Name: "Defqon 1", Detail: "Maikel Hoeks"))
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String
+    {
+        switch(section)
+        {
+        case 1:return "Approved"
+            break
+        case 2:return ""
+            break
+        default :return "Waiting for approving"
+            break
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,24 +46,23 @@ class ActivityTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return apps.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        var title = self.activities[indexPath.row].name
-        var subTitle = self.activities[indexPath.row].detail
-        cell.textLabel?.text = title
-        cell.detailTextLabel?.text = subTitle
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as swipeablecell
+        
+        cell.name?.text = apps[indexPath.row]
+
 
         return cell
     }
@@ -62,8 +75,42 @@ class ActivityTableViewController: UITableViewController {
         return true
     }
     */
-
+        
     /*
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
+        // 1
+        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            // 2
+            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
+            
+            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+            
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(cancelAction)
+            
+            
+            self.presentViewController(shareMenu, animated: true, completion: nil)
+        })
+        // 3
+        var rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Rate" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            // 4
+            let rateMenu = UIAlertController(title: nil, message: "Rate this App", preferredStyle: .ActionSheet)
+            
+            let appRateAction = UIAlertAction(title: "Rate", style: UIAlertActionStyle.Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+            
+            rateMenu.addAction(appRateAction)
+            rateMenu.addAction(cancelAction)
+            
+            
+            self.presentViewController(rateMenu, animated: true, completion: nil)
+        })
+        // 5
+        return [shareAction,rateAction]
+    }
+
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -90,24 +137,14 @@ class ActivityTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if(sender?.identifier == "detailActivity")
-        {
-            var controller = segue.destinationViewController as ActivityDetailViewController
-            controller.selectedActivity = self.activities[self.tableView.indexPathForSelectedRow()!.row]
-        }
-        else if(sender?.identifier == "addActivity")
-        {
-            
-        }
-        
     }
-    
+    */
 
 }

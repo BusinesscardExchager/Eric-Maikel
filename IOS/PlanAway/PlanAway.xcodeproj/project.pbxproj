@@ -21,12 +21,13 @@
 		07E9BDDD1ACD765B00229293 /* summer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDDC1ACD765B00229293 /* summer@2x.png */; };
 		07E9BDDF1ACD77EA00229293 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */; };
 		07E9BDE11ACD785D00229293 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDE01ACD785D00229293 /* add@2x.png */; };
+		07E9BDE41ACD7BA900229293 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9BDE21ACD7BA900229293 /* TableViewController.swift */; };
+		07E9BDE51ACD7BA900229293 /* swipeablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9BDE31ACD7BA900229293 /* swipeablecell.swift */; };
 		F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5511AC4360200258CC5 /* AppDelegate.swift */; };
 		F516A5571AC4360200258CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F516A5551AC4360200258CC5 /* Main.storyboard */; };
 		F516A5591AC4360200258CC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F516A5581AC4360200258CC5 /* Images.xcassets */; };
 		F516A55C1AC4360200258CC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F516A55A1AC4360200258CC5 /* LaunchScreen.xib */; };
 		F516A5681AC4360200258CC5 /* PlanAwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5671AC4360200258CC5 /* PlanAwayTests.swift */; };
-		F516A5721AC43E4900258CC5 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5711AC43E4900258CC5 /* ActivityTableViewController.swift */; };
 		F516A5761AC440FD00258CC5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5751AC440FD00258CC5 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		07E9BDDC1ACD765B00229293 /* summer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "summer@2x.png"; sourceTree = "<group>"; };
 		07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		07E9BDE01ACD785D00229293 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		07E9BDE21ACD7BA900229293 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		07E9BDE31ACD7BA900229293 /* swipeablecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swipeablecell.swift; sourceTree = "<group>"; };
 		F516A54C1AC4360200258CC5 /* PlanAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F516A5501AC4360200258CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F516A5511AC4360200258CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 		F516A5611AC4360200258CC5 /* PlanAwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanAwayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F516A5661AC4360200258CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F516A5671AC4360200258CC5 /* PlanAwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanAwayTests.swift; sourceTree = "<group>"; };
-		F516A5711AC43E4900258CC5 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		F516A5751AC440FD00258CC5 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +132,8 @@
 				F516A5581AC4360200258CC5 /* Images.xcassets */,
 				F516A55A1AC4360200258CC5 /* LaunchScreen.xib */,
 				F516A54F1AC4360200258CC5 /* Supporting Files */,
-				F516A5711AC43E4900258CC5 /* ActivityTableViewController.swift */,
+				07E9BDE21ACD7BA900229293 /* TableViewController.swift */,
+				07E9BDE31ACD7BA900229293 /* swipeablecell.swift */,
 				0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */,
 				F516A5751AC440FD00258CC5 /* Activity.swift */,
 				077B158F1AC4527E00B04439 /* newActivityViewController.swift */,
@@ -282,7 +285,8 @@
 				07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */,
 				F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */,
 				0797DC331ACD55940007179D /* ViewController.swift in Sources */,
-				F516A5721AC43E4900258CC5 /* ActivityTableViewController.swift in Sources */,
+				07E9BDE41ACD7BA900229293 /* TableViewController.swift in Sources */,
+				07E9BDE51ACD7BA900229293 /* swipeablecell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
