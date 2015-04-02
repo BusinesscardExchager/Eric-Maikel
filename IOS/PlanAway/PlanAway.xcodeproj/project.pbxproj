@@ -8,14 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B158F1AC4527E00B04439 /* newActivityViewController.swift */; };
+		0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */; };
+		0797DC221ACD3F9F0007179D /* ActivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC211ACD3F9F0007179D /* ActivityProvider.swift */; };
+		0797DC2A1ACD45670007179D /* burgerszoo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC241ACD45670007179D /* burgerszoo.jpeg */; };
+		0797DC2B1ACD45670007179D /* decibel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC251ACD45670007179D /* decibel.jpg */; };
+		0797DC2C1ACD45670007179D /* defqon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC261ACD45670007179D /* defqon.jpg */; };
+		0797DC2D1ACD45670007179D /* efteling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC271ACD45670007179D /* efteling.jpg */; };
+		0797DC2E1ACD45670007179D /* qlimax.png in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC281ACD45670007179D /* qlimax.png */; };
+		0797DC2F1ACD45670007179D /* sealife.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC291ACD45670007179D /* sealife.jpg */; };
+		0797DC331ACD55940007179D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC321ACD55940007179D /* ViewController.swift */; };
+		07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */; };
+		07E9BDDD1ACD765B00229293 /* summer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDDC1ACD765B00229293 /* summer@2x.png */; };
+		07E9BDDF1ACD77EA00229293 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */; };
+		07E9BDE11ACD785D00229293 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDE01ACD785D00229293 /* add@2x.png */; };
 		F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5511AC4360200258CC5 /* AppDelegate.swift */; };
-		F516A5541AC4360200258CC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5531AC4360200258CC5 /* ViewController.swift */; };
 		F516A5571AC4360200258CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F516A5551AC4360200258CC5 /* Main.storyboard */; };
 		F516A5591AC4360200258CC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F516A5581AC4360200258CC5 /* Images.xcassets */; };
 		F516A55C1AC4360200258CC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F516A55A1AC4360200258CC5 /* LaunchScreen.xib */; };
 		F516A5681AC4360200258CC5 /* PlanAwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5671AC4360200258CC5 /* PlanAwayTests.swift */; };
 		F516A5721AC43E4900258CC5 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5711AC43E4900258CC5 /* ActivityTableViewController.swift */; };
-		F516A5741AC4406A00258CC5 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5731AC4406A00258CC5 /* ActivityDetailViewController.swift */; };
 		F516A5761AC440FD00258CC5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5751AC440FD00258CC5 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,10 +42,22 @@
 
 /* Begin PBXFileReference section */
 		077B158F1AC4527E00B04439 /* newActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newActivityViewController.swift; sourceTree = "<group>"; };
+		0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		0797DC211ACD3F9F0007179D /* ActivityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityProvider.swift; sourceTree = "<group>"; };
+		0797DC241ACD45670007179D /* burgerszoo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burgerszoo.jpeg; sourceTree = "<group>"; };
+		0797DC251ACD45670007179D /* decibel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = decibel.jpg; sourceTree = "<group>"; };
+		0797DC261ACD45670007179D /* defqon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defqon.jpg; sourceTree = "<group>"; };
+		0797DC271ACD45670007179D /* efteling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = efteling.jpg; sourceTree = "<group>"; };
+		0797DC281ACD45670007179D /* qlimax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qlimax.png; sourceTree = "<group>"; };
+		0797DC291ACD45670007179D /* sealife.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sealife.jpg; sourceTree = "<group>"; };
+		0797DC321ACD55940007179D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		07E9BDDC1ACD765B00229293 /* summer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "summer@2x.png"; sourceTree = "<group>"; };
+		07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
+		07E9BDE01ACD785D00229293 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 		F516A54C1AC4360200258CC5 /* PlanAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F516A5501AC4360200258CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F516A5511AC4360200258CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F516A5531AC4360200258CC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F516A5561AC4360200258CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F516A5581AC4360200258CC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F516A55B1AC4360200258CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,7 +65,6 @@
 		F516A5661AC4360200258CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F516A5671AC4360200258CC5 /* PlanAwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanAwayTests.swift; sourceTree = "<group>"; };
 		F516A5711AC43E4900258CC5 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
-		F516A5731AC4406A00258CC5 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		F516A5751AC440FD00258CC5 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0797DC231ACD45530007179D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */,
+				07E9BDDC1ACD765B00229293 /* summer@2x.png */,
+				0797DC241ACD45670007179D /* burgerszoo.jpeg */,
+				07E9BDE01ACD785D00229293 /* add@2x.png */,
+				0797DC251ACD45670007179D /* decibel.jpg */,
+				0797DC261ACD45670007179D /* defqon.jpg */,
+				0797DC271ACD45670007179D /* efteling.jpg */,
+				0797DC281ACD45670007179D /* qlimax.png */,
+				0797DC291ACD45670007179D /* sealife.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		F516A5431AC4360200258CC5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,16 +123,19 @@
 		F516A54E1AC4360200258CC5 /* PlanAway */ = {
 			isa = PBXGroup;
 			children = (
+				0797DC231ACD45530007179D /* Images */,
 				F516A5511AC4360200258CC5 /* AppDelegate.swift */,
-				F516A5531AC4360200258CC5 /* ViewController.swift */,
+				0797DC321ACD55940007179D /* ViewController.swift */,
 				F516A5551AC4360200258CC5 /* Main.storyboard */,
 				F516A5581AC4360200258CC5 /* Images.xcassets */,
 				F516A55A1AC4360200258CC5 /* LaunchScreen.xib */,
 				F516A54F1AC4360200258CC5 /* Supporting Files */,
 				F516A5711AC43E4900258CC5 /* ActivityTableViewController.swift */,
-				F516A5731AC4406A00258CC5 /* ActivityDetailViewController.swift */,
+				0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */,
 				F516A5751AC440FD00258CC5 /* Activity.swift */,
 				077B158F1AC4527E00B04439 /* newActivityViewController.swift */,
+				0797DC211ACD3F9F0007179D /* ActivityProvider.swift */,
+				07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */,
 			);
 			path = PlanAway;
 			sourceTree = "<group>";
@@ -205,9 +246,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E9BDE11ACD785D00229293 /* add@2x.png in Resources */,
+				0797DC2F1ACD45670007179D /* sealife.jpg in Resources */,
+				0797DC2D1ACD45670007179D /* efteling.jpg in Resources */,
+				0797DC2E1ACD45670007179D /* qlimax.png in Resources */,
+				0797DC2C1ACD45670007179D /* defqon.jpg in Resources */,
+				07E9BDDF1ACD77EA00229293 /* checkmark@2x.png in Resources */,
 				F516A5571AC4360200258CC5 /* Main.storyboard in Resources */,
+				0797DC2A1ACD45670007179D /* burgerszoo.jpeg in Resources */,
 				F516A55C1AC4360200258CC5 /* LaunchScreen.xib in Resources */,
 				F516A5591AC4360200258CC5 /* Images.xcassets in Resources */,
+				0797DC2B1ACD45670007179D /* decibel.jpg in Resources */,
+				07E9BDDD1ACD765B00229293 /* summer@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,10 +276,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F516A5761AC440FD00258CC5 /* Activity.swift in Sources */,
-				F516A5741AC4406A00258CC5 /* ActivityDetailViewController.swift in Sources */,
+				0797DC221ACD3F9F0007179D /* ActivityProvider.swift in Sources */,
 				077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */,
-				F516A5541AC4360200258CC5 /* ViewController.swift in Sources */,
+				0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */,
+				07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */,
 				F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */,
+				0797DC331ACD55940007179D /* ViewController.swift in Sources */,
 				F516A5721AC43E4900258CC5 /* ActivityTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

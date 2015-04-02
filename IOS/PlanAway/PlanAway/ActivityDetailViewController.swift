@@ -2,7 +2,7 @@
 //  ActivityDetailViewController.swift
 //  PlanAway
 //
-//  Created by Fhict on 26/03/15.
+//  Created by Eric de Regter on 02-04-15.
 //  Copyright (c) 2015 Fontys. All rights reserved.
 //
 
@@ -10,11 +10,12 @@ import UIKit
 
 class ActivityDetailViewController: UIViewController {
 
+    @IBOutlet var lblActivityName: UILabel!
     var selectedActivity: Activity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = selectedActivity?.name
+        lblActivityName.text = selectedActivity?.name
         // Do any additional setup after loading the view.
     }
 

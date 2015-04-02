@@ -11,10 +11,12 @@ import UIKit
 class Activity: NSObject {
    var name = ""
     var detail = ""
+    var image: UIImage
     
-    init(Name name:String, Detail detail:String)
+    init(Name name:String, Detail detail:String, Image image:String)
     {
         self.name = name
         self.detail = detail
+        self.image = UIImage(named: image)!
     }
 }
