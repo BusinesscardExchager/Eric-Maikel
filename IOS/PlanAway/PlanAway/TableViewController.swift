@@ -27,11 +27,8 @@ let apps = ["Minecraft","Facebook","Twitter","Instagram"]
         switch(section)
         {
         case 1:return "Approved"
-            break
         case 2:return ""
-            break
         default :return "Waiting for approving"
-            break
         }
         
     }

@@ -12,6 +12,7 @@ class Activity: NSObject {
    var name = ""
     var detail = ""
     var image: UIImage
+    var datum: NSDate?
     
     init(Name name:String, Detail detail:String, Image image:String)
     {

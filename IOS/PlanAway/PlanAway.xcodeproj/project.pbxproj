@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074BEB1A1ACF48DA00EB0A87 /* bios.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB181ACF48DA00EB0A87 /* bios.jpg */; };
+		074BEB1E1ACF500900EB0A87 /* defqon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB1C1ACF500900EB0A87 /* defqon.jpg */; };
+		074BEB1F1ACF500900EB0A87 /* qlimax.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB1D1ACF500900EB0A87 /* qlimax.jpg */; };
+		074BEB211ACF51EF00EB0A87 /* food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB201ACF51EF00EB0A87 /* food.jpg */; };
+		074BEB231ACF541600EB0A87 /* burgerszoo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB221ACF541600EB0A87 /* burgerszoo.jpg */; };
+		074BEB251ACF54D400EB0A87 /* efteling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB241ACF54D400EB0A87 /* efteling.jpg */; };
 		077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B158F1AC4527E00B04439 /* newActivityViewController.swift */; };
 		0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */; };
 		0797DC221ACD3F9F0007179D /* ActivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC211ACD3F9F0007179D /* ActivityProvider.swift */; };
-		0797DC2A1ACD45670007179D /* burgerszoo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC241ACD45670007179D /* burgerszoo.jpeg */; };
 		0797DC2B1ACD45670007179D /* decibel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC251ACD45670007179D /* decibel.jpg */; };
-		0797DC2C1ACD45670007179D /* defqon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC261ACD45670007179D /* defqon.jpg */; };
-		0797DC2D1ACD45670007179D /* efteling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC271ACD45670007179D /* efteling.jpg */; };
-		0797DC2E1ACD45670007179D /* qlimax.png in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC281ACD45670007179D /* qlimax.png */; };
 		0797DC2F1ACD45670007179D /* sealife.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC291ACD45670007179D /* sealife.jpg */; };
 		0797DC331ACD55940007179D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC321ACD55940007179D /* ViewController.swift */; };
 		07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */; };
@@ -42,14 +44,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074BEB181ACF48DA00EB0A87 /* bios.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bios.jpg; sourceTree = "<group>"; };
+		074BEB1C1ACF500900EB0A87 /* defqon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defqon.jpg; sourceTree = "<group>"; };
+		074BEB1D1ACF500900EB0A87 /* qlimax.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qlimax.jpg; sourceTree = "<group>"; };
+		074BEB201ACF51EF00EB0A87 /* food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food.jpg; sourceTree = "<group>"; };
+		074BEB221ACF541600EB0A87 /* burgerszoo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burgerszoo.jpg; sourceTree = "<group>"; };
+		074BEB241ACF54D400EB0A87 /* efteling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = efteling.jpg; sourceTree = "<group>"; };
 		077B158F1AC4527E00B04439 /* newActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newActivityViewController.swift; sourceTree = "<group>"; };
 		0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		0797DC211ACD3F9F0007179D /* ActivityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityProvider.swift; sourceTree = "<group>"; };
-		0797DC241ACD45670007179D /* burgerszoo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burgerszoo.jpeg; sourceTree = "<group>"; };
 		0797DC251ACD45670007179D /* decibel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = decibel.jpg; sourceTree = "<group>"; };
-		0797DC261ACD45670007179D /* defqon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defqon.jpg; sourceTree = "<group>"; };
-		0797DC271ACD45670007179D /* efteling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = efteling.jpg; sourceTree = "<group>"; };
-		0797DC281ACD45670007179D /* qlimax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qlimax.png; sourceTree = "<group>"; };
 		0797DC291ACD45670007179D /* sealife.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sealife.jpg; sourceTree = "<group>"; };
 		0797DC321ACD55940007179D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
@@ -91,14 +95,16 @@
 		0797DC231ACD45530007179D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				074BEB181ACF48DA00EB0A87 /* bios.jpg */,
 				07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */,
 				07E9BDDC1ACD765B00229293 /* summer@2x.png */,
-				0797DC241ACD45670007179D /* burgerszoo.jpeg */,
+				074BEB201ACF51EF00EB0A87 /* food.jpg */,
+				074BEB221ACF541600EB0A87 /* burgerszoo.jpg */,
+				074BEB241ACF54D400EB0A87 /* efteling.jpg */,
 				07E9BDE01ACD785D00229293 /* add@2x.png */,
+				074BEB1C1ACF500900EB0A87 /* defqon.jpg */,
+				074BEB1D1ACF500900EB0A87 /* qlimax.jpg */,
 				0797DC251ACD45670007179D /* decibel.jpg */,
-				0797DC261ACD45670007179D /* defqon.jpg */,
-				0797DC271ACD45670007179D /* efteling.jpg */,
-				0797DC281ACD45670007179D /* qlimax.png */,
 				0797DC291ACD45670007179D /* sealife.jpg */,
 			);
 			name = Images;
@@ -251,15 +257,17 @@
 			files = (
 				07E9BDE11ACD785D00229293 /* add@2x.png in Resources */,
 				0797DC2F1ACD45670007179D /* sealife.jpg in Resources */,
-				0797DC2D1ACD45670007179D /* efteling.jpg in Resources */,
-				0797DC2E1ACD45670007179D /* qlimax.png in Resources */,
-				0797DC2C1ACD45670007179D /* defqon.jpg in Resources */,
+				074BEB1A1ACF48DA00EB0A87 /* bios.jpg in Resources */,
 				07E9BDDF1ACD77EA00229293 /* checkmark@2x.png in Resources */,
+				074BEB1F1ACF500900EB0A87 /* qlimax.jpg in Resources */,
 				F516A5571AC4360200258CC5 /* Main.storyboard in Resources */,
-				0797DC2A1ACD45670007179D /* burgerszoo.jpeg in Resources */,
 				F516A55C1AC4360200258CC5 /* LaunchScreen.xib in Resources */,
 				F516A5591AC4360200258CC5 /* Images.xcassets in Resources */,
+				074BEB231ACF541600EB0A87 /* burgerszoo.jpg in Resources */,
 				0797DC2B1ACD45670007179D /* decibel.jpg in Resources */,
+				074BEB251ACF54D400EB0A87 /* efteling.jpg in Resources */,
+				074BEB211ACF51EF00EB0A87 /* food.jpg in Resources */,
+				074BEB1E1ACF500900EB0A87 /* defqon.jpg in Resources */,
 				07E9BDDD1ACD765B00229293 /* summer@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
