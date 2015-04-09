@@ -167,7 +167,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addButton" destination="OAL-bh-ecc" id="m3I-Sq-ANR"/>
+                                    <outlet property="deleteButton" destination="I7Y-h0-xtV" id="DjW-CN-o38"/>
                                     <outlet property="name" destination="jNO-kq-p75" id="n3K-nH-d1L"/>
+                                    <outlet property="pendingCell" destination="wXh-ei-KSQ" id="EAh-Ls-AzP"/>
+                                    <segue destination="qlW-t6-xEX" kind="show" identifier="pendingCellID" id="vJG-Mq-zmt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -182,7 +186,48 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wV-0N-8u0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3925" y="1401"/>
+            <point key="canvasLocation" x="3815" y="1590"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OMH-sv-ni6">
+            <objects>
+                <viewController id="qlW-t6-xEX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ud4-6m-d5D"/>
+                        <viewControllerLayoutGuide type="bottom" id="gFV-2R-9JY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MCG-nw-v8Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rsu-o3-zWc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9d6-65-Jg7">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kby-Ml-9Fk">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15o-iI-ZGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4197" y="1834"/>
         </scene>
         <!--New activity-->
         <scene sceneID="Nyw-vc-cLk">
@@ -264,6 +309,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="iZK-UT-yYs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Uyr-pi-xsP"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="sFf-Vc-hCf"/>
                     </navigationItem>
                 </tableViewController>

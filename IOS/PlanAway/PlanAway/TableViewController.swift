@@ -11,7 +11,12 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-let apps = ["Minecraft","Facebook","Twitter","Instagram"]
+    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    var pendingactivityProvider: pendingActivityProvider?
+    var approvedActivities: [pendingActivities]?
+    var waitingActivities: [pendingActivities]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +25,30 @@ let apps = ["Minecraft","Facebook","Twitter","Instagram"]
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        pendingactivityProvider = appDelegate.pendingactivityProvider
+        approvedActivities = pendingactivityProvider?.getApprovedActivities()
+        waitingActivities = pendingactivityProvider?.getUnapprovedActivities()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
+        
+        
     }
+    
+    func loadList(notification: NSNotification){
+        //load data here
+        println("viewWillReload")
+        approvedActivities = pendingactivityProvider?.getApprovedActivities()
+        waitingActivities = pendingactivityProvider?.getUnapprovedActivities()
+        self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println("viewWillAppear")
+        approvedActivities = pendingactivityProvider?.getApprovedActivities()
+        waitingActivities = pendingactivityProvider?.getUnapprovedActivities()
+        self.tableView.reloadData()
+    }
+    
     
     override func tableView( tableView : UITableView,  titleForHeaderInSection section: Int)->String
     {
@@ -49,7 +77,16 @@ let apps = ["Minecraft","Facebook","Twitter","Instagram"]
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return apps.count
+        if (section == 0){
+            return waitingActivities!.count
+        }
+        else if (section == 1)
+        {
+            return approvedActivities!.count
+        }
+        else{
+            return 0
+        }
     }
 
     
@@ -58,8 +95,17 @@ let apps = ["Minecraft","Facebook","Twitter","Instagram"]
         // Configure the cell...
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as swipeablecell
         
-        cell.name?.text = apps[indexPath.row]
-
+        
+        if(indexPath.section == 1)
+        {
+            cell.name?.text = approvedActivities?[indexPath.row].name
+            cell.addButton.hidden = true
+            cell.deleteButton.hidden = true
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        }
+        else{
+            cell.name?.text = waitingActivities?[indexPath.row].name
+        }
 
         return cell
     }
@@ -134,14 +180,28 @@ let apps = ["Minecraft","Facebook","Twitter","Instagram"]
     }
     */
 
-    /*
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        var section = self.tableView.indexPathForSelectedRow()!.section
+        if(section == 1)
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-    }
-    */
+        var selectedRow = self.tableView.indexPathForSelectedRow()!.row
+            }
+    
 
 }

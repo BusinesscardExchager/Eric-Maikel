@@ -31,6 +31,8 @@
 		F516A55C1AC4360200258CC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F516A55A1AC4360200258CC5 /* LaunchScreen.xib */; };
 		F516A5681AC4360200258CC5 /* PlanAwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5671AC4360200258CC5 /* PlanAwayTests.swift */; };
 		F516A5761AC440FD00258CC5 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516A5751AC440FD00258CC5 /* Activity.swift */; };
+		F54438601AD66E8400009A2E /* pendingActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544385F1AD66E8400009A2E /* pendingActivities.swift */; };
+		F54438621AD66FA800009A2E /* pendingActivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54438611AD66FA800009A2E /* pendingActivityProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		F516A5661AC4360200258CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F516A5671AC4360200258CC5 /* PlanAwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanAwayTests.swift; sourceTree = "<group>"; };
 		F516A5751AC440FD00258CC5 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		F544385F1AD66E8400009A2E /* pendingActivities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pendingActivities.swift; sourceTree = "<group>"; };
+		F54438611AD66FA800009A2E /* pendingActivityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pendingActivityProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				077B158F1AC4527E00B04439 /* newActivityViewController.swift */,
 				0797DC211ACD3F9F0007179D /* ActivityProvider.swift */,
 				07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */,
+				F544385F1AD66E8400009A2E /* pendingActivities.swift */,
+				F54438611AD66FA800009A2E /* pendingActivityProvider.swift */,
 			);
 			path = PlanAway;
 			sourceTree = "<group>";
@@ -286,11 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54438601AD66E8400009A2E /* pendingActivities.swift in Sources */,
 				F516A5761AC440FD00258CC5 /* Activity.swift in Sources */,
 				0797DC221ACD3F9F0007179D /* ActivityProvider.swift in Sources */,
 				077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */,
 				0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */,
 				07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */,
+				F54438621AD66FA800009A2E /* pendingActivityProvider.swift in Sources */,
 				F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */,
 				0797DC331ACD55940007179D /* ViewController.swift in Sources */,
 				07E9BDE41ACD7BA900229293 /* TableViewController.swift in Sources */,
