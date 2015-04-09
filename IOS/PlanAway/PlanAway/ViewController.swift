@@ -64,7 +64,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         let cells = self.collectionView!.visibleCells()
         let collectionHeight: CGFloat = collectionView.bounds.size.height
         for i in cells {
-            let cell: CollectionViewCell = i as! CollectionViewCell
+            let cell: CollectionViewCell = i as CollectionViewCell
             
             //Om de richting van de animatie te veranderen: draai 0 en collectionHeight om. Of -collectionHeight
             cell.transform = CGAffineTransformMakeTranslation(0, -collectionHeight)
@@ -73,7 +73,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         var indexCell = 0
         
         for a in cells {
-            let cell: CollectionViewCell = a as! CollectionViewCell
+            let cell: CollectionViewCell = a as CollectionViewCell
             UIView.animateWithDuration(0.8, delay: 0.01 * Double(indexCell), usingSpringWithDamping: 1, initialSpringVelocity: 0, options: nil, animations: {
                 cell.transform = CGAffineTransformMakeTranslation(0, 0)
                 }, completion: nil)
@@ -88,7 +88,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CollectionViewCell
         cell.textLabel.text = activityProvider!.getActivityAtIndex(index: indexPath.item).name
         var imageView = cell.imageView
         imageView.image = activityProvider?.getActivityAtIndex(index: indexPath.item).image
@@ -96,14 +96,14 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
+        var cell = collectionView.cellForItemAtIndexPath(indexPath) as CollectionViewCell
         
         var activity = activityProvider?.getActivityAtIndex(index: indexPath.item)
         self.performSegueWithIdentifier("DetailSegue", sender: activity)
     }
     
     func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-        var cell = collectionView.cellForItemAtIndexPath(indexPath) as!CollectionViewCell
+        var cell = collectionView.cellForItemAtIndexPath(indexPath) as CollectionViewCell
         
         var scale: CGFloat = 0.9
 //        var newWidth = cell.imageView.bounds.width * scale
@@ -113,7 +113,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
-        var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
+        var cell = collectionView.cellForItemAtIndexPath(indexPath) as CollectionViewCell
         var scale: CGFloat = 0.9
         cell.scaleImageView(scale, operation: "devide")
     }
@@ -123,8 +123,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DetailSegue"
         {
-            var activityDetailViewController: ActivityDetailViewController = segue.destinationViewController as!ActivityDetailViewController
-            var selectedActivity = sender as! Activity
+            var activityDetailViewController: ActivityDetailViewController = segue.destinationViewController as ActivityDetailViewController
+            var selectedActivity = sender as Activity
             activityDetailViewController.selectedActivity = selectedActivity
         }
     }
