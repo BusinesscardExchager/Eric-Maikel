@@ -123,14 +123,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+<<<<<<< Updated upstream
 		F54439121AD6AC9A00009A2E /* Embed Frameworks */ = {
+=======
+		07A373F51AD6AD4200EFF960 /* Embed Frameworks */ = {
+>>>>>>> Stashed changes
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+<<<<<<< Updated upstream
 				F54439451AD6AD6900009A2E /* SwiftyJSON.framework in Embed Frameworks */,
 				F54439321AD6AD2000009A2E /* Alamofire.framework in Embed Frameworks */,
+=======
+>>>>>>> Stashed changes
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +321,11 @@
 				F516A5481AC4360200258CC5 /* Sources */,
 				F516A5491AC4360200258CC5 /* Frameworks */,
 				F516A54A1AC4360200258CC5 /* Resources */,
+<<<<<<< Updated upstream
 				F54439121AD6AC9A00009A2E /* Embed Frameworks */,
+=======
+				07A373F51AD6AD4200EFF960 /* Embed Frameworks */,
+>>>>>>> Stashed changes
 			);
 			buildRules = (
 			);
