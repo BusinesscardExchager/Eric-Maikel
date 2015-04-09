@@ -11,7 +11,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var pendingactivityProvider: pendingActivityProvider?
     var approvedActivities: [pendingActivities]?
     var waitingActivities: [pendingActivities]?
@@ -93,7 +93,7 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         // Configure the cell...
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as swipeablecell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! swipeablecell
         
         
         if(indexPath.section == 1)

@@ -22,7 +22,7 @@ class swipeablecell: UITableViewCell {
         alert.message = "accept activity" + name.text!
         alert.addButtonWithTitle("Ok")
         alert.show()
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var pendingactivityProvider = appDelegate.pendingactivityProvider as pendingActivityProvider
         var unapproved = pendingactivityProvider.getUnapprovedActivities()
         for var index:Int = 0 ; index < unapproved.count ;index += 1{
