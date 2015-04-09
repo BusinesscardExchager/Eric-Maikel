@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource  {
     
@@ -17,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         println("View wordt geladen")
-        
+        self.loadJsonData()
         //Get screen sizes
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
@@ -129,5 +131,39 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         }
     }
     
+    func loadJsonData()
+    {
+        var jSONrequest = Alamofire.request(.GET, "http://athena.fhict.nl/users/i254244/service.php")
+        jSONrequest.validate()
+        jSONrequest.responseJSON(completionHandler: {
+            (urlREQ, urlResp, responsestring, error) -> Void in
+            if error == nil
+            {
+                //println(responsestring)
+                self.parseJsonData(responsestring)
+                //self.tableView.reloadData()
+            }
+            else
+            {
+                //Something went wrong
+                println(error)
+            }
+        })
+    }
+    
+    func parseJsonData(jsonData:AnyObject?)
+    {
+        //Create empry array for Pirates
+        var jsonConverted = JSON(jsonData!)
+        println(jsonConverted)
+        
+        for (index: String, subJson: JSON) in jsonConverted{
+            
+            let newActiviteit = Activiteit(Bedrijf: subJson["bedrijf"].string!, Omschrijving: subJson["omschrijving"].string!, Naam: subJson["naam"].string!, Afbeelding: subJson["afbeelding"].string!)
+            
+            newActiviteit.toString()
+        }
+    }
+
 }
 
