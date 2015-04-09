@@ -45,7 +45,7 @@
         
         
         override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
             
             // Configure the cell...
             var currentRow = indexPath.row
@@ -99,32 +99,31 @@
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             var selectedRow = self.tableView.indexPathForSelectedRow()
             var selectedPirate = self.pirates[selectedRow!.row]
-            var controller = segue.destinationViewController as DetailsViewController
+            var controller = segue.destinationViewController as! DetailsViewController
             controller.selectedPirate = selectedPirate
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+            // Get the new view controller using [segue destinationViewController].
+            // Pass the selected object to the new view controller.
         }
         
         
         func loadJsonData()
         {
-            var jSONrequest = Alamofire.request(.GET, "http://athena.fhict.nl/users/i886625/pirates.json")
+            var jSONrequest = Alamofire.request(.GET, "http://athena.fhict.nl/users/i254244/service.php")
             jSONrequest.validate()
-            jSONrequest.responseJSON
+            jSONrequest.responseJSON({
+                (urlREQ, urlResp, responsestring, error) -> Void in
+                if error == nil
                 {
-                    (urlREQ, urlResp, responsestring, error) -> Void in
-                    if error == nil
-                    {
-                        println(responsestring)
-                        self.parseJsonData(responsestring)
-                        self.tableView.reloadData()
-                    }
-                    else
-                    {
-                        //Something went wrong
-                        println(error)
-                    }
-            }
+                    //println(responsestring)
+                    self.parseJsonData(responsestring)
+                    //self.tableView.reloadData()
+                }
+                else
+                {
+                    //Something went wrong
+                    println(error)
+                }
+            })
         }
         
         func parseJsonData(jsonData:AnyObject?)
@@ -134,8 +133,12 @@
             println(jsonConverted)
             
             for (index: String, subJson: JSON) in jsonConverted{
-                let newPirate = Pirate(Name: subJson["name"].string!, Life: subJson["life"].string!, CountryOfOrigin: subJson["country_of_origin"].string!, ActiveYears: subJson["years_active"].string!, Comments: subJson["comments"].string!)
-                pirates.append(newPirate)
+//                let newPirate = Pirate(Name: subJson["name"].string!, Life: subJson["life"].string!, CountryOfOrigin: subJson["country_of_origin"].string!, ActiveYears: subJson["years_active"].string!, Comments: subJson["comments"].string!)
+//                pirates.append(newPirate)
+                
+                let newActiviteit = Activiteit(Bedrijf: subJson["bedrijf"].string!, Omschrijving: subJson["omschrijving"].string!, Naam: subJson["naam"].string!, Afbeelding: subJson["afbeelding"].string!)
+                
+                newActiviteit.toString()
             }
         }
         

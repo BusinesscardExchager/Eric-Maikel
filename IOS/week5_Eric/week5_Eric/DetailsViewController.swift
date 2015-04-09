@@ -22,7 +22,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.lblName.text = selectedPirate?.name?
+        self.lblName.text = selectedPirate?.name
         self.lblLife.text = selectedPirate?.life
         self.lblActiveYears.text = selectedPirate?.activeYears
         self.lblCountryOfBirth.text = selectedPirate?.countryOfOrigin

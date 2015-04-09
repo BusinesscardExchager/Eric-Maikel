@@ -19,6 +19,7 @@
 		07CC0A441ABAD76D0076AC7B /* week5_EricTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC0A431ABAD76D0076AC7B /* week5_EricTests.swift */; };
 		07CC0A501ABAE03D0076AC7B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC0A4F1ABAE03D0076AC7B /* DetailsViewController.swift */; };
 		07CC0A541ABAE26F0076AC7B /* Pirate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC0A531ABAE26F0076AC7B /* Pirate.swift */; };
+		07CD557B1AD6A063000C3931 /* Activiteit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD557A1AD6A063000C3931 /* Activiteit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		07CC0A431ABAD76D0076AC7B /* week5_EricTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week5_EricTests.swift; sourceTree = "<group>"; };
 		07CC0A4F1ABAE03D0076AC7B /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		07CC0A531ABAE26F0076AC7B /* Pirate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pirate.swift; sourceTree = "<group>"; };
+		07CD557A1AD6A063000C3931 /* Activiteit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activiteit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				070770BD1ABAE99F0075CF2B /* TableViewController.swift */,
+				07CD557A1AD6A063000C3931 /* Activiteit.swift */,
 				07CC0A2D1ABAD76D0076AC7B /* AppDelegate.swift */,
 				07CC0A311ABAD76D0076AC7B /* Main.storyboard */,
 				07CC0A341ABAD76D0076AC7B /* Images.xcassets */,
@@ -409,6 +412,7 @@
 			files = (
 				07CC0A541ABAE26F0076AC7B /* Pirate.swift in Sources */,
 				07CC0A2E1ABAD76D0076AC7B /* AppDelegate.swift in Sources */,
+				07CD557B1AD6A063000C3931 /* Activiteit.swift in Sources */,
 				070770BE1ABAE99F0075CF2B /* TableViewController.swift in Sources */,
 				07CC0A501ABAE03D0076AC7B /* DetailsViewController.swift in Sources */,
 			);
