@@ -281,13 +281,13 @@
         <!--Mogelijke Data-->
         <scene sceneID="rhS-pn-qhV">
             <objects>
-                <tableViewController id="xaI-ac-o8J" sceneMemberID="viewController">
+                <tableViewController id="xaI-ac-o8J" customClass="DataTableViewController" customModule="PlanAway" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uJR-gF-Xzj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="hyr-30-OWq" style="IBUITableViewCellStyleDefault" id="AJE-5g-HcB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="hyr-30-OWq" style="IBUITableViewCellStyleDefault" id="AJE-5g-HcB">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJE-5g-HcB" id="xKW-Rb-bTN">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -414,37 +414,45 @@
             </objects>
             <point key="canvasLocation" x="4968" y="1266"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Contacten Table View Controller-->
         <scene sceneID="VIS-in-1yX">
             <objects>
-                <tableViewController id="V0H-hT-cKw" sceneMemberID="viewController">
+                <tableViewController id="V0H-hT-cKw" customClass="ContactenTableViewController" customModule="PlanAway" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="t6q-Xh-bg0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MwW-3A-nCY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="MwW-3A-nCY" customClass="ContactTableViewCell" customModule="PlanAway" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MwW-3A-nCY" id="riI-eR-pwN">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7KK-PW-IcI">
                                             <rect key="frame" x="263" y="4" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchAction:" destination="MwW-3A-nCY" eventType="valueChanged" id="Hdm-ml-jcA"/>
+                                            </connections>
                                         </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilv-oZ-1ZV">
-                                            <rect key="frame" x="8" y="22" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="email" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilv-oZ-1ZV">
+                                            <rect key="frame" x="8" y="23" width="156" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64v-nT-ONZ">
-                                            <rect key="frame" x="8" y="4" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="name" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64v-nT-ONZ">
+                                            <rect key="frame" x="8" y="5" width="171" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="email" destination="ilv-oZ-1ZV" id="f8I-sk-EHV"/>
+                                    <outlet property="name" destination="64v-nT-ONZ" id="M42-2v-aVj"/>
+                                    <outlet property="switch" destination="7KK-PW-IcI" id="VUi-s3-yHq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -459,7 +467,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34W-v5-ina" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6088" y="1266"/>
+            <point key="canvasLocation" x="6088" y="1264"/>
         </scene>
         <!--Activities-->
         <scene sceneID="sIb-b1-Ohm">
