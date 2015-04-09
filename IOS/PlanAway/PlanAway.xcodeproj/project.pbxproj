@@ -36,10 +36,6 @@
 		F54438681AD69BA400009A2E /* ContactenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54438671AD69BA400009A2E /* ContactenTableViewController.swift */; };
 		F544386A1AD69D6E00009A2E /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54438691AD69D6E00009A2E /* ContactTableViewCell.swift */; };
 		F544386C1AD69ECF00009A2E /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544386B1AD69ECF00009A2E /* DataTableViewController.swift */; };
-		F54439311AD6AD2000009A2E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F544392A1AD6AD1400009A2E /* Alamofire.framework */; };
-		F54439321AD6AD2000009A2E /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F544392A1AD6AD1400009A2E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F54439441AD6AD6900009A2E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F544393D1AD6AD6000009A2E /* SwiftyJSON.framework */; };
-		F54439451AD6AD6900009A2E /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F544393D1AD6AD6000009A2E /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,13 +74,6 @@
 			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
 			remoteInfo = "Alamofire OSX Tests";
 		};
-		F54439331AD6AD2000009A2E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F54439221AD6AD1400009A2E /* Alamofire copy.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
 		F544393C1AD6AD6000009A2E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F54439351AD6AD6000009A2E /* SwiftyJSON copy.xcodeproj */;
@@ -113,29 +102,7 @@
 			remoteGlobalIDString = 9C7DFC651A9102BD005AA3F7;
 			remoteInfo = "SwiftyJSON OSX Tests";
 		};
-		F54439461AD6AD6900009A2E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F54439351AD6AD6000009A2E /* SwiftyJSON copy.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
-			remoteInfo = "SwiftyJSON iOS";
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F54439121AD6AC9A00009A2E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F54439451AD6AD6900009A2E /* SwiftyJSON.framework in Embed Frameworks */,
-				F54439321AD6AD2000009A2E /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		074BEB181ACF48DA00EB0A87 /* bios.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bios.jpg; sourceTree = "<group>"; };
@@ -179,8 +146,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54439441AD6AD6900009A2E /* SwiftyJSON.framework in Frameworks */,
-				F54439311AD6AD2000009A2E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,13 +279,10 @@
 				F516A5481AC4360200258CC5 /* Sources */,
 				F516A5491AC4360200258CC5 /* Frameworks */,
 				F516A54A1AC4360200258CC5 /* Resources */,
-				F54439121AD6AC9A00009A2E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F54439341AD6AD2000009A2E /* PBXTargetDependency */,
-				F54439471AD6AD6900009A2E /* PBXTargetDependency */,
 			);
 			name = PlanAway;
 			productName = PlanAway;
@@ -522,16 +484,6 @@
 			target = F516A54B1AC4360200258CC5 /* PlanAway */;
 			targetProxy = F516A5621AC4360200258CC5 /* PBXContainerItemProxy */;
 		};
-		F54439341AD6AD2000009A2E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = F54439331AD6AD2000009A2E /* PBXContainerItemProxy */;
-		};
-		F54439471AD6AD6900009A2E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftyJSON iOS";
-			targetProxy = F54439461AD6AD6900009A2E /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -636,7 +588,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PlanAway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -648,7 +599,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PlanAway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
