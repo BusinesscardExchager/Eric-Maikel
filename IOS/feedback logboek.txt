@@ -44,3 +44,14 @@ Eerst datum geven, dan activiteiten voorstellen is goed
 
 Idee voor concept
 suggesties op basis van leeftijdscategorie?
+
+Week 6:
+Goed bezig geweest met de app. 
+Goed nadenken hoe alles er uit komt te zien (GUI van de app).
+TIP: kijk eens naar collectionview.
+
+Week 7:
+App ziet er goed uit, vooral de collection view.
+Balans tussen design en techniek is goed. 
+We hebben nog geen (relevant) idee wat we qua hardware gaan doen, gevraagd of Michael nog wat wist, maar dit was ook niet het geval.
+We zaten zelf te denken aan gps voor relevante suggesties.

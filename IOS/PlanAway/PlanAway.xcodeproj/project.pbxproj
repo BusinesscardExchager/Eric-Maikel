@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0714DEA61AD6BD77009E24AF /* Activiteit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0714DEA51AD6BD77009E24AF /* Activiteit.swift */; };
 		074BEB1A1ACF48DA00EB0A87 /* bios.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB181ACF48DA00EB0A87 /* bios.jpg */; };
 		074BEB1E1ACF500900EB0A87 /* defqon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB1C1ACF500900EB0A87 /* defqon.jpg */; };
 		074BEB1F1ACF500900EB0A87 /* qlimax.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB1D1ACF500900EB0A87 /* qlimax.jpg */; };
@@ -122,7 +121,6 @@
 /* Begin PBXFileReference section */
 		0714DE721AD6B967009E24AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../../Downloads/Alamofire-xcode-6.3/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		0714DE941AD6BCBA009E24AF /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../../../../Downloads/SwiftyJSON-xcode6.3/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
-		0714DEA51AD6BD77009E24AF /* Activiteit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activiteit.swift; sourceTree = "<group>"; };
 		074BEB181ACF48DA00EB0A87 /* bios.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bios.jpg; sourceTree = "<group>"; };
 		074BEB1C1ACF500900EB0A87 /* defqon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defqon.jpg; sourceTree = "<group>"; };
 		074BEB1D1ACF500900EB0A87 /* qlimax.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qlimax.jpg; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				0797DC231ACD45530007179D /* Images */,
 				F516A5511AC4360200258CC5 /* AppDelegate.swift */,
 				0797DC321ACD55940007179D /* ViewController.swift */,
-				0714DEA51AD6BD77009E24AF /* Activiteit.swift */,
 				F516A5551AC4360200258CC5 /* Main.storyboard */,
 				F516A5581AC4360200258CC5 /* Images.xcassets */,
 				F516A55A1AC4360200258CC5 /* LaunchScreen.xib */,
@@ -481,7 +478,6 @@
 				F516A5521AC4360200258CC5 /* AppDelegate.swift in Sources */,
 				0797DC331ACD55940007179D /* ViewController.swift in Sources */,
 				07E9BDE41ACD7BA900229293 /* TableViewController.swift in Sources */,
-				0714DEA61AD6BD77009E24AF /* Activiteit.swift in Sources */,
 				07E9BDE51ACD7BA900229293 /* swipeablecell.swift in Sources */,
 				F54438681AD69BA400009A2E /* ContactenTableViewController.swift in Sources */,
 			);
