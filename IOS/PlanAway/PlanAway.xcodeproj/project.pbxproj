@@ -14,14 +14,26 @@
 		074BEB231ACF541600EB0A87 /* burgerszoo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB221ACF541600EB0A87 /* burgerszoo.jpg */; };
 		074BEB251ACF54D400EB0A87 /* efteling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB241ACF54D400EB0A87 /* efteling.jpg */; };
 		077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B158F1AC4527E00B04439 /* newActivityViewController.swift */; };
+		07814D7F1ADC508300C77C83 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE7A1AD6B967009E24AF /* Alamofire.framework */; };
+		07814D801ADC508300C77C83 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE7A1AD6B967009E24AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07814D851ADC51B500C77C83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE9C1AD6BCBA009E24AF /* SwiftyJSON.framework */; };
+		07814D861ADC51B500C77C83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE9C1AD6BCBA009E24AF /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07814D8A1ADC537400C77C83 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07814D891ADC537400C77C83 /* FriendsViewController.swift */; };
 		0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */; };
-		0797DC221ACD3F9F0007179D /* ActivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC211ACD3F9F0007179D /* ActivityProvider.swift */; };
 		0797DC2B1ACD45670007179D /* decibel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC251ACD45670007179D /* decibel.jpg */; };
 		0797DC2F1ACD45670007179D /* sealife.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC291ACD45670007179D /* sealife.jpg */; };
 		0797DC331ACD55940007179D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC321ACD55940007179D /* ViewController.swift */; };
+		07E12E081ADC38150038E369 /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E071ADC38150038E369 /* cancel@2x.png */; };
+		07E12E0A1ADC38460038E369 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E091ADC38460038E369 /* checkmark@2x.png */; };
+		07E12E101ADC3B780038E369 /* edwin.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E0B1ADC3B780038E369 /* edwin.png */; };
+		07E12E111ADC3B780038E369 /* lisa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E0C1ADC3B780038E369 /* lisa.jpg */; };
+		07E12E121ADC3B780038E369 /* meny.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E0D1ADC3B780038E369 /* meny.jpg */; };
+		07E12E131ADC3B780038E369 /* rob.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E0E1ADC3B780038E369 /* rob.jpg */; };
+		07E12E141ADC3B780038E369 /* sabien.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E0F1ADC3B780038E369 /* sabien.png */; };
+		07E12E161ADC43B80038E369 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E12E151ADC43B80038E369 /* Person.swift */; };
+		07E12E181ADC48520038E369 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E12E171ADC48520038E369 /* more.png */; };
 		07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */; };
 		07E9BDDD1ACD765B00229293 /* summer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDDC1ACD765B00229293 /* summer@2x.png */; };
-		07E9BDDF1ACD77EA00229293 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */; };
 		07E9BDE11ACD785D00229293 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E9BDE01ACD785D00229293 /* add@2x.png */; };
 		07E9BDE41ACD7BA900229293 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9BDE21ACD7BA900229293 /* TableViewController.swift */; };
 		07E9BDE51ACD7BA900229293 /* swipeablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E9BDE31ACD7BA900229293 /* swipeablecell.swift */; };
@@ -109,6 +121,20 @@
 			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
 			remoteInfo = "SwiftyJSON iOS";
 		};
+		07814D811ADC508300C77C83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0714DE721AD6B967009E24AF /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		07814D871ADC51B500C77C83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0714DE941AD6BCBA009E24AF /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
+			remoteInfo = "SwiftyJSON iOS";
+		};
 		F516A5621AC4360200258CC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F516A5441AC4360200258CC5 /* Project object */;
@@ -117,6 +143,30 @@
 			remoteInfo = PlanAway;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07814D831ADC508300C77C83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				07814D861ADC51B500C77C83 /* SwiftyJSON.framework in Embed Frameworks */,
+				07814D801ADC508300C77C83 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07814D841ADC512600C77C83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0714DE721AD6B967009E24AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../../Downloads/Alamofire-xcode-6.3/Alamofire.xcodeproj"; sourceTree = "<group>"; };
@@ -128,14 +178,22 @@
 		074BEB221ACF541600EB0A87 /* burgerszoo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burgerszoo.jpg; sourceTree = "<group>"; };
 		074BEB241ACF54D400EB0A87 /* efteling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = efteling.jpg; sourceTree = "<group>"; };
 		077B158F1AC4527E00B04439 /* newActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newActivityViewController.swift; sourceTree = "<group>"; };
+		07814D891ADC537400C77C83 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		0797DC211ACD3F9F0007179D /* ActivityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityProvider.swift; sourceTree = "<group>"; };
 		0797DC251ACD45670007179D /* decibel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = decibel.jpg; sourceTree = "<group>"; };
 		0797DC291ACD45670007179D /* sealife.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sealife.jpg; sourceTree = "<group>"; };
 		0797DC321ACD55940007179D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07E12E071ADC38150038E369 /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		07E12E091ADC38460038E369 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
+		07E12E0B1ADC3B780038E369 /* edwin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edwin.png; sourceTree = "<group>"; };
+		07E12E0C1ADC3B780038E369 /* lisa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lisa.jpg; sourceTree = "<group>"; };
+		07E12E0D1ADC3B780038E369 /* meny.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meny.jpg; sourceTree = "<group>"; };
+		07E12E0E1ADC3B780038E369 /* rob.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rob.jpg; sourceTree = "<group>"; };
+		07E12E0F1ADC3B780038E369 /* sabien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sabien.png; sourceTree = "<group>"; };
+		07E12E151ADC43B80038E369 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		07E12E171ADC48520038E369 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		07E9BDDC1ACD765B00229293 /* summer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "summer@2x.png"; sourceTree = "<group>"; };
-		07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		07E9BDE01ACD785D00229293 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 		07E9BDE21ACD7BA900229293 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		07E9BDE31ACD7BA900229293 /* swipeablecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swipeablecell.swift; sourceTree = "<group>"; };
@@ -160,6 +218,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07814D851ADC51B500C77C83 /* SwiftyJSON.framework in Frameworks */,
+				07814D7F1ADC508300C77C83 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,15 +259,22 @@
 			isa = PBXGroup;
 			children = (
 				074BEB181ACF48DA00EB0A87 /* bios.jpg */,
-				07E9BDDE1ACD77EA00229293 /* checkmark@2x.png */,
+				07E12E071ADC38150038E369 /* cancel@2x.png */,
+				07E12E091ADC38460038E369 /* checkmark@2x.png */,
 				07E9BDDC1ACD765B00229293 /* summer@2x.png */,
 				074BEB201ACF51EF00EB0A87 /* food.jpg */,
 				074BEB221ACF541600EB0A87 /* burgerszoo.jpg */,
+				07E12E171ADC48520038E369 /* more.png */,
 				074BEB241ACF54D400EB0A87 /* efteling.jpg */,
 				07E9BDE01ACD785D00229293 /* add@2x.png */,
 				074BEB1C1ACF500900EB0A87 /* defqon.jpg */,
 				074BEB1D1ACF500900EB0A87 /* qlimax.jpg */,
 				0797DC251ACD45670007179D /* decibel.jpg */,
+				07E12E0B1ADC3B780038E369 /* edwin.png */,
+				07E12E0C1ADC3B780038E369 /* lisa.jpg */,
+				07E12E0D1ADC3B780038E369 /* meny.jpg */,
+				07E12E0E1ADC3B780038E369 /* rob.jpg */,
+				07E12E0F1ADC3B780038E369 /* sabien.png */,
 				0797DC291ACD45670007179D /* sealife.jpg */,
 			);
 			name = Images;
@@ -248,13 +315,14 @@
 				0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */,
 				F516A5751AC440FD00258CC5 /* Activity.swift */,
 				077B158F1AC4527E00B04439 /* newActivityViewController.swift */,
-				0797DC211ACD3F9F0007179D /* ActivityProvider.swift */,
 				07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */,
 				F544385F1AD66E8400009A2E /* pendingActivities.swift */,
 				F54438611AD66FA800009A2E /* pendingActivityProvider.swift */,
 				F54438671AD69BA400009A2E /* ContactenTableViewController.swift */,
 				F54438691AD69D6E00009A2E /* ContactTableViewCell.swift */,
 				F544386B1AD69ECF00009A2E /* DataTableViewController.swift */,
+				07E12E151ADC43B80038E369 /* Person.swift */,
+				07814D891ADC537400C77C83 /* FriendsViewController.swift */,
 			);
 			path = PlanAway;
 			sourceTree = "<group>";
@@ -293,12 +361,16 @@
 				F516A5481AC4360200258CC5 /* Sources */,
 				F516A5491AC4360200258CC5 /* Frameworks */,
 				F516A54A1AC4360200258CC5 /* Resources */,
+				07814D831ADC508300C77C83 /* Embed Frameworks */,
+				07814D841ADC512600C77C83 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				0714DEA41AD6BCC4009E24AF /* PBXTargetDependency */,
 				0714DE841AD6BB35009E24AF /* PBXTargetDependency */,
+				07814D821ADC508300C77C83 /* PBXTargetDependency */,
+				07814D881ADC51B500C77C83 /* PBXTargetDependency */,
 			);
 			name = PlanAway;
 			productName = PlanAway;
@@ -438,15 +510,22 @@
 				07E9BDE11ACD785D00229293 /* add@2x.png in Resources */,
 				0797DC2F1ACD45670007179D /* sealife.jpg in Resources */,
 				074BEB1A1ACF48DA00EB0A87 /* bios.jpg in Resources */,
-				07E9BDDF1ACD77EA00229293 /* checkmark@2x.png in Resources */,
+				07E12E101ADC3B780038E369 /* edwin.png in Resources */,
+				07E12E121ADC3B780038E369 /* meny.jpg in Resources */,
+				07E12E181ADC48520038E369 /* more.png in Resources */,
+				07E12E111ADC3B780038E369 /* lisa.jpg in Resources */,
 				074BEB1F1ACF500900EB0A87 /* qlimax.jpg in Resources */,
+				07E12E0A1ADC38460038E369 /* checkmark@2x.png in Resources */,
 				F516A5571AC4360200258CC5 /* Main.storyboard in Resources */,
 				F516A55C1AC4360200258CC5 /* LaunchScreen.xib in Resources */,
+				07E12E081ADC38150038E369 /* cancel@2x.png in Resources */,
 				F516A5591AC4360200258CC5 /* Images.xcassets in Resources */,
 				074BEB231ACF541600EB0A87 /* burgerszoo.jpg in Resources */,
 				0797DC2B1ACD45670007179D /* decibel.jpg in Resources */,
 				074BEB251ACF54D400EB0A87 /* efteling.jpg in Resources */,
+				07E12E141ADC3B780038E369 /* sabien.png in Resources */,
 				074BEB211ACF51EF00EB0A87 /* food.jpg in Resources */,
+				07E12E131ADC3B780038E369 /* rob.jpg in Resources */,
 				074BEB1E1ACF500900EB0A87 /* defqon.jpg in Resources */,
 				07E9BDDD1ACD765B00229293 /* summer@2x.png in Resources */,
 			);
@@ -467,10 +546,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F544386A1AD69D6E00009A2E /* ContactTableViewCell.swift in Sources */,
+				07814D8A1ADC537400C77C83 /* FriendsViewController.swift in Sources */,
 				F54438601AD66E8400009A2E /* pendingActivities.swift in Sources */,
 				F516A5761AC440FD00258CC5 /* Activity.swift in Sources */,
-				0797DC221ACD3F9F0007179D /* ActivityProvider.swift in Sources */,
 				077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */,
+				07E12E161ADC43B80038E369 /* Person.swift in Sources */,
 				F544386C1AD69ECF00009A2E /* DataTableViewController.swift in Sources */,
 				0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */,
 				07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */,
@@ -503,6 +583,16 @@
 			isa = PBXTargetDependency;
 			name = "SwiftyJSON iOS";
 			targetProxy = 0714DEA31AD6BCC4009E24AF /* PBXContainerItemProxy */;
+		};
+		07814D821ADC508300C77C83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 07814D811ADC508300C77C83 /* PBXContainerItemProxy */;
+		};
+		07814D881ADC51B500C77C83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON iOS";
+			targetProxy = 07814D871ADC51B500C77C83 /* PBXContainerItemProxy */;
 		};
 		F516A5631AC4360200258CC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -565,7 +655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -601,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

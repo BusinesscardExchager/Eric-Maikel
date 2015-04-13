@@ -12,21 +12,28 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource  {
     
-    var activityProvider: ActivityProvider?
+    var activities = [Activity]()
+    var isFinished: Bool = false
+    
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         println("View wordt geladen")
-        self.loadJsonData()
+        
+        //Create test data
+        var act1 = Activity(Name: "Bioscoop", Company: "Pathé", Detail: "Pathé behoort tot één van de beste bioscopen van Eindhoven.", Image: UIImage(named: "bios.jpg")!, Date: "21-03-2015", Place: "Eindhoven", SiteURL: "https://www.pathe.nl/bioscoop/eindhoven", TrailerURL: "https://www.youtube.com/watch?v=kl8F-8tR8to", AftermovieURL: "")
+        var act2 = Activity(Name: "Sealife", Company: "Sea Life", Detail: "Ontdek de verrassende onderwaterwereld in SEA LIFE Scheveningen en ontmoet onze fantastische dieren: roggen, haaien, zeesterren, piranha’s en nog veel meer.", Image: UIImage(named: "sealife.jpg")!, Date: "Altijd", Place: "Scheveningen", SiteURL: "https://www.visitsealife.com/scheveningen/", TrailerURL: "", AftermovieURL: "")
+        var act3 = Activity(Name: "Burgers Zoo", Company: "Burgers Zoo", Detail: "Duik in 8 miljoen liter water, ga op avontuur in de overdekte jungle en bewonder de gieren in onze woestijn! Beleef 45 hectare dierenpark in Burgers' Zoo!", Image: UIImage(named: "burgerszoo.jpg")!, Date: "Altijd", Place: "Arnhem", SiteURL: "http://www.burgerszoo.nl", TrailerURL: "", AftermovieURL: "")
+        activities += [act1, act2, act3]
+        
         //Get screen sizes
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
         let screenHeigt = screenSize.height
         
         //Create itemProvider
-        activityProvider = ActivityProvider()
         
         //Set layout etc
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -57,6 +64,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //self.loadJsonData()
         println("View will appear")
         animateCollectionView()
     }
@@ -86,21 +94,23 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     // MARK: Collectionview
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return activityProvider!.getActivities().count
+        //        return activityProvider!.getActivities().count
+        return activities.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollectionViewCell
-        cell.textLabel.text = activityProvider!.getActivityAtIndex(index: indexPath.item).name
+        var activity = activities[indexPath.item] as Activity
+        cell.textLabel!.text = activity.name
         var imageView = cell.imageView
-        imageView.image = activityProvider?.getActivityAtIndex(index: indexPath.item).image
+        imageView!.image = activity.image
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
         
-        var activity = activityProvider?.getActivityAtIndex(index: indexPath.item)
+        var activity = activities[indexPath.item] as Activity
         self.performSegueWithIdentifier("DetailSegue", sender: activity)
     }
     
@@ -108,9 +118,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
         
         var scale: CGFloat = 0.9
-//        var newWidth = cell.imageView.bounds.width * scale
-//        var newHeight = cell.imageView.bounds.height * scale
-//        cell.imageView.frame.size = CGSize(width: newWidth, height: newHeight)
+        //        var newWidth = cell.imageView.bounds.width * scale
+        //        var newHeight = cell.imageView.bounds.height * scale
+        //        cell.imageView.frame.size = CGSize(width: newWidth, height: newHeight)
         cell.scaleImageView(scale, operation: "multiply")
     }
     
@@ -139,9 +149,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             (urlREQ, urlResp, responsestring, error) -> Void in
             if error == nil
             {
-                //println(responsestring)
                 self.parseJsonData(responsestring)
-                //self.tableView.reloadData()
             }
             else
             {
@@ -155,15 +163,19 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     {
         //Create empry array for Pirates
         var jsonConverted = JSON(jsonData!)
-        println(jsonConverted)
-        
+        activities.removeAll(keepCapacity: false)
         for (index: String, subJson: JSON) in jsonConverted{
             
-            let newActiviteit = Activiteit(Bedrijf: subJson["bedrijf"].string!, Omschrijving: subJson["omschrijving"].string!, Naam: subJson["naam"].string!, Afbeelding: subJson["afbeelding"].string!)
+            var imageString = subJson["afbeelding"].string!
+            let decodedData = NSData(base64EncodedData: imageString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+            var decodedimage = UIImage(data: decodedData!)
+            let newActiviteit = Activity(Name: subJson["naam"].string!, Company: subJson["bedrijf"].string!, Detail: subJson["omschrijving"].string!, Image: decodedimage!, Date: subJson["datum"].string!, Place: subJson["plaats"].string!, SiteURL: subJson["sitelink"].string!, TrailerURL: subJson["trailerlink"].string!, AftermovieURL: subJson["aftermovielink"].string!);
             
-            newActiviteit.toString()
+            activities.append(newActiviteit)
         }
+        self.collectionView.reloadData()
+        self.animateCollectionView()
     }
-
+    
 }
 

@@ -15,10 +15,20 @@ class TableViewController: UITableViewController {
     var pendingactivityProvider: pendingActivityProvider?
     var approvedActivities: [pendingActivities]?
     var waitingActivities: [pendingActivities]?
-    
+    var people = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Peoples vullen met testdata
+        var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!)
+        var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!)
+        var person3 = Person(Name: "More..", Image: UIImage(named: "more")!)
+        
+        var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!)
+        var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!)
+        var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!)
+        people += [person1, person2, person3, person4, person5, person6]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -54,9 +64,9 @@ class TableViewController: UITableViewController {
     {
         switch(section)
         {
-        case 1:return "Approved"
+        case 1:return "Accepted Requests"
         case 2:return ""
-        default :return "Waiting for approving"
+        default :return "Do you want to go?"
         }
         
     }
@@ -201,7 +211,12 @@ class TableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         var selectedRow = self.tableView.indexPathForSelectedRow()!.row
-            }
-    
+        
+        var navController: UINavigationController = segue.destinationViewController as! UINavigationController
+        
+        var friendsViewController: FriendsViewController = navController.topViewController as! FriendsViewController
+        friendsViewController.people = people
+        friendsViewController.isWithNavController = true
+    }
 
 }

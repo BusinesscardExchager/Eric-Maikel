@@ -26,12 +26,12 @@ class Activity: NSObject {
         self.image = UIImage(named: image)!
     }
     
-    init(Name name:String, Company company:String, Detail detail:String, Image image:String, Date date:String, Place place:String, SiteURL sitelink:String, TrailerURL trailerlink:String, AftermovieURL aftermovie:String)
+    init(Name name:String, Company company:String, Detail detail:String, Image image:UIImage, Date date:String, Place place:String, SiteURL sitelink:String, TrailerURL trailerlink:String, AftermovieURL aftermovie:String)
     {
         self.name = name
         self.company = company
         self.detail = detail
-        self.image = UIImage(named: image)!
+        self.image = image
         self.date = date
         self.place = place
         self.sitelink = sitelink
