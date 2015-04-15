@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070BD8BE1ADEF15400922877 /* movie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BD8BD1ADEF15400922877 /* movie@2x.png */; };
+		070BD8C81ADEF8DB00922877 /* trailer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BD8C71ADEF8DB00922877 /* trailer@2x.png */; };
+		070BD8CE1ADEFBAC00922877 /* site@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BD8CD1ADEFBAC00922877 /* site@2x.png */; };
+		070BD8D21ADEFE7800922877 /* aftermovie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BD8D11ADEFE7800922877 /* aftermovie@2x.png */; };
 		074BEB1A1ACF48DA00EB0A87 /* bios.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB181ACF48DA00EB0A87 /* bios.jpg */; };
 		074BEB1E1ACF500900EB0A87 /* defqon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB1C1ACF500900EB0A87 /* defqon.jpg */; };
 		074BEB1F1ACF500900EB0A87 /* qlimax.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB1D1ACF500900EB0A87 /* qlimax.jpg */; };
@@ -169,6 +173,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		070BD8BD1ADEF15400922877 /* movie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movie@2x.png"; sourceTree = "<group>"; };
+		070BD8C71ADEF8DB00922877 /* trailer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trailer@2x.png"; sourceTree = "<group>"; };
+		070BD8CD1ADEFBAC00922877 /* site@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "site@2x.png"; sourceTree = "<group>"; };
+		070BD8D11ADEFE7800922877 /* aftermovie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aftermovie@2x.png"; sourceTree = "<group>"; };
 		0714DE721AD6B967009E24AF /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../../Downloads/Alamofire-xcode-6.3/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		0714DE941AD6BCBA009E24AF /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "../../../../Downloads/SwiftyJSON-xcode6.3/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		074BEB181ACF48DA00EB0A87 /* bios.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bios.jpg; sourceTree = "<group>"; };
@@ -258,11 +266,15 @@
 		0797DC231ACD45530007179D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				070BD8BD1ADEF15400922877 /* movie@2x.png */,
 				074BEB181ACF48DA00EB0A87 /* bios.jpg */,
 				07E12E071ADC38150038E369 /* cancel@2x.png */,
 				07E12E091ADC38460038E369 /* checkmark@2x.png */,
+				070BD8C71ADEF8DB00922877 /* trailer@2x.png */,
 				07E9BDDC1ACD765B00229293 /* summer@2x.png */,
+				070BD8D11ADEFE7800922877 /* aftermovie@2x.png */,
 				074BEB201ACF51EF00EB0A87 /* food.jpg */,
+				070BD8CD1ADEFBAC00922877 /* site@2x.png */,
 				074BEB221ACF541600EB0A87 /* burgerszoo.jpg */,
 				07E12E171ADC48520038E369 /* more.png */,
 				074BEB241ACF54D400EB0A87 /* efteling.jpg */,
@@ -523,9 +535,13 @@
 				074BEB231ACF541600EB0A87 /* burgerszoo.jpg in Resources */,
 				0797DC2B1ACD45670007179D /* decibel.jpg in Resources */,
 				074BEB251ACF54D400EB0A87 /* efteling.jpg in Resources */,
+				070BD8D21ADEFE7800922877 /* aftermovie@2x.png in Resources */,
+				070BD8C81ADEF8DB00922877 /* trailer@2x.png in Resources */,
 				07E12E141ADC3B780038E369 /* sabien.png in Resources */,
 				074BEB211ACF51EF00EB0A87 /* food.jpg in Resources */,
 				07E12E131ADC3B780038E369 /* rob.jpg in Resources */,
+				070BD8CE1ADEFBAC00922877 /* site@2x.png in Resources */,
+				070BD8BE1ADEF15400922877 /* movie@2x.png in Resources */,
 				074BEB1E1ACF500900EB0A87 /* defqon.jpg in Resources */,
 				07E9BDDD1ACD765B00229293 /* summer@2x.png in Resources */,
 			);

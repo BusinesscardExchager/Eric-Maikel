@@ -115,36 +115,30 @@
                                         <rect key="frame" x="100" y="26" width="120" height="120"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfV-Ud-2Rq">
-                                        <rect key="frame" x="31" y="230" width="107" height="21"/>
+                                        <rect key="frame" x="31" y="261" width="107" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTa-i9-VTr">
-                                        <rect key="frame" x="0.0" y="192" width="99" height="30"/>
-                                        <state key="normal" title="Visit Site">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnSite_Click:" destination="kh3-f3-WPI" eventType="touchUpInside" id="I4W-PN-kup"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUn-vg-ieN">
-                                        <rect key="frame" x="228" y="192" width="92" height="30"/>
-                                        <state key="normal" title="Trailer">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <rect key="frame" x="247" y="191" width="50" height="50"/>
+                                        <state key="normal" image="trailer.png"/>
                                         <connections>
                                             <action selector="btnTrailer_Click:" destination="kh3-f3-WPI" eventType="touchUpInside" id="RXo-Qw-37u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm9-Cr-gYg">
-                                        <rect key="frame" x="100" y="192" width="120" height="30"/>
-                                        <state key="normal" title="Aftermovie">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="63" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm9-Cr-gYg">
+                                        <rect key="frame" x="124" y="183" width="72" height="66"/>
+                                        <state key="normal" image="aftermovie.png"/>
                                         <connections>
                                             <action selector="btnAftermovie_Click:" destination="kh3-f3-WPI" eventType="touchUpInside" id="Qkz-ff-22x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTa-i9-VTr">
+                                        <rect key="frame" x="17" y="194" width="65" height="44"/>
+                                        <state key="normal" image="site.png"/>
+                                        <connections>
+                                            <action selector="btnSite_Click:" destination="kh3-f3-WPI" eventType="touchUpInside" id="I4W-PN-kup"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -636,8 +630,11 @@
     </scenes>
     <resources>
         <image name="add.png" width="25" height="25"/>
+        <image name="aftermovie.png" width="63" height="40"/>
         <image name="cancel.png" width="25" height="25"/>
         <image name="checkmark.png" width="25" height="25"/>
+        <image name="site.png" width="40" height="40"/>
         <image name="summer.png" width="25" height="25"/>
+        <image name="trailer.png" width="40" height="40"/>
     </resources>
 </document>
