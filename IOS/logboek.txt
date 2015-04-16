@@ -18,3 +18,36 @@ Visie van het concept opgeschreven
 
 Persona's gemaakt
 Scenario's gemaakt
+
+Week 4
+Gewerkt aan de presentatie voor volgende week.
+opdracht voor week 5 gemaakt. 
+
+Week 5
+v1.0 van Wireframes en flowcharts ontwikkeld.
+
+Begin gemaakt aan de app. Vooral het opzetten van de storyboard volgens de flowchart
+
+Week 6
+Verder gewerkt aan de app. + de eerste versie van de website online gezet. Afbeeldingen geprobeerd toe te voegen d.m.v. ftp.
+
+Collectionview en animaties toegevoegd.
+
+Week 7
+Filmpjes gekeken over experience design + boek gelezen over de processing levels:visceral, behavioral en reflective.
+
+Bovenstaande informatie verwerkt in ons concept.
+
+Website aangepast m.b.t. het uploaden van afbeeldingen. Eerst nog geprobeerd om de afbeelding te kopiëren naar de athena webserver. Wegens te weinig rechten op de server lukte dit niet. Hierna besloten om de afbeeldingen op te slaan als base64 string in de database.
+
+Flowchart v2.0 gemaakt.  
+
+Verder gewerkt aan de app. collection gui geüpdatet. 
+Nagedacht over de te gebruiken hardware feature.
+
+Week 8
+Documentatie afgemaakt. 
+Prioriteiten gesteld waaraan de app moet voldoen voor de oplevering (inlevering).
+Prioriteiten gesteld waaraan de app moet voldoen voor de oplevering (demonstratie).
+
+Verder gewerkt aan de app op basis van de opgestelde prioriteiten.

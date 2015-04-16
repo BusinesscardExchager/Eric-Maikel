@@ -14,14 +14,14 @@ class pendingActivityProvider{
     
     init()
     {
-        var activity1 = pendingActivities(Name: "Cinema", Detail: "Met Maikel, Joris...", Approved:true)
-        var activity2 = pendingActivities(Name: "Restaurant", Detail: "Met Maikel, Joris...", Approved:false)
-        var activity3 = pendingActivities(Name: "Qlimax", Detail: "Met Maikel, Joris...", Approved:false)
-        var activity4 = pendingActivities(Name: "Burgers Zoo", Detail: "Met Maikel, Joris...", Approved:false)
-        var activity5 = pendingActivities(Name: "Efteling", Detail: "Met Maikel, Joris...", Approved:false)
-        var activity6 = pendingActivities(Name: "Sea Life", Detail: "Met Maikel, Joris...", Approved:false)
-        var activity7 = pendingActivities(Name: "Defqon 1.", Detail: "Met Maikel, Joris...", Approved:true)
-        var activity8 = pendingActivities(Name: "Decibel", Detail: "Met Maikel, Joris...", Approved:true )
+        var activity1 = pendingActivities(Name: "Activiteit met Maikel, Eric...", Detail: "Met Maikel, Joris...", Approved:true)
+        var activity2 = pendingActivities(Name: "Activiteit met Joris, Meny...", Detail: "Met Maikel, Joris...", Approved:false)
+        var activity3 = pendingActivities(Name: "Activiteit met Joris, Eric...", Detail: "Met Maikel, Joris...", Approved:false)
+        var activity4 = pendingActivities(Name: "Activiteit met Maikel, Meny...", Detail: "Met Maikel, Joris...", Approved:false)
+        var activity5 = pendingActivities(Name: "Activiteit met Meny, Lisa...", Detail: "Met Maikel, Joris...", Approved:false)
+        var activity6 = pendingActivities(Name: "Activiteit met Lisa, Eric...", Detail: "Met Maikel, Joris...", Approved:false)
+        var activity7 = pendingActivities(Name: "Activiteit met Edwin, Kees...", Detail: "Met Maikel, Joris...", Approved:true)
+        var activity8 = pendingActivities(Name: "Activiteit met Sabien, Rob...", Detail: "Met Maikel, Joris...", Approved:true )
         
         self.pendingactivities += [activity1, activity2, activity3, activity4, activity5, activity6, activity7, activity8]
     }
@@ -32,6 +32,11 @@ class pendingActivityProvider{
     
     func getActivityAtIndex(#index : Int) -> pendingActivities{
         return pendingactivities[index]
+    }
+    
+    func deleteActivityAtIndex(#index : Int)
+    {
+        pendingactivities.removeAtIndex(index)
     }
     
     func setApprovedTrue(#index : Int)

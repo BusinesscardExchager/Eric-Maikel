@@ -18,6 +18,7 @@ class Activity: NSObject {
     var sitelink: String?
     var trailerlink: String?
     var aftermovie: String?
+    var time: String?
     
     init(Name name:String, Detail detail:String, Image image:String)
     {
@@ -26,7 +27,7 @@ class Activity: NSObject {
         self.image = UIImage(named: image)!
     }
     
-    init(Name name:String, Company company:String, Detail detail:String, Image image:UIImage, Date date:String, Place place:String, SiteURL sitelink:String, TrailerURL trailerlink:String, AftermovieURL aftermovie:String)
+    init(Name name:String, Company company:String, Detail detail:String, Image image:UIImage, Date date:String, Place place:String, SiteURL sitelink:String, TrailerURL trailerlink:String, AftermovieURL aftermovie:String, Time time:String)
     {
         self.name = name
         self.company = company
@@ -37,10 +38,11 @@ class Activity: NSObject {
         self.sitelink = sitelink
         self.trailerlink = trailerlink
         self.aftermovie = aftermovie
+        self.time = time
     }
     
     func toString()
     {
-        println("Name: \(name) Company: \(company), Detail: \(detail), Date: \(date), Place: \(place), Site: \(sitelink), Trailer: \(trailerlink), Aftermovie: \(aftermovie)")
+        println("Name: \(name) Company: \(company), Detail: \(detail), Date: \(date), \(time), Place: \(place), Site: \(sitelink), Trailer: \(trailerlink), Aftermovie: \(aftermovie)")
     }
 }

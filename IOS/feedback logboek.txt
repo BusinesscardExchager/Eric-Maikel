@@ -55,3 +55,7 @@ App ziet er goed uit, vooral de collection view.
 Balans tussen design en techniek is goed. 
 We hebben nog geen (relevant) idee wat we qua hardware gaan doen, gevraagd of Michael nog wat wist, maar dit was ook niet het geval.
 We zaten zelf te denken aan gps voor relevante suggesties.
+
+Week 8:
+De hardware feature van de website is voldoende. De camera gebruiken om een foto toe te voegen en te uploaden.
+john komt als het goed is nog langs om feedback te geven.

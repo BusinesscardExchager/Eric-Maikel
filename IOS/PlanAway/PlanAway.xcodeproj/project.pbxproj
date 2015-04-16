@@ -23,6 +23,8 @@
 		07814D851ADC51B500C77C83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE9C1AD6BCBA009E24AF /* SwiftyJSON.framework */; };
 		07814D861ADC51B500C77C83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE9C1AD6BCBA009E24AF /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07814D8A1ADC537400C77C83 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07814D891ADC537400C77C83 /* FriendsViewController.swift */; };
+		078CF0041ADFDFA200A39B1F /* JSONActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CF0031ADFDFA200A39B1F /* JSONActivityTableViewController.swift */; };
+		078CF00C1ADFE0ED00A39B1F /* JSONTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CF00B1ADFE0ED00A39B1F /* JSONTableViewCell.swift */; };
 		0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */; };
 		0797DC2B1ACD45670007179D /* decibel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC251ACD45670007179D /* decibel.jpg */; };
 		0797DC2F1ACD45670007179D /* sealife.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0797DC291ACD45670007179D /* sealife.jpg */; };
@@ -187,6 +189,8 @@
 		074BEB241ACF54D400EB0A87 /* efteling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = efteling.jpg; sourceTree = "<group>"; };
 		077B158F1AC4527E00B04439 /* newActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newActivityViewController.swift; sourceTree = "<group>"; };
 		07814D891ADC537400C77C83 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		078CF0031ADFDFA200A39B1F /* JSONActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONActivityTableViewController.swift; sourceTree = "<group>"; };
+		078CF00B1ADFE0ED00A39B1F /* JSONTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTableViewCell.swift; sourceTree = "<group>"; };
 		0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		0797DC251ACD45670007179D /* decibel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = decibel.jpg; sourceTree = "<group>"; };
 		0797DC291ACD45670007179D /* sealife.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sealife.jpg; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				F544386B1AD69ECF00009A2E /* DataTableViewController.swift */,
 				07E12E151ADC43B80038E369 /* Person.swift */,
 				07814D891ADC537400C77C83 /* FriendsViewController.swift */,
+				078CF0031ADFDFA200A39B1F /* JSONActivityTableViewController.swift */,
+				078CF00B1ADFE0ED00A39B1F /* JSONTableViewCell.swift */,
 			);
 			path = PlanAway;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */,
 				07E12E161ADC43B80038E369 /* Person.swift in Sources */,
 				F544386C1AD69ECF00009A2E /* DataTableViewController.swift in Sources */,
+				078CF00C1ADFE0ED00A39B1F /* JSONTableViewCell.swift in Sources */,
 				0797DC1E1ACD3DDA0007179D /* CollectionViewCell.swift in Sources */,
 				07E9BDDB1ACD62CB00229293 /* ActivityDetailViewController.swift in Sources */,
 				F54438621AD66FA800009A2E /* pendingActivityProvider.swift in Sources */,
@@ -575,6 +582,7 @@
 				0797DC331ACD55940007179D /* ViewController.swift in Sources */,
 				07E9BDE41ACD7BA900229293 /* TableViewController.swift in Sources */,
 				07E9BDE51ACD7BA900229293 /* swipeablecell.swift in Sources */,
+				078CF0041ADFDFA200A39B1F /* JSONActivityTableViewController.swift in Sources */,
 				F54438681AD69BA400009A2E /* ContactenTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,11 +17,6 @@ class swipeablecell: UITableViewCell {
     
     
     @IBAction func addClick(sender: AnyObject) {
-        let alert = UIAlertView()
-        alert.title = "add"
-        alert.message = "accept activity" + name.text!
-        alert.addButtonWithTitle("Ok")
-        alert.show()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var pendingactivityProvider = appDelegate.pendingactivityProvider as pendingActivityProvider
         var unapproved = pendingactivityProvider.getUnapprovedActivities()
@@ -34,11 +29,15 @@ class swipeablecell: UITableViewCell {
     }
     
     @IBAction func deleteClick(sender: AnyObject) {
-        let alert = UIAlertView()
-        alert.title = "delete"
-        alert.message = "delete activity" + name.text!
-        alert.addButtonWithTitle("Ok")
-        alert.show()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        var pendingactivityProvider = appDelegate.pendingactivityProvider as pendingActivityProvider
+        var unapproved = pendingactivityProvider.getUnapprovedActivities()
+        for var index:Int = 0 ; index < unapproved.count ;index += 1{
+            if(unapproved[index].name == name.text){
+                pendingactivityProvider.deleteActivityAtIndex(index: index)
+            }
+        }
+         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         
     }
     

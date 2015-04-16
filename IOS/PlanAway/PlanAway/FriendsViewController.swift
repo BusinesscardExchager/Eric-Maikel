@@ -59,6 +59,20 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         cell.textLabel!.font = UIFont(name: cell.textLabel!.font.fontName, size: 12)
         var imageView = cell.imageView
         imageView!.image = person.image
+        if(isWithNavController)
+        {
+            if(indexPath.item <= 3)
+            {
+                imageView!.layer.borderColor = UIColor(red: 17/255, green: 170/255, blue: 21/255, alpha: 1).CGColor
+            }
+            else
+            {
+                imageView!.layer.borderColor = UIColor.redColor().CGColor
+            }
+            
+            imageView!.layer.borderWidth = 1.5
+        }
+        
         return cell
     }
     

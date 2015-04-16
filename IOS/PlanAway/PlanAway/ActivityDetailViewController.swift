@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
+    @IBOutlet var barButtonSave: UIBarButtonItem!
     @IBOutlet var lblActivityName: UILabel!
     @IBOutlet var imageViewDetail: UIImageView!
     @IBOutlet var lblCompany: UILabel!
@@ -20,19 +21,27 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     
     var selectedActivity: Activity?
     var people = [Person]()
+    var isFromJson = false
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Peoples vullen met testdata
-        var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!)
-        var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!)
-        var person3 = Person(Name: "More..", Image: UIImage(named: "more")!)
-        
-        var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!)
-        var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!)
-        var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!)
-        people += [person1, person2, person3, person4, person5, person6]
+        if(!isFromJson)
+        {
+            self.navigationItem.rightBarButtonItem = nil
+            //Peoples vullen met testdata
+            var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!)
+            var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!)
+            var person3 = Person(Name: "More..", Image: UIImage(named: "more")!)
+            
+            var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!)
+            var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!)
+            var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!)
+            people += [person1, person2, person3, person4, person5, person6]
+        }
+
         
         
         // voeg labels toe
@@ -63,7 +72,13 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         labelDate.font = font
         self.scrollView.addSubview(labelDate)
         
-        var labelDescription = UILabel(frame: CGRectMake(xPos, yPos+(4*distance), labelWidth, labelHeigth))
+        var labelTime = UILabel(frame: CGRectMake(xPos, yPos+(3*distance), labelWidth, labelHeigth))
+        labelTime.textAlignment = textAlignment
+        labelTime.text = "Time:"
+        labelTime.font = font
+        self.scrollView.addSubview(labelTime)
+        
+        var labelDescription = UILabel(frame: CGRectMake(xPos, yPos+(5*distance), labelWidth, labelHeigth))
         labelDescription.textAlignment = textAlignment
         labelDescription.text = "Description"
         labelDescription.font = font
@@ -84,9 +99,15 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         
         var labelDateValue = UILabel(frame: CGRectMake(xPosRight, labelDate.frame.origin.y, labelWidthRight, labelHeigth))
         labelDateValue.textAlignment = textAlignment
-        labelDateValue.text = selectedActivity?.date
+        labelDateValue.text = selectedActivity!.date
         labelDateValue.font = font
         self.scrollView.addSubview(labelDateValue)
+        
+        var labelTimeValue = UILabel(frame: CGRectMake(xPosRight, labelTime.frame.origin.y, labelWidthRight, labelHeigth))
+        labelTimeValue.textAlignment = textAlignment
+        labelTimeValue.text = selectedActivity!.time
+        labelTimeValue.font = font
+        self.scrollView.addSubview(labelTimeValue)
         
         var labelDescriptionWidth = (labelDateValue.frame.origin.x + labelDateValue.bounds.size.width) - xPos
         
@@ -116,27 +137,36 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         }
         
         //Collectionview maken
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25)
-        
-        //Afbeelding is 2/3 van de cell, afbeelding moet vierkant zijn dus breedte:hoogte = 1:1.333
-        // Er wordt 20 van de breedte afgehaald omdat er anders maar 1 cell in de breedte is ipv 2 (voor iphone 5s scherm)
-        var width = ((self.view.frame.width/3) - 20) * (0.8)
-        var heigth = (self.view.frame.width/3 - 20) * (1)
-        layout.itemSize = CGSize(width: width, height: heigth)
-        
-        var yPosCollectionViewFriends = labelDescriptionValue.frame.origin.y + labelDescriptionValue.frame.size.height + distance
-        var collectionViewFriends = UICollectionView(frame: CGRectMake(0, yPosCollectionViewFriends, self.view.bounds.width, (heigth + 10.0)), collectionViewLayout: layout)
-        
-        collectionViewFriends.dataSource = self
-        collectionViewFriends.delegate = self
-        collectionViewFriends.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionViewFriends.backgroundColor = UIColor.whiteColor()
-        collectionViewFriends.scrollEnabled = false
-        self.scrollView.addSubview(collectionViewFriends)
-        
-        
-        scrollView.contentSize = CGSizeMake(self.view.bounds.width, (collectionViewFriends.frame.origin.y + collectionViewFriends.frame.size.height)-distance*2)
+        if(!isFromJson)
+        {
+            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+            layout.sectionInset = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25)
+            
+            //Afbeelding is 2/3 van de cell, afbeelding moet vierkant zijn dus breedte:hoogte = 1:1.333
+            // Er wordt 20 van de breedte afgehaald omdat er anders maar 1 cell in de breedte is ipv 2 (voor iphone 5s scherm)
+            var width = ((self.view.frame.width/3) - 20) * (0.8)
+            var heigth = (self.view.frame.width/3 - 20) * (1)
+            layout.itemSize = CGSize(width: width, height: heigth)
+            
+            var yPosCollectionViewFriends = labelDescriptionValue.frame.origin.y + labelDescriptionValue.frame.size.height + distance
+            var collectionViewFriends = UICollectionView(frame: CGRectMake(0, yPosCollectionViewFriends, self.view.bounds.width, (heigth + 10.0)), collectionViewLayout: layout)
+            
+            collectionViewFriends.dataSource = self
+            collectionViewFriends.delegate = self
+            collectionViewFriends.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+            collectionViewFriends.backgroundColor = UIColor.whiteColor()
+            collectionViewFriends.scrollEnabled = false
+            self.scrollView.addSubview(collectionViewFriends)
+            
+            
+            scrollView.contentSize = CGSizeMake(self.view.bounds.width, (collectionViewFriends.frame.origin.y + collectionViewFriends.frame.size.height)-distance*2)
+        }
+        else
+        {
+                        scrollView.contentSize = CGSizeMake(self.view.bounds.width, (labelDescriptionValue.frame.origin.y + labelDescriptionValue.frame.size.height))
+        }
+
+
         
         // Do any additional setup after loading the view.
         
@@ -240,9 +270,16 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "FriendsSegue"){
+            var friendsViewController: FriendsViewController = segue.destinationViewController as! FriendsViewController
+            friendsViewController.people = people
+        }
+        else if (segue.identifier == "saveActivity")
+        {
+            var controller: ViewController = segue.destinationViewController as! ViewController
+            appDelegate.PlannedActivities.append(selectedActivity!)
+        }
         
-        var friendsViewController: FriendsViewController = segue.destinationViewController as! FriendsViewController
-        friendsViewController.people = people
     }
     
     
