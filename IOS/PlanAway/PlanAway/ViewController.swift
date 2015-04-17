@@ -112,6 +112,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollectionViewCell
         var activity = activities[indexPath.item] as Activity
         cell.textLabel!.text = activity.name
+        cell.timeLabel!.text = activity.date! + " - " + activity.time!
         var imageView = cell.imageView
         imageView!.image = activity.image
         return cell

@@ -11,7 +11,9 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     var imageView: UIImageView?
-    var textLabel: UILabel?
+
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var textLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,12 +34,22 @@ class CollectionViewCell: UICollectionViewCell {
         
         //Label toevoegen om naam te laten zien
         let textFrame = CGRect(x: 0, y: (imageView!.frame.size.height + 5.0), width: frame.size.width, height: frame.size.height*0.2)
+        
         textLabel = UILabel(frame: textFrame)
         textLabel!.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
         textLabel!.textAlignment = .Center
         textLabel!.font =
             UIFont(name: textLabel!.font.fontName, size: 20)
         contentView.addSubview(textLabel!)
+        
+        let timeFrame = CGRect(x: 0, y: (imageView!.frame.size.height + 5.0) + 20.0, width: frame.size.width, height: frame.size.height*0.2)
+        
+        timeLabel = UILabel(frame: timeFrame)
+        timeLabel!.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
+        timeLabel!.textAlignment = .Center
+        timeLabel!.font =
+            UIFont(name: timeLabel!.font.fontName, size: 10)
+        contentView.addSubview(timeLabel!)
         
         var layer = contentView.layer
         layer.shadowColor = UIColor.blackColor().CGColor
