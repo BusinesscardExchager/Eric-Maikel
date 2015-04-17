@@ -43,6 +43,7 @@ class TableViewController: UITableViewController {
         
     }
     
+    //reloads the activities and the tableview from outside this class
     func loadList(notification: NSNotification){
         //load data here
         println("viewWillReload")
@@ -51,6 +52,8 @@ class TableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    
+    //reloads the activities and the tableview when the appear
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         println("viewWillAppear")

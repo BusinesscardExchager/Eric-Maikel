@@ -228,18 +228,22 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         imageViewDetail.image = selectedActivity?.image
     }
     
+    //open the site of the activity
     @IBAction func btnSite_Click(sender: AnyObject) {
         openUrl(selectedActivity!.sitelink!)
     }
     
+    //opens the trailer of the activity
     @IBAction func btnTrailer_Click(sender: AnyObject) {
         openUrl(selectedActivity!.trailerlink!)
     }
     
+    //opens the aftermovie of the activity
     @IBAction func btnAftermovie_Click(sender: AnyObject) {
         openUrl(selectedActivity!.aftermovie!)
     }
     
+    //opens the url of a string
     func openUrl(url: String)
     {
         var tempUrl = url

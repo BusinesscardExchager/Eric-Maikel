@@ -26,24 +26,29 @@ class pendingActivityProvider{
         self.pendingactivities += [activity1, activity2, activity3, activity4, activity5, activity6, activity7, activity8]
     }
     
+    //gets all the activities
     func getActivities() -> [pendingActivities]{
         return self.pendingactivities
     }
     
+    //get a activity by index
     func getActivityAtIndex(#index : Int) -> pendingActivities{
         return pendingactivities[index]
     }
     
+    //deletes a activity by index
     func deleteActivityAtIndex(#index : Int)
     {
         pendingactivities.removeAtIndex(index)
     }
     
+    //set the approved of a activity true
     func setApprovedTrue(#index : Int)
     {
         pendingactivities[index].approved = true
     }
     
+    //gets all approved activities
     func getApprovedActivities() -> [pendingActivities]{
         var approved = [pendingActivities]()
         for var index:Int = 0 ; index < pendingactivities.count ;index += 1{
@@ -54,6 +59,7 @@ class pendingActivityProvider{
         return approved
     }
     
+    //gets all unapproved activities
     func getUnapprovedActivities() -> [pendingActivities]{
         var unapproved = [pendingActivities]()
         for var index:Int = 0 ; index < pendingactivities.count ;index += 1{

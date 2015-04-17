@@ -50,6 +50,7 @@ class CollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
+    //Scales the imageview
     func scaleImageView(scale: CGFloat, operation: String)
     {
         var oldSize = self.imageView!.frame.size

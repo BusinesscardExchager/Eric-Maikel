@@ -78,6 +78,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         animateCollectionView()
     }
     
+    //this function makes the collectionView animate
     func animateCollectionView() {
         self.collectionView.layoutIfNeeded()
         let cells = self.collectionView!.visibleCells()
@@ -148,8 +149,10 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             var selectedActivity = sender as! Activity
             activityDetailViewController.selectedActivity = selectedActivity
         }
+        
     }
     
+    //gets the json from the webservice
     func loadJsonData()
     {
         var jSONrequest = Alamofire.request(.GET, "http://athena.fhict.nl/users/i254244/service.php")
@@ -168,9 +171,10 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         })
     }
     
+    //parses the json file
     func parseJsonData(jsonData:AnyObject?)
     {
-        //Create empry array for Pirates
+        //Create empry array for Activities
         var jsonConverted = JSON(jsonData!)
         activities.removeAll(keepCapacity: false)
         for (index: String, subJson: JSON) in jsonConverted{

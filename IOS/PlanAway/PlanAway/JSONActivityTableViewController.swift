@@ -110,7 +110,7 @@ class JSONActivityTableViewController: UITableViewController {
             activityDetailViewController.isFromJson = true
     }
 
-    
+    //gets the json from the webservice
     func loadJsonData()
     {
         var jSONrequest = Alamofire.request(.GET, "http://athena.fhict.nl/users/i254244/service.php")
@@ -129,6 +129,7 @@ class JSONActivityTableViewController: UITableViewController {
         })
     }
     
+    //parses the json to a activity
     func parseJsonData(jsonData:AnyObject?)
     {
         //Create empry array for Pirates

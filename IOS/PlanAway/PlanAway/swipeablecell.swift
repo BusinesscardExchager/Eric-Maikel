@@ -15,7 +15,7 @@ class swipeablecell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var pendingCell: UIView!
     
-    
+    //as there is clicked on this button the activity approves
     @IBAction func addClick(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var pendingactivityProvider = appDelegate.pendingactivityProvider as pendingActivityProvider
@@ -28,6 +28,8 @@ class swipeablecell: UITableViewCell {
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
     
+    
+    //as there is clicked on this button the activity deletes
     @IBAction func deleteClick(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var pendingactivityProvider = appDelegate.pendingactivityProvider as pendingActivityProvider
