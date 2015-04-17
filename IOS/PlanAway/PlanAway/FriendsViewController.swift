@@ -77,6 +77,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+        let alert = UIAlertView()
+        alert.title = "Selected Friend"
+        alert.message = "You selected " + people[indexPath.row].name! + " and the email is: " + people[indexPath.row].email!
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
     
     

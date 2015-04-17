@@ -11,10 +11,12 @@ import UIKit
 class Person: NSObject {
     var name: String?
     var image: UIImage?
+    var email: String?
     
-    init(Name name: String, Image image: UIImage)
+    init(Name name: String, Image image: UIImage, Email email: String)
     {
         self.name = name
         self.image = image
+        self.email = email
     }
 }

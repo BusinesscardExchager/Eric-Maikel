@@ -21,13 +21,13 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         //Peoples vullen met testdata
-        var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!)
-        var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!)
-        var person3 = Person(Name: "More..", Image: UIImage(named: "more")!)
+        var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!, Email: "meny@hotmail.com")
+        var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!, Email: "lisa@gmail.com")
+        var person3 = Person(Name: "More..", Image: UIImage(named: "more")!, Email: "more")
         
-        var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!)
-        var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!)
-        var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!)
+        var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!, Email: "sabien@live.nl")
+        var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!, Email: "edwin@gmail.com")
+        var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!, Email: "rob@hotmail.com")
         people += [person1, person2, person3, person4, person5, person6]
 
         // Uncomment the following line to preserve selection between presentations

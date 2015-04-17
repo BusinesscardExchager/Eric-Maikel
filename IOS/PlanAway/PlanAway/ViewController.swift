@@ -23,6 +23,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
         println("View wordt geladen")
         
+        
+        //create new activities if the appdelegate has 0 activities
         if(appDelegate.PlannedActivities.count == 0){
             //Create test data
             var act1 = Activity(Name: "Bioscoop", Company: "Pathé", Detail: "Pathé behoort tot één van de beste bioscopen van Eindhoven.", Image: UIImage(named: "bios.jpg")!, Date: "21-03-2015", Place: "Eindhoven", SiteURL: "https://www.pathe.nl/bioscoop/eindhoven", TrailerURL: "https://www.youtube.com/watch?v=kl8F-8tR8to", AftermovieURL: "https://www.youtube.com/watch?v=kl8F-8tR8to", Time: "20:00")
@@ -67,6 +69,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     // MARK: Animation
     
+    //as the view appears there will be some animation
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //self.loadJsonData()
