@@ -60,6 +60,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView!.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView!)
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,6 +76,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         super.viewWillAppear(animated)
         //self.loadJsonData()
         activities = appDelegate.PlannedActivities
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        collectionView.reloadData()
         println("View will appear")
         animateCollectionView()
     }

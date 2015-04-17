@@ -34,7 +34,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uYf-h8-wrD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GeI-eN-Mdi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pW1-37-Dxx">
@@ -463,7 +463,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Activity" id="4mL-aL-rf8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DyN-4X-HEq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DyN-4X-HEq">
+                            <connections>
+                                <segue destination="qRZ-k8-RL0" kind="show" id="AGP-J6-9Ua"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
@@ -597,6 +601,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O2z-Jb-q10"/>
-        <segue reference="CSf-IY-Cdu"/>
+        <segue reference="AGP-J6-9Ua"/>
     </inferredMetricsTieBreakers>
 </document>
