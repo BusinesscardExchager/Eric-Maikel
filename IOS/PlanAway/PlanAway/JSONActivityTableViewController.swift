@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class JSONActivityTableViewController: UITableViewController {
-
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var activities = [Activity]()
     
     override func viewDidLoad() {
@@ -105,9 +106,12 @@ class JSONActivityTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
             var selectedRow = self.tableView.indexPathForSelectedRow()!.row
             var selectedActivity = activities[selectedRow]
-            var activityDetailViewController: ActivityDetailViewController = segue.destinationViewController as! ActivityDetailViewController
-            activityDetailViewController.selectedActivity = selectedActivity
-            activityDetailViewController.isFromJson = true
+        appDelegate.PlannedActivities.append(selectedActivity)
+        let alert = UIAlertView()
+        alert.title = "New Planned Activity"
+        alert.message = "The planned activity can you see under the tab 'Activities'"
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
 
     //gets the json from the webservice

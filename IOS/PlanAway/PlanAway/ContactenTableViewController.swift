@@ -9,7 +9,7 @@
 import UIKit
 
 class ContactenTableViewController: UITableViewController {
-    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let contact = ["Maikel","Eric","Joris","Meny"]
     let email = ["Maikel@hotmail.com","Eric@hotmail.com","Joris@hotmail.com","Meny@hotmail.com"]
     override func viewDidLoad() {
@@ -88,14 +88,15 @@ class ContactenTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        appDelegate.pendingactivityProvider.addActivity("Activiteit met TEST", Detail: "geen details")
     }
-    */
+    
 
 }

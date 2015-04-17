@@ -208,7 +208,7 @@
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="hNt-ON-m1A" customClass="TableViewController" customModule="PlanAway" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CrJ-gd-0j1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -272,7 +272,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gFV-2R-9JY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MCG-nw-v8Y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rsu-o3-zWc">
@@ -401,7 +401,7 @@
                                     <outlet property="cellImageView" destination="ELG-ze-kRs" id="OkL-Ru-3Ts"/>
                                     <outlet property="lblDetail" destination="cFe-ha-YLr" id="H4O-yg-Us3"/>
                                     <outlet property="lblName" destination="Zr6-JC-H6a" id="OcQ-9W-ZWq"/>
-                                    <segue destination="kh3-f3-WPI" kind="show" identifier="" id="lb7-cG-D1v"/>
+                                    <segue destination="hNt-ON-m1A" kind="show" id="z0T-pE-IBD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -600,7 +600,7 @@
         <image name="trailer.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O2z-Jb-q10"/>
         <segue reference="AGP-J6-9Ua"/>
+        <segue reference="z0T-pE-IBD"/>
     </inferredMetricsTieBreakers>
 </document>

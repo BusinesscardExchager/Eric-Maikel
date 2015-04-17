@@ -31,6 +31,13 @@ class pendingActivityProvider{
         return self.pendingactivities
     }
     
+    //adds a activity
+    func addActivity(name: String, Detail detail: String)
+    {
+        var act = pendingActivities(Name: name, Detail: detail, Approved:false)
+        self.pendingactivities.append(act)
+    }
+    
     //get a activity by index
     func getActivityAtIndex(#index : Int) -> pendingActivities{
         return pendingactivities[index]
@@ -40,6 +47,16 @@ class pendingActivityProvider{
     func deleteActivityAtIndex(#index : Int)
     {
         pendingactivities.removeAtIndex(index)
+    }
+    
+    //deletes a activity by name
+    func deleteActivityByName(#name : String)
+    {
+        for var index:Int = 0 ; index < pendingactivities.count ;index += 1{
+            if(pendingactivities[index].name == name){
+                pendingactivities.removeAtIndex(index)
+            }
+        }
     }
     
     //set the approved of a activity true

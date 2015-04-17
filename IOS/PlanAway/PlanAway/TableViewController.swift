@@ -40,6 +40,8 @@ class TableViewController: UITableViewController {
         waitingActivities = pendingactivityProvider?.getUnapprovedActivities()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         
     }
     
@@ -59,6 +61,7 @@ class TableViewController: UITableViewController {
         println("viewWillAppear")
         approvedActivities = pendingactivityProvider?.getApprovedActivities()
         waitingActivities = pendingactivityProvider?.getUnapprovedActivities()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         self.tableView.reloadData()
     }
     
@@ -214,12 +217,16 @@ class TableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         var selectedRow = self.tableView.indexPathForSelectedRow()!.row
+        println(selectedRow)
+        var selectedActivity = pendingactivityProvider!.getApprovedActivities()[selectedRow]
+        println(selectedActivity.name)
         
         var navController: UINavigationController = segue.destinationViewController as! UINavigationController
         
         var friendsViewController: FriendsViewController = navController.topViewController as! FriendsViewController
         friendsViewController.people = people
         friendsViewController.isWithNavController = true
+        appDelegate.pendingactivityProvider.deleteActivityByName(name: selectedActivity.name)
     }
 
 }
