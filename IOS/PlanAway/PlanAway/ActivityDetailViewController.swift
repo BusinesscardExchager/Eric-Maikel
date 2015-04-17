@@ -22,7 +22,6 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     var selectedActivity: Activity?
     var people = [Person]()
     var isFromJson = false
-    
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -271,8 +270,15 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         }
         else if (segue.identifier == "saveActivity")
         {
-            var controller: ViewController = segue.destinationViewController as! ViewController
+            var controller: TableViewController = segue.destinationViewController as! TableViewController
+            
             appDelegate.PlannedActivities.append(selectedActivity!)
+            let alert = UIAlertView()
+            alert.title = "New Planned Activity"
+            alert.message = "The planned activity can you see under the tab 'Activities'"
+            alert.addButtonWithTitle("OK")
+            alert.show()
+            
         }
         
     }

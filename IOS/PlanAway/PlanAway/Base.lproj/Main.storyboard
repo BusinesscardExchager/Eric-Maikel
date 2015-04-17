@@ -163,7 +163,7 @@
                     <navigationItem key="navigationItem" id="uxS-Tl-8gb">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Iwu-SA-1cY">
                             <connections>
-                                <segue destination="qRZ-k8-RL0" kind="show" identifier="saveActivity" id="CSf-IY-Cdu"/>
+                                <segue destination="hNt-ON-m1A" kind="show" identifier="saveActivity" id="Eun-7j-fNd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -401,7 +401,7 @@
                                     <outlet property="cellImageView" destination="ELG-ze-kRs" id="OkL-Ru-3Ts"/>
                                     <outlet property="lblDetail" destination="cFe-ha-YLr" id="H4O-yg-Us3"/>
                                     <outlet property="lblName" destination="Zr6-JC-H6a" id="OcQ-9W-ZWq"/>
-                                    <segue destination="hNt-ON-m1A" kind="show" id="z0T-pE-IBD"/>
+                                    <segue destination="kh3-f3-WPI" kind="show" identifier="" id="u9R-fX-e01"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -600,7 +600,8 @@
         <image name="trailer.png" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="u9R-fX-e01"/>
+        <segue reference="Eun-7j-fNd"/>
         <segue reference="AGP-J6-9Ua"/>
-        <segue reference="z0T-pE-IBD"/>
     </inferredMetricsTieBreakers>
 </document>

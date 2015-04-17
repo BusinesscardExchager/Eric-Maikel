@@ -42,6 +42,8 @@ class TableViewController: UITableViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: true)
         
+        self.tableView.reloadData()
+        
         
     }
     

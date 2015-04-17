@@ -106,12 +106,10 @@ class JSONActivityTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
             var selectedRow = self.tableView.indexPathForSelectedRow()!.row
             var selectedActivity = activities[selectedRow]
-        appDelegate.PlannedActivities.append(selectedActivity)
-        let alert = UIAlertView()
-        alert.title = "New Planned Activity"
-        alert.message = "The planned activity can you see under the tab 'Activities'"
-        alert.addButtonWithTitle("OK")
-        alert.show()
+        
+        var activityDetailViewController: ActivityDetailViewController = segue.destinationViewController as! ActivityDetailViewController
+        activityDetailViewController.selectedActivity = selectedActivity
+        activityDetailViewController.isFromJson = true
     }
 
     //gets the json from the webservice
