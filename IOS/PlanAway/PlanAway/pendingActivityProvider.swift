@@ -12,6 +12,7 @@ class pendingActivityProvider{
     
     private var pendingactivities = [pendingActivities]()
     
+    //Create dummy people and add them to the activities
     init()
     {
         var group1 = [Person]()
@@ -40,7 +41,6 @@ class pendingActivityProvider{
         group6 = [lisa, eric, maikel]
         group7 = [edwin, sabien, joris]
         group8 = [sabien, rob, eric]
-        
         
         var activity1 = pendingActivities(Name: "Activiteit met Maikel, Eric...", Detail: "Met Maikel, Joris...", Approved:true, People: group1)
         var activity2 = pendingActivities(Name: "Activiteit met Joris, Meny...", Detail: "Met Maikel, Joris...", Approved:false, People: group2)

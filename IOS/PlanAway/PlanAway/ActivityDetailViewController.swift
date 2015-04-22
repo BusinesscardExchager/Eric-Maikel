@@ -29,6 +29,8 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //This controller is used from different routes. Therefor it needs different settings/properties
+        // isFromJson means the view before this one was the JSONActivityTableViewController
         if(!isFromJson)
         {
             if(selectedActivity?.people.count > 0)
@@ -48,12 +50,9 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
                 people += [person1, person2, person3, person4, person5, person6]
             }
             self.navigationItem.rightBarButtonItem = nil
-            
         }
         
-        
-        
-        // voeg labels toe
+        // Add the labels for the information about this activity
         var xPos = lblCompany.frame.origin.x
         var yPos = lblCompany.frame.origin.y
         var labelWidth = lblCompany.frame.size.width
@@ -128,8 +127,7 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         labelDescriptionValue.font = font
         self.scrollView.addSubview(labelDescriptionValue)
         
-        
-        //Laat de links niet zien als ze leeg zijn
+        //Do not show the links when there are none
         if(selectedActivity?.sitelink == "")
         {
             btnSite.hidden = true
@@ -145,7 +143,7 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
             btnAftermovie.hidden = true
         }
         
-        //Collectionview maken
+        //Show the friends who are comming (if it's not from the JSONActivityTableViewController)
         if(!isFromJson)
         {
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -174,13 +172,9 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         {
             scrollView.contentSize = CGSizeMake(self.view.bounds.width, (labelDescriptionValue.frame.origin.y + labelDescriptionValue.frame.size.height))
         }
-        
-        
-        
-        // Do any additional setup after loading the view.
-        
     }
     
+    // MARK: - CollectionView methods
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -198,7 +192,7 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
-            self.performSegueWithIdentifier("FriendsSegue", sender: self)
+        self.performSegueWithIdentifier("FriendsSegue", sender: self)
         
     }
     
@@ -212,8 +206,8 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     
     func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
-            var scale: CGFloat = 0.9
-            cell.scaleImageView(scale, operation: "devide")
+        var scale: CGFloat = 0.9
+        cell.scaleImageView(scale, operation: "devide")
         
     }
     
@@ -227,6 +221,7 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         // Dispose of any resources that can be recreated.
     }
     
+    //Change people in viewWillApear because it doesnt have to load the whole view again
     override func viewWillAppear(animated: Bool) {
         if(!isFromJson)
         {
@@ -248,7 +243,6 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
                 var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!, Email: "rob@hotmail.com")
                 people = [person1, person2, person3, person4, person5, person6]
             }
-            
         }
     }
     
@@ -280,31 +274,30 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     //opens the url of a string
     func openUrl(url: String)
     {
+        //Adds http:// if it isn't at the start of the string
         var tempUrl = url
         if(!tempUrl.hasPrefix("http"))
         {
             tempUrl = "http://" + tempUrl
         }
         
+        //Open the url
         if let checkURL = NSURL(string: tempUrl) {
-            if UIApplication.sharedApplication().openURL(checkURL) {
-                //println("url sucefully opened")
-            }
+            UIApplication.sharedApplication().openURL(checkURL)
+            
         }
     }
     
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        //Show the friends who are comming
         if (segue.identifier == "FriendsSegue"){
             var friendsViewController: FriendsViewController = segue.destinationViewController as! FriendsViewController
             friendsViewController.people = people
         }
         else if (segue.identifier == "saveActivity")
         {
+            //Save the actiivty
             var controller: TableViewController = segue.destinationViewController as! TableViewController
             selectedActivity!.people = pendingActivity!.people
             appDelegate.PlannedActivities.append(selectedActivity!)
@@ -315,8 +308,5 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
             alert.show()
             appDelegate.pendingactivityProvider.deleteActivityByName(name: pendingActivity!.name)
         }
-        
     }
-    
-    
 }

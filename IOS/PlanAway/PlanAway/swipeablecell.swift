@@ -9,13 +9,13 @@
 import UIKit
 
 class swipeablecell: UITableViewCell {
-
+    
     @IBOutlet var name: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var pendingCell: UIView!
     
-    //as there is clicked on this button the activity approves
+    //When clicked on this button, the activity gets approved
     @IBAction func addClick(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var pendingactivityProvider = appDelegate.pendingactivityProvider as pendingActivityProvider
@@ -29,7 +29,7 @@ class swipeablecell: UITableViewCell {
     }
     
     
-    //as there is clicked on this button the activity deletes
+    //When clicked on this button, the activity gets deleted/disapproved
     @IBAction func deleteClick(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var pendingactivityProvider = appDelegate.pendingactivityProvider as pendingActivityProvider
@@ -39,19 +39,20 @@ class swipeablecell: UITableViewCell {
                 pendingactivityProvider.deleteActivityAtIndex(index: index)
             }
         }
-         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         
     }
     
-
+    
+    //Protocol methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -59,8 +60,8 @@ class swipeablecell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)    }
-
+    
 }

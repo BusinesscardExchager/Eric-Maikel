@@ -16,6 +16,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Index and indexNeeded to get the selected index from a person in the people array
         var index = 0
         var indexNeeded = -1
         
@@ -26,11 +28,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
             }
             index++
         }
+        
         if(indexNeeded != -1)
         {
             people.removeAtIndex(indexNeeded)
         }
-
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25)
@@ -43,6 +45,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         
         // Do any additional setup after loading the view.
         var collectionViewFriends = UICollectionView(frame: CGRectMake(0, 0, self.view.bounds.width, (self.view.bounds.height)), collectionViewLayout: layout)
+        
         if(isWithNavController)
         {
             var frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - (self.tabBarController!.tabBar.frame.height) - self.navigationController!.navigationBar.frame.height - UIApplication.sharedApplication().statusBarFrame.height)
@@ -99,14 +102,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         alert.show()
     }
     
-    
-    
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
         if(segue.identifier == "planActivitySegue")
         {
             var navController: UINavigationController = segue.destinationViewController as! UINavigationController
@@ -115,6 +112,4 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
         }
         
     }
-
-    
 }

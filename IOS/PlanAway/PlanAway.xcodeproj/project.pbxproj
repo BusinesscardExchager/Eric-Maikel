@@ -20,7 +20,6 @@
 		074BEB211ACF51EF00EB0A87 /* food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB201ACF51EF00EB0A87 /* food.jpg */; };
 		074BEB231ACF541600EB0A87 /* burgerszoo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB221ACF541600EB0A87 /* burgerszoo.jpg */; };
 		074BEB251ACF54D400EB0A87 /* efteling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 074BEB241ACF54D400EB0A87 /* efteling.jpg */; };
-		077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B158F1AC4527E00B04439 /* newActivityViewController.swift */; };
 		07814D7F1ADC508300C77C83 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE7A1AD6B967009E24AF /* Alamofire.framework */; };
 		07814D801ADC508300C77C83 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE7A1AD6B967009E24AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07814D851ADC51B500C77C83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714DE9C1AD6BCBA009E24AF /* SwiftyJSON.framework */; };
@@ -193,7 +192,6 @@
 		074BEB201ACF51EF00EB0A87 /* food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food.jpg; sourceTree = "<group>"; };
 		074BEB221ACF541600EB0A87 /* burgerszoo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burgerszoo.jpg; sourceTree = "<group>"; };
 		074BEB241ACF54D400EB0A87 /* efteling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = efteling.jpg; sourceTree = "<group>"; };
-		077B158F1AC4527E00B04439 /* newActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newActivityViewController.swift; sourceTree = "<group>"; };
 		07814D891ADC537400C77C83 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		078CF0031ADFDFA200A39B1F /* JSONActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONActivityTableViewController.swift; sourceTree = "<group>"; };
 		078CF00B1ADFE0ED00A39B1F /* JSONTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTableViewCell.swift; sourceTree = "<group>"; };
@@ -339,7 +337,6 @@
 				07E9BDE31ACD7BA900229293 /* swipeablecell.swift */,
 				0797DC1D1ACD3DDA0007179D /* CollectionViewCell.swift */,
 				F516A5751AC440FD00258CC5 /* Activity.swift */,
-				077B158F1AC4527E00B04439 /* newActivityViewController.swift */,
 				07E9BDDA1ACD62CB00229293 /* ActivityDetailViewController.swift */,
 				F544385F1AD66E8400009A2E /* pendingActivities.swift */,
 				F54438611AD66FA800009A2E /* pendingActivityProvider.swift */,
@@ -583,7 +580,6 @@
 				07814D8A1ADC537400C77C83 /* FriendsViewController.swift in Sources */,
 				F54438601AD66E8400009A2E /* pendingActivities.swift in Sources */,
 				F516A5761AC440FD00258CC5 /* Activity.swift in Sources */,
-				077B15901AC4527E00B04439 /* newActivityViewController.swift in Sources */,
 				07E12E161ADC43B80038E369 /* Person.swift in Sources */,
 				F544386C1AD69ECF00009A2E /* DataTableViewController.swift in Sources */,
 				078CF00C1ADFE0ED00A39B1F /* JSONTableViewCell.swift in Sources */,

@@ -12,7 +12,7 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet var checkbox: UISwitch!
-
+    
     @IBOutlet var afbeelding: UIImageView!
     @IBAction func switchAction(sender: AnyObject) {
     }
@@ -21,11 +21,11 @@ class ContactTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

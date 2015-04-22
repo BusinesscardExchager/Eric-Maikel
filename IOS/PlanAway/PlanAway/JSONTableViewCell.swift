@@ -9,7 +9,7 @@
 import UIKit
 
 class JSONTableViewCell: UITableViewCell {
-
+    
     
     @IBOutlet var cellImageView: UIImageView!
     @IBOutlet var lblName: UILabel!
@@ -19,13 +19,11 @@ class JSONTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
 }

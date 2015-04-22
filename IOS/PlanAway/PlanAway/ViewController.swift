@@ -22,9 +22,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         // Do any additional setup after loading the view, typically from a nib.
         self.tabBarController?.tabBar.tintColor = UIColor.redColor()
         
-        println("View wordt geladen")
-        
-        
         //create new activities if the appdelegate has 0 activities
         if(appDelegate.PlannedActivities.count == 0){
             //Create test data
@@ -40,8 +37,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
         let screenHeigt = screenSize.height
-        
-        //Create itemProvider
         
         //Set layout etc
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -95,6 +90,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             cell.transform = CGAffineTransformMakeTranslation(0, -collectionHeight)
         }
         
+        // IndexCell for delay in animation
         var indexCell = 0
         
         for a in cells {
@@ -109,10 +105,10 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     // MARK: Collectionview
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        return activityProvider!.getActivities().count
         return activities.count
     }
     
+    // set data in cell
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollectionViewCell
         var activity = activities[indexPath.item] as Activity
@@ -123,23 +119,23 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+    //When a cell is selected
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
         
         var activity = activities[indexPath.item] as Activity
         self.performSegueWithIdentifier("DetailSegue", sender: activity)
     }
     
+    //When a cell is highlighted
     func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
         
         var scale: CGFloat = 0.9
-        //        var newWidth = cell.imageView.bounds.width * scale
-        //        var newHeight = cell.imageView.bounds.height * scale
-        //        cell.imageView.frame.size = CGSize(width: newWidth, height: newHeight)
         cell.scaleImageView(scale, operation: "multiply")
     }
     
+    //When a cell is unhighlighted
     func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
         var cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
         var scale: CGFloat = 0.9
@@ -147,7 +143,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     // MARK: Segue
-    
+    //Happens just before the segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DetailSegue"
         {
@@ -155,7 +151,6 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             var selectedActivity = sender as! Activity
             activityDetailViewController.selectedActivity = selectedActivity
         }
-        
     }
     
     //gets the json from the webservice
@@ -195,6 +190,5 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         self.collectionView.reloadData()
         self.animateCollectionView()
     }
-    
 }
 

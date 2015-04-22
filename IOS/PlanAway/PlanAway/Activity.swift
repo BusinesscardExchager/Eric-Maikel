@@ -21,13 +21,6 @@ class Activity: NSObject {
     var time: String?
     var people = [Person]()
     
-    init(Name name:String, Detail detail:String, Image image:String)
-    {
-        self.name = name
-        self.detail = detail
-        self.image = UIImage(named: image)!
-    }
-    
     init(Name name:String, Company company:String, Detail detail:String, Image image:UIImage, Date date:String, Place place:String, SiteURL sitelink:String, TrailerURL trailerlink:String, AftermovieURL aftermovie:String, Time time:String)
     {
         self.name = name
@@ -40,10 +33,5 @@ class Activity: NSObject {
         self.trailerlink = trailerlink
         self.aftermovie = aftermovie
         self.time = time
-    }
-    
-    func toString()
-    {
-        println("Name: \(name) Company: \(company), Detail: \(detail), Date: \(date), \(time), Place: \(place), Site: \(sitelink), Trailer: \(trailerlink), Aftermovie: \(aftermovie)")
     }
 }

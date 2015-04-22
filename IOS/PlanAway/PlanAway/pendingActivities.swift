@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Is actually pendingActivity
 class pendingActivities: NSObject {
     var name = ""
     var detail = ""
