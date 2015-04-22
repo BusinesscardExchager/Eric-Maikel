@@ -21,11 +21,9 @@ class ContactenTableViewController: UITableViewController {
         var rob = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!, Email: "rob@hotmail.com")
         var sabien = Person(Name: "Sabien", Image: UIImage(named: "sabien")!, Email: "sabien@hotmail.com")
         var maikel = Person(Name: "Maikel", Image: UIImage(named: "maikel.jpg")!, Email: "maikel@gmail.com")
-        var eric = Person(Name: "Eric", Image: UIImage(named: "eric.jpg")!, Email: "eric@gmail.com")
-        var joris = Person(Name: "Joris", Image: UIImage(named: "joris.jpg")!, Email: "joris@hotmail.com")
         
         
-        people = [edwin, lisa, meny, rob, sabien, maikel, eric, joris]
+        people = [edwin, lisa, meny, rob, sabien, maikel]
     }
     
     override func didReceiveMemoryWarning() {
