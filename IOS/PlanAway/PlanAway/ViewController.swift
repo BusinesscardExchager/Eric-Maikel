@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.tabBarController?.tabBar.tintColor = UIColor.redColor()
         
         println("View wordt geladen")
         
@@ -27,9 +28,9 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         //create new activities if the appdelegate has 0 activities
         if(appDelegate.PlannedActivities.count == 0){
             //Create test data
-            var act1 = Activity(Name: "Bioscoop", Company: "Pathé", Detail: "Pathé behoort tot één van de beste bioscopen van Eindhoven.", Image: UIImage(named: "bios.jpg")!, Date: "21-03-2015", Place: "Eindhoven", SiteURL: "https://www.pathe.nl/bioscoop/eindhoven", TrailerURL: "https://www.youtube.com/watch?v=kl8F-8tR8to", AftermovieURL: "https://www.youtube.com/watch?v=kl8F-8tR8to", Time: "20:00")
-            var act2 = Activity(Name: "Sealife", Company: "Sea Life", Detail: "Ontdek de verrassende onderwaterwereld in SEA LIFE Scheveningen en ontmoet onze fantastische dieren: roggen, haaien, zeesterren, piranha’s en nog veel meer.", Image: UIImage(named: "sealife.jpg")!, Date: "Altijd", Place: "Scheveningen", SiteURL: "https://www.visitsealife.com/scheveningen/", TrailerURL: "", AftermovieURL: "", Time: "08:00")
-            var act3 = Activity(Name: "Burgers Zoo", Company: "Burgers Zoo", Detail: "Duik in 8 miljoen liter water, ga op avontuur in de overdekte jungle en bewonder de gieren in onze woestijn! Beleef 45 hectare dierenpark in Burgers' Zoo!", Image: UIImage(named: "burgerszoo.jpg")!, Date: "Altijd", Place: "Arnhem", SiteURL: "http://www.burgerszoo.nl", TrailerURL: "", AftermovieURL: "", Time: "10:00")
+            var act1 = Activity(Name: "Bioscoop", Company: "Pathé", Detail: "Pathé behoort tot één van de beste bioscopen van Eindhoven.", Image: UIImage(named: "bios.jpg")!, Date: "21-05-2015", Place: "Eindhoven", SiteURL: "https://www.pathe.nl/bioscoop/eindhoven", TrailerURL: "https://www.youtube.com/watch?v=kl8F-8tR8to", AftermovieURL: "https://www.youtube.com/watch?v=kl8F-8tR8to", Time: "20:00")
+            var act2 = Activity(Name: "Sealife", Company: "Sea Life", Detail: "Ontdek de verrassende onderwaterwereld in SEA LIFE Scheveningen en ontmoet onze fantastische dieren: roggen, haaien, zeesterren, piranha’s en nog veel meer.", Image: UIImage(named: "sealife.jpg")!, Date: "28-05-2015", Place: "Scheveningen", SiteURL: "https://www.visitsealife.com/scheveningen/", TrailerURL: "", AftermovieURL: "", Time: "08:00")
+            var act3 = Activity(Name: "Burgers Zoo", Company: "Burgers Zoo", Detail: "Duik in 8 miljoen liter water, ga op avontuur in de overdekte jungle en bewonder de gieren in onze woestijn! Beleef 45 hectare dierenpark in Burgers' Zoo!", Image: UIImage(named: "burgerszoo.jpg")!, Date: "28-05-2015", Place: "Arnhem", SiteURL: "http://www.burgerszoo.nl", TrailerURL: "", AftermovieURL: "", Time: "10:00")
             appDelegate.PlannedActivities += [act1, act2, act3]
         }
         

@@ -19,6 +19,7 @@ class Activity: NSObject {
     var trailerlink: String?
     var aftermovie: String?
     var time: String?
+    var people = [Person]()
     
     init(Name name:String, Detail detail:String, Image image:String)
     {

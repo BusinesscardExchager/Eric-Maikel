@@ -23,22 +23,32 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
     var people = [Person]()
     var isFromJson = false
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var pendingActivity: pendingActivities?
+    var collectionViewFriends:UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if(!isFromJson)
         {
+            if(selectedActivity?.people.count > 0)
+            {
+                people = selectedActivity!.people
+            }
+            else
+            {
+                //Peoples vullen met testdata
+                var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!, Email: "meny@hotmail.com")
+                var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!, Email: "lisa@gmail.com")
+                var person3 = Person(Name: "More..", Image: UIImage(named: "more")!, Email: "more")
+                
+                var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!, Email: "sabien@live.nl")
+                var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!, Email: "edwin@gmail.com")
+                var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!, Email: "rob@hotmail.com")
+                people += [person1, person2, person3, person4, person5, person6]
+            }
             self.navigationItem.rightBarButtonItem = nil
-            //Peoples vullen met testdata
-            var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!, Email: "meny@hotmail.com")
-            var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!, Email: "lisa@gmail.com")
-            var person3 = Person(Name: "More..", Image: UIImage(named: "more")!, Email: "more")
             
-            var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!, Email: "sabien@live.nl")
-            var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!, Email: "edwin@gmail.com")
-            var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!, Email: "rob@hotmail.com")
-            people += [person1, person2, person3, person4, person5, person6]
         }
         
         
@@ -148,17 +158,17 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
             layout.itemSize = CGSize(width: width, height: heigth)
             
             var yPosCollectionViewFriends = labelDescriptionValue.frame.origin.y + labelDescriptionValue.frame.size.height + distance
-            var collectionViewFriends = UICollectionView(frame: CGRectMake(0, yPosCollectionViewFriends, self.view.bounds.width, (heigth + 10.0)), collectionViewLayout: layout)
+            collectionViewFriends = UICollectionView(frame: CGRectMake(0, yPosCollectionViewFriends, self.view.bounds.width, (heigth + 10.0)), collectionViewLayout: layout)
             
-            collectionViewFriends.dataSource = self
-            collectionViewFriends.delegate = self
-            collectionViewFriends.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-            collectionViewFriends.backgroundColor = UIColor.whiteColor()
-            collectionViewFriends.scrollEnabled = false
-            self.scrollView.addSubview(collectionViewFriends)
+            collectionViewFriends!.dataSource = self
+            collectionViewFriends!.delegate = self
+            collectionViewFriends!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+            collectionViewFriends!.backgroundColor = UIColor.whiteColor()
+            collectionViewFriends!.scrollEnabled = false
+            self.scrollView.addSubview(collectionViewFriends!)
             
             
-            scrollView.contentSize = CGSizeMake(self.view.bounds.width, (collectionViewFriends.frame.origin.y + collectionViewFriends.frame.size.height)-distance*2)
+            scrollView.contentSize = CGSizeMake(self.view.bounds.width, (collectionViewFriends!.frame.origin.y + collectionViewFriends!.frame.size.height)-distance*2)
         }
         else
         {
@@ -217,6 +227,31 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if(!isFromJson)
+        {
+            if(selectedActivity?.people.count > 0)
+            {
+                people = selectedActivity!.people
+                people.insert(Person(Name: "More..", Image: UIImage(named: "more")!, Email: "more"), atIndex: 2)
+                collectionViewFriends?.reloadData()
+            }
+            else
+            {
+                //Peoples vullen met testdata
+                var person1 = Person(Name: "Meny", Image: UIImage(named: "meny.jpg")!, Email: "meny@hotmail.com")
+                var person2 = Person(Name: "Lisa", Image: UIImage(named: "lisa.jpg")!, Email: "lisa@gmail.com")
+                var person3 = Person(Name: "More..", Image: UIImage(named: "more")!, Email: "more")
+                
+                var person4 = Person(Name: "Sabien", Image: UIImage(named: "sabien")!, Email: "sabien@live.nl")
+                var person5 = Person(Name: "Edwin", Image: UIImage(named: "edwin")!, Email: "edwin@gmail.com")
+                var person6 = Person(Name: "Rob", Image: UIImage(named: "rob.jpg")!, Email: "rob@hotmail.com")
+                people = [person1, person2, person3, person4, person5, person6]
+            }
+            
+        }
+    }
+    
     override func viewWillLayoutSubviews() {
         imageViewDetail.layer.cornerRadius = imageViewDetail.bounds.width/2
         imageViewDetail.contentMode = UIViewContentMode.ScaleAspectFill
@@ -271,14 +306,14 @@ class ActivityDetailViewController: UIViewController, UICollectionViewDelegateFl
         else if (segue.identifier == "saveActivity")
         {
             var controller: TableViewController = segue.destinationViewController as! TableViewController
-            
+            selectedActivity!.people = pendingActivity!.people
             appDelegate.PlannedActivities.append(selectedActivity!)
             let alert = UIAlertView()
             alert.title = "New Planned Activity"
-            alert.message = "The planned activity can you see under the tab 'Activities'"
+            alert.message = "You can find the planned activity under the 'Activities' tab"
             alert.addButtonWithTitle("OK")
             alert.show()
-            
+            appDelegate.pendingactivityProvider.deleteActivityByName(name: pendingActivity!.name)
         }
         
     }

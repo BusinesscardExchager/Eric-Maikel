@@ -11,8 +11,9 @@ import UIKit
 class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var `switch`: UISwitch!
+    @IBOutlet var checkbox: UISwitch!
 
+    @IBOutlet var afbeelding: UIImageView!
     @IBAction func switchAction(sender: AnyObject) {
     }
     

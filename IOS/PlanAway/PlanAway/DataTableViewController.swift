@@ -10,7 +10,8 @@ import UIKit
 
 class DataTableViewController: UITableViewController {
 
-    let data = ["03-09-11","04-09-11","05-09-11","06-09-11"]
+    let data = ["03-09-2015","04-09-2015","05-09-2015","06-09-2015"]
+    var selectedActivity: pendingActivities?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -86,14 +87,21 @@ class DataTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "dataToJsonSegue")
+        {
+            var navController: UINavigationController = segue.destinationViewController as! UINavigationController
+            var jSONActivityTableViewController: JSONActivityTableViewController = navController.topViewController as! JSONActivityTableViewController
+            jSONActivityTableViewController.pendingActivity = selectedActivity!
+        }
+        //appDelegate.pendingactivityProvider.deleteActivityByName(name: selectedActivity.name)
     }
-    */
+
 
 }

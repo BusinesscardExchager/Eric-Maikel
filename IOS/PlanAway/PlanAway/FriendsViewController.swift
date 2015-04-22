@@ -12,10 +12,25 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     
     var people = [Person]()
     var isWithNavController = false
+    var activity: pendingActivities?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        people.removeAtIndex(2)
+        var index = 0
+        var indexNeeded = -1
+        
+        for person in people {
+            if(person.name == "More..")
+            {
+                indexNeeded = index
+            }
+            index++
+        }
+        if(indexNeeded != -1)
+        {
+            people.removeAtIndex(indexNeeded)
+        }
+
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25)
@@ -85,14 +100,21 @@ class FriendsViewController: UIViewController, UICollectionViewDelegateFlowLayou
     }
     
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if(segue.identifier == "planActivitySegue")
+        {
+            var navController: UINavigationController = segue.destinationViewController as! UINavigationController
+            var dataTableViewController: DataTableViewController = navController.topViewController as! DataTableViewController
+            dataTableViewController.selectedActivity = activity!
+        }
+        
     }
-    */
+
     
 }

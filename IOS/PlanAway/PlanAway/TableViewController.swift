@@ -219,16 +219,14 @@ class TableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         var selectedRow = self.tableView.indexPathForSelectedRow()!.row
-        println(selectedRow)
         var selectedActivity = pendingactivityProvider!.getApprovedActivities()[selectedRow]
-        println(selectedActivity.name)
         
         var navController: UINavigationController = segue.destinationViewController as! UINavigationController
         
         var friendsViewController: FriendsViewController = navController.topViewController as! FriendsViewController
-        friendsViewController.people = people
+        friendsViewController.people = selectedActivity.people
         friendsViewController.isWithNavController = true
-        appDelegate.pendingactivityProvider.deleteActivityByName(name: selectedActivity.name)
+        friendsViewController.activity = selectedActivity
     }
 
 }

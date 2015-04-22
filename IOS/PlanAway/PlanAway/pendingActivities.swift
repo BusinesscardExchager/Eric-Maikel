@@ -12,11 +12,13 @@ class pendingActivities: NSObject {
     var name = ""
     var detail = ""
     var approved = false
+    var people = [Person]()
     
-    init(Name name:String, Detail detail:String, Approved approved:Bool)
+    init(Name name:String, Detail detail:String, Approved approved:Bool, People people: [Person])
     {
         self.name = name
         self.detail = detail
         self.approved = approved
+        self.people = people
     }
 }

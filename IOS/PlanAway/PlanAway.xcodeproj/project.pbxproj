@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0705C7191AE7B92200E6CE57 /* maikel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0705C7181AE7B92200E6CE57 /* maikel.jpg */; };
+		0705C7211AE7B98900E6CE57 /* eric.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0705C7201AE7B98900E6CE57 /* eric.jpg */; };
+		0705C7231AE7BA1900E6CE57 /* joris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0705C7221AE7BA1900E6CE57 /* joris.jpg */; };
 		070BD8BE1ADEF15400922877 /* movie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BD8BD1ADEF15400922877 /* movie@2x.png */; };
 		070BD8C81ADEF8DB00922877 /* trailer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BD8C71ADEF8DB00922877 /* trailer@2x.png */; };
 		070BD8CE1ADEFBAC00922877 /* site@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BD8CD1ADEFBAC00922877 /* site@2x.png */; };
@@ -175,6 +178,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0705C7181AE7B92200E6CE57 /* maikel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maikel.jpg; sourceTree = "<group>"; };
+		0705C7201AE7B98900E6CE57 /* eric.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eric.jpg; sourceTree = "<group>"; };
+		0705C7221AE7BA1900E6CE57 /* joris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joris.jpg; sourceTree = "<group>"; };
 		070BD8BD1ADEF15400922877 /* movie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movie@2x.png"; sourceTree = "<group>"; };
 		070BD8C71ADEF8DB00922877 /* trailer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trailer@2x.png"; sourceTree = "<group>"; };
 		070BD8CD1ADEFBAC00922877 /* site@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "site@2x.png"; sourceTree = "<group>"; };
@@ -289,8 +295,11 @@
 				07E12E0B1ADC3B780038E369 /* edwin.png */,
 				07E12E0C1ADC3B780038E369 /* lisa.jpg */,
 				07E12E0D1ADC3B780038E369 /* meny.jpg */,
+				0705C7181AE7B92200E6CE57 /* maikel.jpg */,
+				0705C7201AE7B98900E6CE57 /* eric.jpg */,
 				07E12E0E1ADC3B780038E369 /* rob.jpg */,
 				07E12E0F1ADC3B780038E369 /* sabien.png */,
+				0705C7221AE7BA1900E6CE57 /* joris.jpg */,
 				0797DC291ACD45670007179D /* sealife.jpg */,
 			);
 			name = Images;
@@ -544,8 +553,11 @@
 				070BD8D21ADEFE7800922877 /* aftermovie@2x.png in Resources */,
 				070BD8C81ADEF8DB00922877 /* trailer@2x.png in Resources */,
 				07E12E141ADC3B780038E369 /* sabien.png in Resources */,
+				0705C7231AE7BA1900E6CE57 /* joris.jpg in Resources */,
 				074BEB211ACF51EF00EB0A87 /* food.jpg in Resources */,
+				0705C7191AE7B92200E6CE57 /* maikel.jpg in Resources */,
 				07E12E131ADC3B780038E369 /* rob.jpg in Resources */,
+				0705C7211AE7B98900E6CE57 /* eric.jpg in Resources */,
 				070BD8CE1ADEFBAC00922877 /* site@2x.png in Resources */,
 				070BD8BE1ADEF15400922877 /* movie@2x.png in Resources */,
 				074BEB1E1ACF500900EB0A87 /* defqon.jpg in Resources */,
